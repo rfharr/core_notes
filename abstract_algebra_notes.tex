@@ -882,7 +882,7 @@ This section is a short compilation of examples of subgroup lattices. Lattices a
     \item $\phi(g^{-1} = \phi(g)^{-1})$
     \item $\phi(g^n) = \phi(g)^n$
     \item $\ker{(\phi)} \leq G$
-    \item $\Im{(\phi)} \leq H$ where $\Im{(\phi)} = \{h \in H: \phi(g) = h \text{ for some } g \in G\}$.
+    \item $Im{(\phi)} \leq H$ where $Im{(\phi)} = \{h \in H: \phi(g) = h \text{ for some } g \in G\}$.
 \end{enumerate}
 
 Let us sketch a proof for the first statement in the proposition above.
@@ -892,7 +892,7 @@ Let us sketch a proof for the first statement in the proposition above.
     e_G \cdot e_G = e_G &\Longrightarrow \phi(e_G) = \phi(e_G \cdot e_G) \\
     &\Longrightarrow \phi(e_G) = \phi(e_G) \cdot \phi(e_G).
 \end{align*}
-Since $\phi(e_G) \in H$ and $\phi(e_G) - \phi(e_G) \cdot \phi(e_G)$, we must have that $\phi(E_G) = e_H$. $\square$
+Since $\phi(e_G) \in H$ and $\phi(e_G) = \phi(e_G) \cdot \phi(e_G)$, we must have that $\phi(E_G) = e_H$. $\square$
 
 \textcolor{purple}{Definition 3.1.2:} For $N \leq G$ and $g \in G$, $gN = \{gn: n \in N\}$ is a \textcolor{purple}{left coset} of $N$ in $G$ and $Ng = \{ng: n \in N\}$ is a \textcolor{purple}{right coset} of $N$ in $G$. An element $x \in gN$ or $x \in Ng$ is called a \textcolor{purple}{coset representative}.
 
@@ -924,7 +924,7 @@ Next, we claim that $Ng \subseteq gN$. In doing so, we claim $g^{-1} \in N_G(N)$
 \end{align*}
 Now, note that $n_1g \in Ng$ and $gn_2 \in gN$, so $n_1g = gn_2 \Longrightarrow n_1g \in gN \Longrightarrow Ng \subseteq gN$. $\square$
 
-\textbf{Proof ($2 \Longrightarrow 3$):} Assume $gN = Ng \ \forall g \in G$. Suppose $g_1N = g_2N$ and $h_1N = h_2N$. We need to show $(g_1h_1)N = N(g_2h_2)$. Note that 
+\textbf{Proof ($3 \Longrightarrow 4$):} Assume $gN = Ng \ \forall g \in G$. Suppose $g_1N = g_2N$ and $h_1N = h_2N$. We need to show $(g_1h_1)N = N(g_2h_2)$. Note that 
 \begin{align*}
     g_1N = g_2N &\Longrightarrow \exists n_1 \in N : g_2^{-1}g_1=n_1 \text{ and }\\
     h_1N = h_2N &\Longrightarrow \exists n_2 \in N : h_2^{-1}h_1=n_2.
@@ -938,5 +938,132 @@ Solving for $g_1$ and $h_1$ gives us $g_1 = g_2n_1$ and $h_1=h_2n_2$. Then we ha
     &= g_2h_2N \\
     &=(g_2h_2)N 
 \end{align*}
+
+\textbf{Proof ($4 \Longrightarrow 5$):} Assume $g_1N \star g_2N = (g_1g_2)N$, with $\star$ on left cosets being well-defined. We want to show $gNg^{-1} \subseteq N \ \forall g \in G$. We have
+\begin{align*}
+    gng^{-1}N &= (gnN)(g^{-1}N) \\
+    &= (gN)(g^{-1}N) \\
+    &=(gg^{-1})N \\
+    &= eN \\
+    &= N
+\end{align*}
+so we must have that $gng^{-1} \in N \ \forall g \in G \ \forall n \in N$, and thusly $gNg^{-1} \subseteq N \ \forall g \in G$. $\square$
+
+\textbf{Proof ($5 \Longrightarrow 1$):} Assume $gNg^{-1} \subseteq N \ \forall g \in G$. Then we need to show $N \subseteq gNg^{-1} \ \forall g \in G$. Let $n \in N$. We need to show $n \in gNg^{-1}$. We have 
+\begin{align*}
+    n &= (gg^{-1})n(gg^{-1}) \\
+    &= g(g^{-1}ng)g^{-1} \\
+    &= g(g^{-1}n(g^{-1})^{-1})g^{-1} \\
+    &= gn_2g^{-1} \text{ for some } n_2 \in N
+\end{align*}
+so $n \in gNg^{-1} \ \forall g \in G$. Thusly, $N \subseteq gNg^{-1}$ and therefore $gNg^{-1} = N \ \forall g \in G$. $\square$
+
+As a consequence, we can now define \textcolor{purple}{quotient groups}. 
+
+\textcolor{purple}{Definition 3.1.4:} We say that if $N \trianglelefteq G$, then we have a well-defined operation $\sfrac{G}{N}$ (the set of all left cosets of $N$ in $G$). In fact, $\sfrac{G}{N}$ forms a group under this operation. This group is called a \textcolor{purple}{quotient group} or \textcolor{purple}{factor group}.
+
+\textcolor{red}{Proposition 3.1.2:} Let $N \leq G$. Then $N \trianglelefteq G$ if and only if $N = \ker{(\phi)}$ with $\phi$ a homomorphism.
+
+\textbf{Proof:} Assume $N \trianglelefteq G$. Then define the map $\pi: G \longrightarrow \sfrac{G}{N}$ by $\pi(g)=gN$. Then, for any $g_1,g_2 \in G$, we have
+\begin{align*}
+    \pi(g_1g_2) &= g_1g_2N \\
+    &= (g_1N)(g_2N) \\
+    &= \pi(g_1)\pi(g_2).
+\end{align*}
+Now
+\begin{align*}
+    g \in \ker{(\pi)} &\Longleftrightarrow \pi(g)=eN \\
+    &\Longleftrightarrow gN=N \\
+    &\Longleftrightarrow g \in N,
+\end{align*}
+thus $\ker{(\pi)}=N$. 
+
+Now, for the other direction, assume $N$ is the kernel of some group homomorphism $g:G\longrightarrow K$. We know $N \leq G$. Let $g \in G, \ n \in N$. We need to find $gng^{-1}\in N$. We have
+\begin{align*}
+    f(gng^{-1})&=g(g)f(n)f(g)^{-1} \\
+    &= f(g)e_Kf(g)^{-1} \\
+    &= e_K.
+\end{align*}
+This shows $gng^{-1} \in \ker{(f)}=N$ $\forall g \in G$ $\forall n \in N$. Then $gNg^{-1} \subseteq N \ \forall g \in G$. Thusly, $N \trianglelefteq G. \ \square$
+
+Next, we consider a vital theorem, \textcolor{red}{the First Isomorphism Theorem}.
+
+\textcolor{red}{Theorem 3.1.2: The First Isomorphism Theorem}\\
+If $\phi: G \longrightarrow H$ is a group homomorphism, then $\ker{(\phi)} \trianglelefteq G$ and $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$, where $\phi(G) = Im{(G)}$.
+
+\textbf{Proof:} We have shown (above) that $\ker{(\phi)} \trianglelefteq G$. Then we need to show $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$. Define
+\begin{center}
+    $\psi:\sfrac{G}{\ker{(\phi)}} \longrightarrow Im(G)$
+\end{center}
+by the rule $\psi(g\ker{(\phi)}) = \phi(g)$. Let $\ker{(\phi)}=K$. We then need to show that $\psi$ is an isomorphism. First, we need to see if $\psi$ is well-defined. Suppose $g_1K = g_2K$. Then we have $g_2^{-1}g_1 \in K$. Since $K = \ker{(\phi)}$, we have $\phi(g_2^{-1}g_1) = e_H$. This can be rewritten as $\phi(g_1)=\phi(g_2)$. Then $\psi$ is well-defined (and one-to-one, which can be easily shown by reversing the well-defined argument above). Next, let $h \in Im(\phi)$, so $h = \phi(g)$ for some $g \in G$. Then $\psi(gK)=\phi(g)=h$. To check for operation preservation, consider
+\begin{align*}
+    \psi(g_1Kg_2K) &= \psi(g_1g_2K) \\
+    &= \phi(g_1g_2) \\
+    &= \phi(g_2)\phi(g_2) \\
+    &= \psi(g_1K)\psi(g_2K). \ \square
+\end{align*}
+
+\textcolor{red}{Theorem 3.1.3:} Let $G$ be a finite group with $H \leq G$. If the number of left cosets of $H$ in $G$ is $p$ with $p \big| |G|$ and $p$ prime, then $H \trianglelefteq G$.\\
+\textbf{Proof:} Let $G$ act on the set of elft cosets of $H$ in $G$ by the rule $g \cdot aH = gaH$. This gives a homomorphism from $G$ to $S_p$. By the first isomorphism theorem, we can say
+\[
+    \sfrac{G}{\ker{(\phi)}} \cong Im(\phi).
+\]
+Now $Im(\phi) \leq S_p$. By La Grange, $|Im(\phi)| \big| p!$ (as $|S_p|=p!$). Since $\big| \sfrac{G}{\ker{(\phi)}} \big| = |Im(\phi)|$, we have that
+\begin{align*}
+    \sfrac{|G|}{|\ker{(\phi)}|}p! &\Longrightarrow \sfrac{|G|}{|\ker{(\phi)}|} \big| p \\
+    &\Longrightarrow \sfrac{|G|}{|\ker{(\phi)}|} = 1 \text{ or } \sfrac{|G|}{|\ker{(\phi)}|} = p.
+\end{align*}
+
+If $\sfrac{|G|}{|\ker{(\phi)}|} = 1$, then $G = \ker{(\phi)}$, which would give that $\phi(g) = id_{S_p}$ $\forall g \in G$. But then for any $g \notin H$, $gH \neq H$ so that $\sigma_g \neq id_{S_p}$. Then, because of the contradiction, we must have that $\sfrac{|G|}{|\ker{(\phi)}|} = p$.
+
+Notice that $g \in \ker{(\phi)}$, so $\phi(g)=\sigma_g$ is the identity permutation in $S_p$. In particular, $gH=H$, which holds if and only if $g \in H$. Then we must have that $\ker(\phi) \cong H$.
+
+Then $\sfrac{|G|}{|H|} \leq \sfrac{|G|}{|\ker{(\phi)}|} = p$. Since there are $p$ left cosets of $H$ in $G$, we also have that $p = \sfrac{|G|}{|H|}$. Then $|H| = |\ker{(\phi)}|$ and since $\ker{(\phi)} \subseteq H$, we have that $\ker{(\phi)}=H$. Since $\ker{(\phi)} \trianglelefteq G$, we have that $H \trianglelefteq G$. $\square$
+
+One consequence of this result is if $G$ is finite, $H$ is a subgroup of $G$, and there are only two left cosets of $H$ in $G$, then $H \trianglelefteq G$.
+
+\newpage
+\subsection{More on Cosets and La Grange's Theorem}
+
+\textcolor{red}{Theorem 3.2.1: La Grange's Theorem}\\
+If $G$ is finite with $H \leq G$, then $|H| \big| |G|$, and there are $\sfrac{|G|}{|H|}$ left cosets of $H$ in $G$.
+
+\textcolor{purple}{Definition 3.2.1:} For $H \leq G$, the \textcolor{purple}{index of $H$ in $G$}, denoted $[G:H]$, is the number of left cosets of $H$ in $G$. If $G$ is finite, then $[G:H] = \sfrac{|G|}{|H|}$.
+
+\textcolor{red}{Corollary 3.2.1:} If $G$ is finite and $x \in G$, then $|x| \big| |G|$.\\
+\textbf{Proof:} Observe $|<x>| = |x|$. Then, by La Grange, $|<x>| \big| |G|$. $\square$
+
+\textcolor{red}{Corollary 3.2.2:} If $|G| = p$ with $p$ prime, then $G \cong \mathbb{Z}_p$.\\
+\textbf{Proof:} Let $x \in G$ with $x \neq e$. Then $|<x>|>1$ and $|<x>|=p$. Then $<x>=G$. $\square$
+
+\textcolor{purple}{Definition 3.2.2:} Let $G$ be a group with $H,K \leq G$. Define $HK = \{hk: h \in H, k \in K\}$.
+
+\textcolor{red}{Proposition 3.2.1:} If $H,K \leq G$ with $H$ and $K$ both finite, then $|HK = \dfrac{|H| \cdot |K|}{|H \cap K|}$.\\
+\textbf{Proof:} We can write $HK = \bigcup_{h \in H}{hK}$. Note that two cosets of the form $h_1K$ and $h_2K$ are equal if and only if $h_2^{-1}h_1 \in K$. Now, since $H \leq G$, $h_2^{-1}h_1 \in H$. Then
+\begin{align*}
+    h_1K = h_2K &\Longleftrightarrow h_2^{-1}h_1 \in H \cap K \\
+    &\Longleftrightarrow h_1(H \cap K) = h_2(H \cap K).
+\end{align*}
+This means that, in the union $HK = \bigcup_{h \in H}{hK}$, there are $|H \cap K|$ cosets $hK$ that are all the same coset. Then $\bigg| \bigcup_{h \in H}{hK} \bigg| = \dfrac{|H|}{|H \cap K|}|K|. \ \square$
+
+\newpage
+\setcounter{subsection}{3}
+\subsection{Composition Series and the H\"{o}lder Program}
+
+\textcolor{red}{Proposition 3.4.1} If $G$ is a finite abelian group and $p$ is a prime such that $p \big| |G|$, then $x \in G$ such that $ord(x) = p$.\\
+\textbf{Proof:} We will prove by induction. First, assume $p$ is a prime such that $p \big| |G|$. Then let the base case assume that $|G| = p$. In this case, if $x \in G$ with $x \neq e$. Then $|x| \neq 1$ and $|x| \big| p$ by La Grange. Since $p$ is prime, $|x|=p$.
+
+Next, for the inductive step, assume the base case result holds now for all abelian groups with less than $|G|$ elements. That is, assume that if $H$ is an abelian group and $p \big| |H|$ with $|H| < |G|$, then $h \in H$ with $|h| = p$. Let $x \in G$ with $x \neq e$. If $p \big| |x|$, say $|x| = pk$ with $k \in \mathbb{Z}$, then
+\[
+    |x^k| = \dfrac{pk}{k} = p \Longrightarrow |x^k| = p
+\]
+and we found an element of order $p$. Next, assume $p \nmid |x|$. Consider $N = <x>$ is a subgroup. Since $G$ is abelian, we know $N \trianglelefteq G$ and $p \nmid |N|$. Lets look at the abelian group $\sfrac{G}{N}$. Notice $|\sfrac{G}{N}| = \sfrac{|G|}{|N|} < |G|$ since $x \neq e$. Also, $p \big| \sfrac{|G|}{|N|}$ since $p | |G|$ but $p \nmid |N|$. By the inductive hypothesis, $\sfrac{G}{N}$ has an element of order $p$, say $yN$ in $\sfrac{G}{N}$. However, the map $\pi : G \longrightarrow \sfrac{G}{N}$ defined by $\pi(g) = gN$ is a group homomorphism. Thus $|yN|_{\sfrac{G}{N}} \bigg| |y|_G \Longrightarrow p \big| |y|_G$, and now we can apply the first part of the argument if $|y|_G = pl$, then $|y^l|_G = p$. $\square$
+
+\textcolor{purple}{Definition 3.4.1:} Let $G$ be a group. Then $G$ is called \textcolor{purple}{simple} if its only normal subgroups are $\{e\}$ and $G$.
+
+\newpage
+\subsection{Transpositions and the Alternating Groups}
+
+
 
 \end{document}
