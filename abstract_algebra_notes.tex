@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{xcolor}
+\usepackage{multicol}
 \usepackage{xfrac}
 \usepackage{parskip}
 \usepackage{tikz}
@@ -1064,6 +1065,226 @@ and we found an element of order $p$. Next, assume $p \nmid |x|$. Consider $N = 
 \newpage
 \subsection{Transpositions and the Alternating Groups}
 
+\textcolor{purple}{Definition 3.5.1:} In the permutation group, a cycle of length $2$ is called a \textcolor{purple}{transposition}.
+
+Consider now a cycle $(a_1 \ a_2 \ \dots \ a_m)$ of length $m$. Any cycle can be written as a product (composition) of $m-1$ transpositions.
+\[
+\begin{array}{c|c}
+    \textbf{Cycle Length} & \textbf{Product of Transpositions} \\ \hline
+    2 \text{ so } (a \ b) & (a \ b) \\
+    3 \text{ so } (a \ b \ c) & (a \ c)(a \ b) \\
+    4 \text{ so } (a \ b \ c \ d) & (a \ d)(a \ c)(a \ b) \\
+    \vdots & \vdots \\
+    m \text{ so } (a_1 \ a_2 \ \dots \ a_m) & (a_1 \ a_m)(a_1 \ a_{m-1}) \dots (a_1 \ a_3)(a_1 \ a_2)
+\end{array}
+\]
+
+Since every permutation in $S_n$ can be written as a product of disjoint cycles, and each cycle can be written as a product of transpositions, every $\sigma \in S_n$ is a product of transpositions. Note that they need not be disjoint.
+
+\textcolor{blue}{Example 3.5.1:} Consider 
+\begin{align*}
+    \sigma &= (1 \ 3 \ 7 \ 9)(2 \ 6 \ 4)(5 \ 8) \\
+    &= ( 1 \ 9)(1 \ 7)(1 \ 3)
+\end{align*}
+
+\textcolor{purple}{Definition 3.5.2:} We call a permutation \textcolor{purple}{even} if it can be written as a product of an even number of transpositions. Else, it is odd.
+
+\textcolor{blue}{Example 3.5.2:} Note that determinants of matrices relate to even and odd permutations. Consider the matrix and its determinant below:
+
+\[
+\begin{vmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{vmatrix} = a_1b_2c_3 + b_1c_2a_3 + c_1a_2b_3
+\]
+
+We will have more of this in Galois Theory.
+
+\textcolor{red}{Theorem 3.5.1:} In $S_n$, any time the identity permutation is written as a product of transpositions, the number of transpositions must be even.
+
+\textcolor{red}{Theorem 3.5.2:} If $\sigma \in S_n$ and $\sigma = \alpha_1 \alpha_2 \cdots \alpha_r = \beta_1 \beta_2 \cdots \beta_t$, where each $\alpha_i,\beta_j$ is a transposition, then $r$ and $t$ are either both even or both odd.
+
+Consider the sketch of this proof below:
+\begin{align*}
+    id &= \sigma \sigma^{-1} \\
+    &= \alpha_1 \alpha_2 \cdots \alpha_r (\beta_1 \beta_2 \cdots \beta_t)^{-1} \\
+    &= \alpha_1 \alpha_2 \cdots \alpha_r \beta_t^{-1} \beta_{t-1}^{-1} \cdots \beta_1^{-1} \\
+    &= \alpha_1 \alpha_2 \cdots \alpha_r \beta_t \beta_{t-1} \cdots \beta_1.
+\end{align*}
+Note that the final line above expresses the identity permutation $id$ as a total of $r+t$ transpositions, so $r+t$ must be even. $\square$
+
+\textcolor{purple}{Definition 3.5.3:} The \textcolor{purple}{Alternating Group of degree $n$}, denoted $A_n$, is the subgroup of $S_n$ consisting of all even permutations in $S_n$. Note some interesting properties of $A_n$ below:
+\begin{enumerate}
+    \item $A_n \trianglelefteq S_n$
+    \item $|A_n|=\sfrac{n!}{2}$
+    \item $[S_n:A_n]=2$
+\end{enumerate}
+
+\textcolor{blue}{Example 3.5.3:} Consider the following symmetric groups and their corresponding alternating groups. Note that the symmetric groups shown do not list the members of their corresponding alternating groups.
+\begin{multicols}{2}
+    \[
+        \begin{array}{|c|c|}
+            \hline 
+            A_2 & S_2 \backslash A_2 \\
+            \hline 
+            id & (1 \ 2) \\
+            \hline
+        \end{array}
+    \]
+    \columnbreak
+    \[
+        \begin{array}{|c|c|}
+            \hline 
+            A_3 & S_3 \backslash A_3 \\
+            \hline 
+            id & (1 \ 2) \\
+            \hline
+            (1 \ 2 \ 3) & (1 \ 3) \\
+            \hline
+            (1 \ 3 \ 2) & (2 \ 3) \\
+            \hline
+        \end{array}
+    \]
+\end{multicols}
+
+\textcolor{red}{Theorem 3.5.3: Cauchy's Theorem}\\
+If $G$ is a finite group and $p$ is a prime dividing $|G|$, then $G$ has an element of order $p$. Equivalently, $G$ has a subgroup with $p$ elements. Note that we proved this already with abelian groups (see \textcolor{red}{proposition 3.4.1}).
+\textbf{Proof:} We will use induction on the number of elements in $G$. Let $|G|=n$. Since $p \big| |G|$, we know $p|n$, so $p \leq n$. This means our base case is $n=p$.
+
+So $|G|=p$ and any non-identity element in $G$ has order $p$ by La Grange's Theorem. Then our induction hypothesis supposes that $n>p$ and $p|n$. Assume Cauchy's Theorem is true for all groups of order $m$ where $m<n$ and $p|m$.
+
+If there is a $y \in G$ such that $p \big| |y|$, say $|y|=kp$ for some $k \in \mathbb{N}$. Then we have $|y^k|=p$ and we are done. Assume that no element has order $p$. We will obtain a ctonradiction.
+
+Case $1$: $G$ is not abelian. By the class equation, we have 
+\[
+    |G| = |Z(G)| + \sum_{i=1}^r[G:C_G(g_i)]
+\]
+where $g_1, g_2, \dots, g_r$ are representatives from the conjugacy classes of size bigger than one. Since $p \big||G|$, if $p \big| |Z(G)|$, then since $Z(G) \lneq G$, we can apply our induction hypothesis to $Z(G)$ to get an element $z \in Z(G)$ of order $p$, which has order $p$ in $G$.
+
+Assume $p \nmid |Z(G)|$. Then there must exist $g_1$ such that $p \nmid [G:C_G(g_i)]$. Then $p \nmid \sfrac{|G|}{|C_G(g_i)|}$. But $p \big| |G|$, so $p \big| |C_G(g_i)|$. Now $C_G(g_i) \lneq G$ and $p \big| |C_G(g_i)|$. Then, by our induction hypothesis, $C_G(g_i)$ has an element of order $p$. $\square$
+
+
+\newpage
+
+
+\section{Group Actions}
+\setcounter{subsection}{3}
+\subsection{Automorphisms}
+
+\textcolor{purple}{Definition 4.4.1:} Let $G$ be a group and $\phi:G \longrightarrow G$ be the automorphism $\phi_g(x)=gxg^{-1}$. Let $Inn(G) = \{ \phi_g:g \in G\}$ be the inner automorphisms of $G$. This forms a subgroup $Aut(G)$, the set of all automorphisms of $G$ under function composition.
+
+This idea of using conjugation to generate an automorphism can be generalized into subgroups:
+
+Let $H \leq G$ and $g \in G$. For $\phi_g$ to be a function from $H \longrightarrow H$, we need
+\begin{align*}
+    \phi_g(h) \in H \ \forall h \in H &\Longleftrightarrow ghg^{-1} \in H \ \forall h \in H \\
+    &\Longleftrightarrow g \in N_G(H)
+\end{align*}
+
+Define $\psi:N_G(H) \longrightarrow Aut(H)$ by the rule $\psi(g)=\phi_g$ ($\phi_g(h) = ghg^{-1}$). Note that $\psi$ is a homomorphism:
+\begin{align*}
+    \psi(g_1g_2) &= \phi_{g_1g_2}(h) \\
+    &= \phi_{g_1} \circ \phi_{g_2}(h).
+\end{align*}
+By the first isomorphism theorem, we have
+\[
+    \sfrac{N_G(H)}{\ker{(\psi)}} \cong Im(\psi) \leq Aut(H).
+\]
+Now, 
+
+\begin{align*}
+    g \in N_G(H) \text{ is in } \ker{(\psi)} &\Longleftrightarrow \psi(g) = \text{id}_H \text{ with } \text{id}_H(h)=h \ \forall h \in H \\
+    &\Longleftrightarrow \phi_g=\text{id}_H \\
+    &\Longleftrightarrow \phi_g(h)=h \ \forall h \in H \\
+    &\Longleftrightarrow ghg^{-1} = h \ \forall h \in H \\
+    &\Longleftrightarrow gh = hg \ \forall h \in H \\
+    &\Longleftrightarrow g \in C_G(H).
+\end{align*}
+
+Thus, $\ker{(\psi)} = C_G(H)$ and we have
+\[
+    \sfrac{N_G(H)}{C_G(H)} \cong Im(\psi) = \{\phi_g:g \in N_G(H)\}.
+\]
+
+Now, lets return to the case when $H=G$. 
+\begin{align*}
+    N_G(G)=G \text{ and } C_G(G)=Z(G) \text{ and } Im(\psi) &= \{\psi(g):g \in G\} \\
+    &= \{\phi_g:g \in G\} \\
+    &= Inn(G),
+\end{align*}
+which gives us that $\sfrac{G}{Z(G)} \cong Inn(G)$. This is a good result to add to our toolbelt when investigating groups.
+
+\newpage
+\subsection{Sylow's Theorems}
+\textcolor{purple}{Definition 4.5.1:} Let $G$ be a group and $p$ be a prime.
+\begin{enumerate}
+    \item A group of order $p^{\alpha}$, $\alpha \in \mathbb{Z}^+$, is called a \textcolor{purple}{$p$-group}. Subgroups of $G$ that are $p$-groups are called \textcolor{purple}{$p$-subgroups}.
+    \item If $|G|=p^{\alpha}m$ with $p \nmid m$, then $H \leq G$ with $|H|=p^{\alpha}$ is called a \textcolor{purple}{$p$-Sylow subgroup of $G$}.
+\end{enumerate}
+\textcolor{blue}{Example 4.5.1:} Consider $\mathbb{Z}_{36}$. We want to find the $3$-subgroups of $\mathbb{Z}_{36}$. That is, we are looking for subgroups of order $3^1=3, 3^2=9, 3^3 = 27, 3^4=81, \dots$, etc.
+\begin{align*}
+    <12> &= \{0,12,24\} \\
+    <4> &= \{0,4,8,12,16,20,24,28,32\}.
+\end{align*}
+Note that $<12> \leq \mathbb{Z}_{36}$ has order $3^1$ and $<4> \leq \mathbb{Z}_{36}$ has order $3^2$. Then $<12>$ and $<4>$ are both $p$-subgroups of $\mathbb{Z}_{36}$. Further, since $|\mathbb{Z}_{36}|=36 = 3^2 \cdot 4$ and $3 \nmid 4$, and since $|<4>| = 3^2$ with $<4> \leq \mathbb{Z}_{36}$, we have that $<4>$ is a $3$-Sylow subgroup of $\mathbb{Z}_{36}$.
+
+\textcolor{blue}{Example 4.5.2:} Consider the symmetric group $S_3$. Note that the $2$-Sylow subgroups in $S_3$ are $\{id, (1 \ 2)\}, \{id, (1 \ 3)\}$, and $\{id, (2 \ 3)\}$. Further, the only $3$-Sylow subgroup in $S_3$ is $\{id, (1 \ 2 \ 3), (1 \ 3 \ 2)\}$.
+
+Note that we write $Syl_p(G)$ to represent the Sylow $p$-subgroups in $G$ and we write $n_p$ or $n_p(G)$ to represent the number of $p$-Sylows in $G$. 
+
+\textcolor{blue}{Example 4.5.3:} In $S_3$, we have
+\begin{align*}
+    Syl_2(S_3) &= \{<(1 \ 2)>, <(1 \ 3)>, <(2 \ 3)>\} \text{ and } n_2 = n_2(S_3) = 3 \\
+    Syl_3(S_3) &= \{<( 1 \ 2 \ 3)>\} \text{ and } n_3 = n_3(S_3) = 1.
+\end{align*}
+
+\textcolor{red}{Theorem 4.5.1: Sylow's Theorem}\\
+Let $G$ be a group and suppose $|G| = p^{\alpha}m$, where $\alpha \in \mathbb{Z}^+$, $p$ is prime, and $p \nmid m$. Then
+\begin{enumerate}
+    \item $Syl_p(G) \neq \emptyset$. That is, $G$ has at least one $p$-Sylow subgroup.
+    \item If $Q \leq G$, $Q$ is a $p$-group, and $P \in Syl_p(G)$, then there exists some $g \in G$ such that $Q \leq gPg^{-1}$. In particular, if $P,Q \in Syl_p(G)$, then there exists some $g \in G$ such that $Q = gPg^{-1}$.\\
+    To put this more simply, any two $p$-Sylows are conjugates of each other.
+    \item If $n_p$ is the number of $p$-Sylows, then $n_p \equiv 1(\mod{p})$ and $n_p | m$. Note that $n_p = [G:N_G(P)]$ where $P \in Syl_p(G)$.
+\end{enumerate}
+
+\textcolor{red}{Corollary 4.5.1:} Let $G$ be a finite group with $P \in Syl_p(G)$. Then $Syl_p(G)= \{P\}$ if and only if $P \trianglelefteq G$. That is, the number of $p$-Sylows in $G$ is $1$ if and only if $P$ is a normal subgroup of $G$.
+
+\textbf{Proof:} Assume that $n_p = 1$. That is, assume $Syl_p(G) = \{P\}$. Then, for any $x \in G$, $xPx^{-1} \in Syl_p(G)$ since $xPx^{-1} \leq G$ and $|xPx^{-1}| = |P| = p^{\alpha}$. Thus, $xPx^{-1} \in Syl_p(G) = \{P\} \ \forall x \in G$. Then $xPx^{-1}=P \ \forall x \in G$ and $P \trianglelefteq G$.
+
+For the other direction, assume $P \trianglelefteq G$. Take any $Q \in Syl_p(G)$. Since any two $p$-Sylows are conjugates (part $2$ of Sylow's theorems), $\exists x \in G$ such that $xPx^{-1} = Q$. Then, since $P \trianglelefteq G$, we have $xPx^{-1} = Q \Longrightarrow P=Q$. $\square$
+
+\textcolor{purple}{Definition 4.5.2: The Normal Factoring Lemma}\\
+Let $G$ be a finite group with $H,K \trianglelefteq G$, $HK = G$, and $g = hk$ with $h \in H$ and $k \in K$ a unique product in $G$ $\forall g \in G$. Then
+\begin{enumerate}
+    \item $H \cap K = \{e\}$, and 
+    \item $G \cong H \times K$.
+\end{enumerate}
+
+Next, we consider some applications of Sylow's theorems. The first application relates to groups of order $pq$. Let $G$ be a group with $|G|=pq$, $p < q$, and $p \nmid q-1$. Then $G \cong \mathbb{Z}_{pq}$.\\
+\textbf{Proof:} First, let's consider what we know:
+\begin{enumerate}
+    \item $n_p \equiv 1(\mod{p})$
+    \item $n_p | q \Longrightarrow n_p \in \{1,q\}$
+    \item $n_q \equiv 1(\mod{p})$, and 
+    \item $n_q | p \Longrightarrow n_q \in \{1,p\}$.
+\end{enumerate}
+Now, consider $n_p = q$. Then we have
+\begin{align*}
+    n_p=q &\Longrightarrow q \equiv 1(\mod{p}) \\
+    &\Longrightarrow p|q-1.
+\end{align*}
+But this is a contradiction, so we must have that $n_p=1$. Next, if $n_q = p$, we have
+\begin{align*}
+    n_q=p &\Longrightarrow p \equiv 1(\mod{q}) \\
+    &\Longrightarrow Q | P-1 \\
+    &\Longrightarrow qk = p-1.
+\end{align*}
+But $p < q$, so this is a contradiction. Then $n_q=1$. Now, let $P, Q \in Syl_p(G)$. Then $P,Q \trianglelefteq G$ since $n_p=n_q=1$. Also, $P \cap Q = \{e\}$ since $\gcd{(|P|,|Q|)} = 1$. Finally,
+\[
+    |PQ| = \dfrac{|P||Q|}{|P \cap Q|}=\dfrac{pq}{1}=pq=|G|.
+\]
+Then, by the normal factoring lemma, $G \cong P \times Q \cong \mathbb{Z}_p \times \mathbb{Z}_q \cong \mathbb{Z}_{pq}$. $\square$
 
 
 \end{document}
