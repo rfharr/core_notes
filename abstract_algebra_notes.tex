@@ -1308,4 +1308,26 @@ Then let $P \in Syl_{17}(G)$. Then $P \trianglelefteq G$. Since $|P|=17$, $P \co
 \end{align*}
 By La Grange, $17 \big| |Z(G)|$, so we must have that $\sfrac{G}{Z(G)}$ has either $1,3,5$, or $3 \cdot 5$ elements, and $3 \nmid 5-1$. In all cases, $G$ is abelian.
 
+\textcolor{blue}{Example 4.5.5:} Show that a group of order $84$ cannot be simple. \textit{Hint: to prove a group is not simple, find a Sylow $p$-subgroup of the group. Further, start with the bigger primes and work your way down.}
+
+Let $|G|=84=2^2 \cdot 3 \cdot 7$. First, we know $n_2 \equiv 1(\mod{2})$ and $n_2 | 3 \cdot 7$. Then we must have that $n_2 \in \{1,3,7,21\}$. Similarly, $n_3 \equiv 1(\mod{3})$ and $n_3 | 2^2 \cdot 7$, so $n_3 \in \{1,4,7\}$. Lastly, we know $n_7 \equiv 1(\mod{7})$ and $n_7 | 2^2 \cdot 3$, so $n_7 \in \{1\}$. Now, since there is only one $7$-Sylow subgroup of $G$ (say $P \in Syl_y(G)$), we must have that $P \trianglelefteq G$. $\square$
+
+\textcolor{blue}{Example 4.5.6:} Show that a group of order $351$ cannot be simple.
+
+We will solve this similarly to the previous example. Let $|G| = 351 = 3^3 \cdot 13$. Note that $n_{13} \equiv 1(\mod{13})$ and $n_{13} | 3^3$. Then we must have that $n_{13} \in \{1, 27\}$. Now, if $n_{13}=1$, then there is only one $13$-Sylow subgroup which will be normal (in this case we would be done). Then assume $n_{13}=27$. That is, assume there are $27$ subgroups of $G$ with cardinality $13$. Remember, if $Q = <x>$ with $|<x>|=13$ (a prime order), then all non-identity elements of $Q$ generate all of $Q$. 
+
+Note that if $Q_1$ and $Q_2$ are two distinct subgroups of cardinality $13$, then $Q_1 \cap Q_2 = \{e\}$. 
+
+Now, since we are assuming that there are $27$ subgroups of cardinality $13$, every element in each subgroup \textit{except} the identity element will generate the whole group. Then $27 \cdot 12 = 324$. But the order of $G$ is $351$, which leaves $27$ ($27 = 351-324$) elements that are not of order $13$.
+
+Since exactly $27$ elements remain, and since a $3$-Sylow subgroup will have exactly $3^3=27$ elements, the remaining elements form a unique $3$-Sylow subgroup which is normal in $G$. $\square$
+
+\textcolor{blue}{Example 4.5.7:} What are the possible isomorphism classes of a group of order $45$?
+
+Let $|G|=45 = 3^2 \cdot 5$. First, note that $n_3 \equiv 1(\mod{3})$ and $n_3 | 5$, so $n_3 = 1$. Similarly, $n_5 \equiv 1(\mod{5})$ and $n_5 | 3^2$, so $n_5 = 1$. Let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $P,Q \trianglelefteq G$, $P \cap Q = \{e\}$, and $|PQ = \dfrac{|P||Q|}{|P \cap Q|} = \dfrac{3^2 \cdot 5}{1} = 45$, so we must have that $PQ=G$. Then, by the Normal Factoring Lemma, $G \cong P \times Q$.
+
+Now, since $|P|=3^2$, $P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5$, so $Q \cong \mathbb{Z}_5$. Then $G \cong \mathbb{Z}_9 \times \mathbb{Z}_5$ or $G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5$. $\square$
+
+\textcolor{blue}{Example 4.5.8:}
+
 \end{document}
