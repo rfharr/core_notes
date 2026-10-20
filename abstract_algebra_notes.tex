@@ -1328,6 +1328,25 @@ Let $|G|=45 = 3^2 \cdot 5$. First, note that $n_3 \equiv 1(\mod{3})$ and $n_3 | 
 
 Now, since $|P|=3^2$, $P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5$, so $Q \cong \mathbb{Z}_5$. Then $G \cong \mathbb{Z}_9 \times \mathbb{Z}_5$ or $G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5$. $\square$
 
-\textcolor{blue}{Example 4.5.8:}
+\textcolor{blue}{Example 4.5.8:} If $|G| = p^2q^2$ with $p$ and $q$ distinct primes and $p < q$, then $G$ has a normal $q$-Sylow unless $|G| = 36$. 
+
+First, note that $n_p \equiv 1(\mod{p})$ and $n_p | q^2$, so we must have that $n_p \in \{1,q,q^2\}$. Similarly, $n_q \equiv 1(\mod{q})$ with $n_q | p^2$, so $n_q \in \{1,p,p^2\}$.
+Now, if $n_q = 1$, then we are done. Then assume $n_q = p$. Then we have
+\begin{align*}
+    n_q = p &\Longrightarrow p \equiv 1(\mod{q}) \\
+    &\Longleftrightarrow q | p-1 \\
+    &\Longleftrightarrow p>q.
+\end{align*}
+But $p<q$, so we have a contradiction. 
+
+Then assume $n_q = p^2$. Then we have 
+\begin{align*}
+    n_q = p^2 &\Longrightarrow p^2 \equiv 1(\mod{q}) \\
+    &\Longrightarrow p^2-1 \equiv 0(\mod{q}) \\
+    &\Longrightarrow (p+1)(p-1) \equiv 0(\mod{q}) \\
+    &\Longrightarrow q | p+1 \text{ or } q | p-1 \\
+    &\Longrightarrow p>q.
+\end{align*}
+But, as above, this is a contradiction. Since $p<q$ are both distrinct primes and $q | p+1$, $p$ and $q$ must be consecutive primes. Then $p = 2$ and $q=3$, so $p^2q^2 = 4 \cdot 9 = 36$. $\square$
 
 \end{document}
