@@ -1023,7 +1023,7 @@ Then $\sfrac{|G|}{|H|} \leq \sfrac{|G|}{|\ker{(\phi)}|} = p$. Since there are $p
 
 One consequence of this result is if $G$ is finite, $H$ is a subgroup of $G$, and there are only two left cosets of $H$ in $G$, then $H \trianglelefteq G$.
 
-\newpage
+
 \subsection{More on Cosets and La Grange's Theorem}
 
 \textcolor{red}{Theorem 3.2.1: La Grange's Theorem}\\
@@ -1047,7 +1047,7 @@ If $G$ is finite with $H \leq G$, then $|H| \big| |G|$, and there are $\sfrac{|G
 \end{align*}
 This means that, in the union $HK = \bigcup_{h \in H}{hK}$, there are $|H \cap K|$ cosets $hK$ that are all the same coset. Then $\bigg| \bigcup_{h \in H}{hK} \bigg| = \dfrac{|H|}{|H \cap K|}|K|. \ \square$
 
-\newpage
+
 \setcounter{subsection}{3}
 \subsection{Composition Series and the H\"{o}lder Program}
 
@@ -1062,7 +1062,7 @@ and we found an element of order $p$. Next, assume $p \nmid |x|$. Consider $N = 
 
 \textcolor{purple}{Definition 3.4.1:} Let $G$ be a group. Then $G$ is called \textcolor{purple}{simple} if its only normal subgroups are $\{e\}$ and $G$.
 
-\newpage
+
 \subsection{Transpositions and the Alternating Groups}
 
 \textcolor{purple}{Definition 3.5.1:} In the permutation group, a cycle of length $2$ is called a \textcolor{purple}{transposition}.
@@ -1348,5 +1348,162 @@ Then assume $n_q = p^2$. Then we have
     &\Longrightarrow p>q.
 \end{align*}
 But, as above, this is a contradiction. Since $p<q$ are both distrinct primes and $q | p+1$, $p$ and $q$ must be consecutive primes. Then $p = 2$ and $q=3$, so $p^2q^2 = 4 \cdot 9 = 36$. $\square$
+
+
+\newpage
+\setcounter{section}{6}
+\section{Introduction to Rings}
+\subsection{Basic Definitions and Examples}
+
+\textcolor{purple}{Definition 7.1.1:} A \textcolor{purple}{ring} is a set with two binary operations $+$ and $\times$, called addition and multiplication, such that
+\begin{enumerate}
+    \item $(R,+)$ is an abelian group,
+    \item $\forall a,b,c \in R$, $a \times (b \times c) = (a \times b) \times c$ (associative law holds), and
+    \item $\forall a,b,c \in R$, $a \times (b + c) = (a \times b) + (a \times c)$ \\
+    and $(b + c) \times a = (b \times a) + (c \times a)$ (distributive law holds).
+\end{enumerate}
+
+Note that a ring is \textcolor{purple}{commutative} if $ab = ba$ $\forall a,b \in R$. Further, $R$ has a \textcolor{purple}{unity element} if $\exists 1 \in R$ such that $1a = a1 \ \forall a \in R$.
+
+Note that, notationally speaking, the additive identity is typically denoted by $0$ and the additive inverse of $a \in R$ is denoted $-a$.
+
+We define \textcolor{purple}{subtraction}, $a - b$, to be $a - b = a+(-b)$.
+
+\textcolor{purple}{Definition 7.1.2:} A ring $R$ with unity element $1$ that is not equal to $0$ is called a \textcolor{purple}{division ring} if every $a \in R$ with $a \neq 0$ has a multiplicative inverse. A commutative division ring is called a \textcolor{purple}{field}.
+
+Note that the reason for the term "division ring" is that dividing by $a$ corresponds to multiplying by $a^{-1}$.
+
+\textcolor{purple}{Definition 7.1.3:} A ring $R$ that is commutative, has a unity element, and the cancellation property, is called an \textcolor{purple}{integral domain}. $R$ has the \textcolor{purple}{cancellation property} if $ab = ac$ with $a \neq 0$ implies $b = c$ and if $ba = ca$ with $a \neq 0$ then $b = c$.
+
+\textcolor{red}{Proposition 7.1.1:} Let $R$ be a ring.
+\begin{enumerate}
+    \item $0a = a0 = 0, a \in R$,
+    \item $(-a)b = a(-b) = -(ab) \ \forall a,b \in R$,
+    \item $(-a)(-b) = ab \ \forall a,b \in R$, and 
+    \item if $R$ has unity $1$, then $-a = (-1)a$
+\end{enumerate}
+
+\textbf{Proof ($1$):} \begin{align*}
+    0a &= (0+0)a \\
+    &= 0a+0a \\
+    \Longrightarrow 0a &= 0a + 0a \\
+    \Longrightarrow 0 &= 0a \text{ by additive cancellation since } (R,+) \text{ is abelian, and }\\
+    a0 &= a(0+0) \\
+    &= a0 + a0 \\
+    \Longrightarrow a0 &= a0 + a0 \\
+    \Longrightarrow 0 &= a0. \ \square 
+\end{align*}
+
+\textbf{Proof ($2$):} By ($1$), we have
+\begin{align*}
+    0 = 0b &\Longrightarrow 0 = (a+(-a))b \\
+    &\Longrightarrow 0 = ab + (-a)b \\
+    &\Longrightarrow 0 - (ab) = -(ab) + ab + (-a)b \\
+    &\Longrightarrow -(ab) = 0+(-a)b \\
+    &\Longrightarrow -(ab) = (-a)b. \ \square
+\end{align*}
+
+\textcolor{purple}{Definition 7.1.4:} Let $R$ be a ring. A nonzero element $a \in R$ is called a \textcolor{purple}{zero divison} if there exists $b \in R$, $b \neq 0$, such that $ab = 0$ or $ba = 0$ if $R$ has unity $1$ with $1 \neq 0$.
+
+Note that no ring $R$ can have both zero divisors \textit{and} the cancellation property.
+
+\textcolor{purple}{Definition 7.1.5:} If a ring $R$ has unity $1 \neq 0$, an element $u$ is called a \textcolor{purple}{unit} if $\exists v \in R$ such that $uv = 1 = vu$. The units in $R$ are denoted $R^{\times}$.
+
+\textcolor{blue}{Example 7.1.1:} In $\mathbb{Z}_6$, $2,3,$ and $4$ are zero divisors while $1$ and $5$ are units.
+
+\textcolor{blue}{Example 7.1.2:} In $\mathbb{Z}$, there are no zero divisors and the units are $1$ and $-1$.
+
+\textcolor{blue}{Example 7.1.3:} In $\mathbb{Q}$, all nonzero elements are units.
+
+\textcolor{purple}{Definition 7.1.6:} If $R$ is a ring with unity $1$, then $R^{\times}$ forms a group under multiplication and is called \textcolor{purple}{the group of units}.
+
+\textcolor{blue}{Example 7.1.4:} In $\mathbb{Z}^{\times}_{10}$, the invertible elements are those relatively prime to $10$. That is, $\mathbb{Z^{\times}_{10}} = \{1,3,7,9\}$.
+
+With this notation, we can say that $F$ is a field if $F$ is commutative and $F^{\times} = F \backslash \{0\}$. 
+
+Note that, if $u$ is a unit in $R$, then $u$ is not a zero divisor (and visa versa).
+
+\textbf{Proof:} Suppose $ux = 0$ or $xu = 0$ for some $x \in R$. If $ux = 0$, then
+\begin{align*}
+    u^{-1}(ux) &= u^{-1}0 \\
+    (u^{-1}u)x &= 0 \\
+    1x &= 0 \\
+    x &= 0.
+\end{align*}
+If $xu = 0$, then a similar argument shows that $x = 0$.
+
+\textcolor{red}{Proposition 7.1.2:} If $R$ is an integral domain (ID) and $ab=0$, then either $a = 0$ or $b = 0$. Thus, an ID has no zero divisors.
+
+\textbf{Proof:} If $a = 0$ then we are done. Then assume $a \neq 0$. Now from $ab = 0$, we have $ab = a0 \Longrightarrow b = 0$ (by cancellation of $a$). $\square$ \\
+Note that one can also prove the converse. Further, if $R$ is a commutative ring with unity (cru) and has no zero divisors, then $R$ has the cancellation property. See below for a sketch of the proof:
+\begin{align*}
+    ab = ac &\Longrightarrow ab-ac=0 \\
+    &\Longrightarrow a(b-c) = 0 \\
+    &\Longrightarrow a = 0 \text{ or } b -c=0 \\
+    &\Longrightarrow b = c \ \square 
+\end{align*}
+
+\textcolor{purple}{Corollary 7.1.1:} If $R$ is a finite integral domain, then $R$ is a field.
+
+\textbf{Proof:} Suppose $R$ is a finite integral domain. Then we know $R$ is a commutative ring with unity and no zero divisors. Further, $R$ has the cancellation property. Let $a \in R: a \neq 0$. We need to show that $a$ is a unit. Let $f:R \longrightarrow R$ be the function $f(x)=ax$.
+
+Claim: $f$ is one-to-one. We have
+\begin{align*}
+    f(x_1)=f(x_2) &\Longrightarrow ax_1=ax_2 \\
+    &\Longrightarrow x_1=x_2 \text{ by cancellation.}
+\end{align*}
+Since $f:R \longrightarrow R$ is one-to-one and $R$ is finite, $f$ is onto. Thus, $\exists b \in R$ such that $f(b)=1$, so $ab=1$. Thusly, $a$ is a unit.
+
+\textcolor{purple}{Definition 7.1.7:} Let $R$ be a ring and $S \subseteq R$. The set $S$ is a \textcolor{purple}{subring} of $R$ if $(S,+) \leq (R,+)$ and $S$ is closed under multiplication.
+
+The \textcolor{purple}{subring test} says that $S$ is a subring of $R$ if 
+\begin{enumerate}
+    \item $S \neq \emptyset$ 
+    \item $a,b \in S \Longrightarrow a-b \in S$, and 
+    \item $a,b \in S \Longrightarrow ab \in S$.
+\end{enumerate}
+
+\textcolor{blue}{Example 7.1.5:} Let $R$ be a commutative ring with unity. Let $a \in R$. Show $<a> = \{ar: r \in R\}$ is a subring of $R$.
+
+Let $ar_1, ar_2 \in <a>$. Then
+\begin{align*}
+    ar_1-ar_2 &= a(r_1-r_2) \\
+    &= ar_3, r_3 \in R,
+\end{align*}
+which has the correct form to be an element of $<a>$. Similarly,
+\begin{align*}
+    (ar_1)(ar_2) &= a(r1)(ar_2) \\
+    &= ar_4, r_4 \in R,
+\end{align*}
+which has the correct form to be an element of $<a>$. $\square$
+
+\subsection{Examples: Polynomial Rings, Matrix Rings, and Group Rings}
+
+\textcolor{purple}{Definition 7.2.1:} Let $R$ be a commutative ring with unity, and let $x$ be an \textcolor{purple}{indeterminant} (kind of like a variable). A \textcolor{purple}{polynomial in x with coefficients in R} is an expression of the form
+\[
+    a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 \text{ where } a_i \in R, n \geq 0.
+\]
+This polynomial is \textcolor{purple}{monic} if $a_n=1$. The ring of polynomials in $x$ with coefficients in $R$ is denoted $R[x]$. Since $R$ is commutative, so is $R[x]$. Since $R$ has unity (say $1$), so does ring $R[x]$ (namely, $u(x)=1$).
+
+The constant polynomials are those of the form $c(x) = a_0$, where $a_0 \in R$. The set of all constant polynomials forms a subring that is isomorphic to $R$. 
+
+\textcolor{red}{Proposition 7.2.1:} Let $R$ be an integral domain and $p(x)$ and $q(x)$ be nonzero polynomials. Then
+\begin{enumerate}
+    \item the degree of $p(x)q(x)$ is equal to the degree of $p(x)$ plus the degree of $q(x)$. Symbolically, $\deg{(p(x)q(x))} = \deg{(p(x))} + \deg{(q(x))}$.
+    \item the units in $R[x]$ are the units in $R$ (viewed as constant polynomials), and 
+    \item $R[x]$ is an integral domain. 
+\end{enumerate}
+Note that $\deg{(c(x))}=0$, where $c(x)$ is a constant polynomial and $\deg{(p(x))}$ is undefined if $p(x)=0$.
+
+\textbf{Proof ($1$):} Assume $\deg{(p(x))}= n$ and $\deg{(q(x))} = m$. Let 
+\begin{align*}
+    p(x) &= a_nx^n+a_{n-1}x^{n-1} + \cdots + a_1x+a_0, a_n \neq 0 \text{ and }\\
+    q(x) &= b_mx^m+b_{m-1}x^{m-1} + \cdots + b_1x+b_0, b_m \neq 0.
+\end{align*}
+Thus $p(x)q(x) = a_nb_mx^{n+m} + \cdots + a_0b_0$. Further, since integral domains have no zero divisors, $a_nb_m \neq 0$. Then $\deg{(p(x)q(x))} = n+m = \deg{(p(x))}+\deg{(q(x))}$. $\square$
+
+\textbf{Proof ($2$):} Suppose $a(x)$ is a unit in $R[x]$. Then $\exists b(x) \in R[x]$ such that $a(x)b(x)=1$. Then, by part $1$ above, $\deg{(a(x))(b(x))} = \deg{(1)} \Longrightarrow \deg{(a(x))} + \deg{(b(x))} = 0 \Longrightarrow \deg{(a(x))} = \deg{(b(x))} = 0$. Then $a(x) = a_0$ and $b(x) = b_0$ for some $a_0, b_0 \in R$. So from $a(x)b(x)=1$, we get $a_0b_0 = 1$. Thus $a_0$ is a unit in $R$. $\square$
+
+\subsection{Ring Homomorphisms and Quotient Rings}
 
 \end{document}
