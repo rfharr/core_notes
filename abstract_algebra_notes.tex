@@ -1506,4 +1506,52 @@ Thus $p(x)q(x) = a_nb_mx^{n+m} + \cdots + a_0b_0$. Further, since integral domai
 
 \subsection{Ring Homomorphisms and Quotient Rings}
 
+\textcolor{purple}{Definition 7.3.1:} Let $R$ and $S$ be rings. A function $\phi:R \longrightarrow S$ is a \textcolor{purple}{ring homomorphism} if
+\begin{align*}
+    \phi(r_1+r_2) &= \phi(r_1)+\phi(r_2) \text{ and }\\
+    \phi(r_1r_2) &= \phi(r_1)\phi(r_2) \ \forall r_1,r_2 \in R. 
+\end{align*}
+A ring homomorphism that is one-to-one is a \textcolor{purple}{ring isomorphism}.
+
+\textcolor{purple}{Definition 7.3.2:} The \textcolor{purple}{kernel} of a ring homomorphism is
+\[
+    \ker{(\phi)} = \{r \in R: \phi(r) = 0_S\}.
+\]
+
+\textcolor{red}{Proposition 7.3.1:} Let $\phi:R \longrightarrow S$ be a ring homomorphism.
+\begin{enumerate}
+    \item The \textcolor{purple}{image} of $\phi$, which is $Im(\phi) = \{s \in S: \exists r \in R \text{ with } \phi(r)=s\}$ is a subring of $S$.
+    \item $\ker{(\phi)}$ is a subring of $R$.
+\end{enumerate}
+
+\textcolor{purple}{Definition 7.3.3:} Let $R$ be a ring and $I$ be a subset of $R$. Define 
+\[
+    rI=\{ra: a \in I\} \text{ and } Ir = \{ar: a \in I\}.
+\]
+We say that $I$ is a \textcolor{purple}{left ideal} if $I$ is a subring and $rI \subseteq I \ \forall r \in R$. We say that $I$ is a \textcolor{purple}{right ideal} if $I$ is a subring and $Ir \subseteq I \ \forall r \in R$. $I$ is a \textcolor{purple}{two-sided ideal}, also just called an \textcolor{purple}{ideal}, if $I$ is both a left and a right ideal.
+
+Since $R$ is an abelian group, we have additive cosets. If $I$ is a subring of $R$, let 
+\[
+    r + I = \{r + a: a \in I\}.
+\]
+Then $r + I$ is a \textcolor{purple}{coset} of $I$. Note that we write $\sfrac{R}{I}$ for the set of all cosets of $I$ in $R$.
+
+\textcolor{red}{Proposition 7.3.2:} Let $R$ be a ring and $I$ be an ideal of $R$ (denoted $I \trianglelefteq R$). The additive quotient group $\sfrac{R}{I}$ is a ring under the operations
+\begin{align}
+    (r+I)+(s+I) &= r+s+I \\
+    (r+I)(s+I)&=rs+I.
+\end{align}
+
+\textbf{Proof ($2$):} Our goal is to prove that $(r+I)(s+I)=rs+I$ is well-defined under the hyptohesis that $I$ is an ideal. Suppose that $r_1 + I=r_2+I$ with $r_1$ not necessarily equal to $r_2$ and $s_1 + I=s_2+I$ with $s_1$ not necessarily equal to $s_2$. We need to show $r_1s_1+I=r_2s_2+I$. \textit{Note that what we need to show is equivalent to $r_1s_1-r_2s_2 \in I$}.
+
+Now, $r_1+I=r_2+I$ tells us $r_2-r_1 \in I$ and $s_1+I=s_2+I$ tells us $s_2-s_1 \in I$. Then
+\begin{align*}
+    (r_2-r_1)(s_2-s_1) \in I &\Longrightarrow r_2s_2-r_2s_1-r_1s_2+r_1s_1 \in I \\
+    &\Longrightarrow r_1(s_1-s_2)+(r_2-r_1)s_2 \in I.
+\end{align*}
+
+This element, and all components of it, are in $I$, and $r_1(s_1-s_2)+(r_2-r_1)s_2=r_1s_1-r_2s_2$. $\square$
+
+\textcolor{purple}{Definition 7.3.4:} If $I \trianglelefteq R$, we call the ring $\sfrac{R}{I}$ a \textcolor{purple}{quotient ring}. That is, if $I$ is an ideal of $R$, we call the set of all cosets of $I$ in $R$ a \textcolor{purple}{quotient ring}.
+
 \end{document}
