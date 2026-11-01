@@ -1679,4 +1679,15 @@ Some good facts to know:
     \item If $R$ is an integral domain, then $R[x]$ is an integral domain and $Frac(R[x]) = R(x)$, where $R(x)$ is the set of rational functions. That is, where $R(x) = \biggl\{ \dfrac{f(x)}{g(x)}: f(x), g(x) \in R[x], g(x) \neq 0 \biggr\}$.
 \end{enumerate}
 
+
+\newpage
+
+\section{Euclidean Domains, Principal Ideal Domains, and Unique Factorization Domains}
+\subsection{Euclidean Domains}
+
+\textcolor{purple}{Definition 8.1.1:} Let $R$ be an integral domain. A function $N: R \longrightarrow \{0,1,2,3, \dots\}$ with $N(0_R) = 0$ is called a \textcolor{purple}{norm} on $R$. If $N(a)>0$ $\forall a \in R$ with $a \neq 0_R$, then $N$ is a \textcolor{purple}{positive norm}.
+
+\textcolor{purple}{Definition 8.1.2:} An integral domain $R$ is a \textcolor{purple}{Euclidean domain} if there is a norm $N$ or $R$ such that for any two $a,b \in R$ with $b \neq 0$, there are unique elements $q$ and $r$ in $R$ such that $a = qb+r$ where $r = 0_R$ or $N(r)<N(b)$. We might call $q$ the \textcolor{purple}{quotient} and $r$ the \textcolor{purple}{remainder}.
+
+
 \end{document}
