@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{xfrac}
+\usepackage{parskip}
+\usepackage{tikz}
+\setcounter{MaxMatrixCols}{20}
+
+\geometry{margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{210 Notes}
+\lhead{Class: Math 210, Sacramento State}
+\cfoot{\thepage}
+
+\title{Abstract Algebra Comprehensive Exam Practice}
+\author{Ryan Harris}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{section}{-1}
+\section{Introduction}
+
+\newpage
+
+\section{The Sylow Theorems}
+
+\begin{enumerate}
+    \item Let $G$ be a finite abelian group and suppose $p$ divides $|G|$. Prove that $n_p = 1$.\\
+    \textbf{Proof:} Let $G$ be a finite abelian group and suppose that $p \big| |G|$. Then we have
+    \begin{align*}
+        p \big| |G| &\Longrightarrow \exists m \in \mathbb{Z}^+:pm=|G| \\
+        &\Longrightarrow \exists P \in Syl_p(G) \\
+        &\Longrightarrow n_p \geq 1
+    \end{align*}
+    Now, assume $\exists Q \in Syl_p(G)$ such that $P \neq Q$. Then we have
+    \begin{align*}
+        \exists Q \in Syl_p(G): P \neq Q &\Longrightarrow \exists g \in G: Q \leq gPg^{-1} \\
+        &\Longrightarrow q = gpg^{-1} \text{ with }q \in Q, p \in P \\
+        &\Longrightarrow qg = gp \\
+        &\Longrightarrow gq = gp \text{ since } G \text{ is abelian} \\
+        &\Longrightarrow q = p \text{ by cancellation } \\
+        &\Longrightarrow Q = P \\
+        &\Longrightarrow n_p = 1. \ \square
+    \end{align*}
+
+    \item If $G$ is a group of order $45$, determine (with proof) $G$ up to isomorphism.\\
+    \textbf{Proof:}Let $G$ be a group with $|G| = 45 = 3^2 \cdot 5$. Then, by Sylow's Theorem, we have
+    \begin{align*}
+        n_3 \equiv 1(\mod{3}) \text{ and } n_3 \big| 5 &\Longrightarrow n_3 = 1 \text{ and }\\
+        n_5 \equiv 1(\mod{5}) \text{ and } n_5 \big| 3^2 = 9 &\Longrightarrow n_5 = 1
+    \end{align*}
+    Now, let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $|P| = 3^2 = 9$ and $|Q|= 5$. Then, since $P$ and $Q$ are both finite subgroups of $G$, we have that 
+    \[
+        |PQ| = \dfrac{|P||Q|}{|P \cap Q|}.
+    \]
+    Now, note that $P \cap Q \leq P$ and $P \cap Q \leq Q$. Then, by La Grange's Theorem, we have
+    \begin{align*}
+        |P \cap Q| \big| |P| &\Longrightarrow |P \cap Q| \in \{1,3,9\} \text{ and } \\
+        |P \cap Q| \big| |Q| &\Longrightarrow |P \cap Q| \in \{1,5\}
+    \end{align*}
+    Then we must have that $|P \cap Q| = 1$, so 
+    \[
+        |PQ| = \dfrac{|P||Q|}{|P \cap Q|} = \dfrac{9 \cdot 5}{1} = 45 = |G|.
+    \]
+    Now, since $n_3 = n_5 = 1$, we must have that $P,Q \trianglelefteq G$. Further, since $|PQ|=|G|$, we must have that $PQ = G$. Then, by the Normal Factoring Lemma, we must have that $G \cong P \times Q$.
+
+    Now, note that $|P| = 9 \Longrightarrow P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5 \Longrightarrow Q \cong \mathbb{Z}_5$. Then we have 
+    \[
+        G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \text{ or } G \cong \mathbb{Z}_9 \times \mathbb{Z}_5. \ \square
+    \]
+
+    \item If $G$ is a group of order $105=3 \cdot 5 \cdot 7$, prove that $G$ has a cyclic subgroup of order $35$ and that this subgroup is normal in $G$.
+    
+    \item Let $p$ and $q$ be distinct primes. Prove that a group of order $p^2q$ is not simple.\\
+    \textbf{Proof:} Let $G$ be a group such that $|G| = p^2q$ with $p$ and $q$ distinct primes. Then, by Sylow's Theorems, $\exists P \in Syl_p(G)$ and $\exists Q \in Syl_q(G)$. First, we investigate $Syl_p(G)$. 
+
+    Note that, again by Sylow's Theorems, $n_p \equiv 1(\mod{p})$ and $n_p \big| q$. Then we must have that $n_p \in \{1,q\}$. Now, if $n_p = 1$, then $p \in Syl_p(G)$ is the sole sylow $p$-subgroup of $G$ and thusly, $P \trianglelefteq G$. Then $G$ is not simple and we are done. Then assume that $n_p = q$. Next, we investigate $Syl_q(G)$. 
+
+    Again citing Sylow's Theorems, $n_q \equiv 1(\mod{q})$ and $n_q \big| p^2$. Then $n_q \in \{1,p,p^2\}$. Similarly to above, if $n_q = 1$, then $Q \in Syl_q(G)$ is the sole sylow $q$-subgroup and is thusly normal in $G$. Then we are done. So assume that $n_q \neq 1$. Then $n_q \in \{p,p^2\}$. Now, since $n_p = q$, we have
+    \begin{align*}
+        n_p = q &\Longrightarrow q \equiv 1(\mod{p}) \\
+        &\Longrightarrow q \in \{1,p+1,2p+1, \dots \} \\
+        &\Longrightarrow p < q.
+    \end{align*}
+
+    Assume $n_q = p$. Now, since $n_q \equiv 1(\mod{q})$, we must have that $n_q \in \{1, q+1, 2q+1, \dots \}$, so $p \in \{1,q+1,2q+1, \dots \}$. But $1 < p < q$, so we have a contradiction (since $p < q \Longrightarrow p < q+1$).
+
+    Then assume that $n_q = p^2$. Now, since $|Q| = q$ and there are $p^2$ sylow $q$-subgroups in $G$, we must have that the total number of elements (not counting the identity) that are accounted for in the sylow $q$-subgroups is $p^2(q-1) = p^2q-p^2$. This means that there are exactly $p^2$ elements of $G$ remaining to be accounted for, all of which must be elements of $P \in Syl_p(G)$. Since $P \in Syl_p(G) \Longrightarrow |P| = p^2$, we must only have one sylow $p$-subgroup of $G$. That is, $n_p = 1$. Then $P \trianglelefteq G$ and $G$ is not simple. $\square$
+    
+    \item Prove that a group of order $132$ cannot be simple.\\
+    \textbf{Proof:} Let $G$ be a group with order $132 = 2^2 \cdot 3 \cdot 11$. Then, by Sylow's Theorem, we have
+    \begin{align*}
+        n_2 &\equiv 1(\mod{2}) \text{ and } n_2 \big| 33 \\
+        &\Longrightarrow n_2 \in \{1,3,5,7,9,11\}, \\
+        n_3 &\equiv 1(\mod{3}) \text{ and } n_3 \big| 44 \\
+        &\Longrightarrow n_3 \in \{1,4,22\}, \text{ and }\\
+        n_{11} &\equiv 1(\mod{11}) \text{ and } n_{11} \big| 12 \\
+        &\Longrightarrow n_{11} \in \{1,12\}.
+    \end{align*}
+    We will start with $n_{11}$. Now, if $n_{11}=1$, then $|Syl_{11}(G)| = 1$ and $P \in Syl_{11}(G) \Longrightarrow P \trianglelefteq G$ and we are done. Then assume $n_{11}=12$. Note that for each $Q_i \in Syl_{11}(G)$, $|Q_i| = 11$. Further, we have that, since the order of each $Q_i$ is prime and each $Q_i$ is unique, $Q_n \cap Q_m = \{e\} \ \forall n,m \in \{1,2, \dots, 12\}$. Then there are $10 \cdot 12 = 120$ unique elements from $G$ accounted for in $\bigcup_{i =1}^{12}{Q_i}$, $Q_i \in Syl_{11}(G)$, which leaves $12$ elements remaining.
+
+    Now, we consider $n_3$. Since there are only $12$ distinct elements remaining in $G$, we know $n_3 \neq 22$. Further, if $n_3=1$ then $K \in Syl_3(G) \Longrightarrow K \trianglelefteq G$ and we are done. Then assume that $n_3 = 4$. Similarly to above, $Syl_3(G)$ will contain $4 \cdot 2 = 8$ unique elements between it's $4$ subgroups, leaving $4$ unique elements remaining in $G$.
+
+    Lastly, we have $n_2$. Note that we must have that $n_2=1$ since $H \in Syl_2(G) \Longrightarrow |H| = 4$. Then $H \trianglelefteq G$ and $G$ is not simple. $\square$
+
+    \item Let $P \in Syl_p(G)$ and let $N$ be a normal subgroup of $G$. Prove that $P \cap N$ is a Sylow $p$-subgroup of $N$.
+    \item Let $G$ be a group of order $231 = 3 \cdot 7 \cdot 11$. Prove that $Z(G)$ contains a Sylow $11$-subgroup. Hint: One approach is to use the $\sfrac{N}{C}$ Theorem which states that if $H$ is a subgroup of $G$, then $\sfrac{N_G(H)}{C_G(H)}$ is isomorphic to a subgroup of $Aut(H)$.
+    \item Prove that there is no simple group of order $300 = 2^2 \cdot 3 \cdot 5^2$. Hint: Assume that $G$ is not simple. By considering $n_5$, obtain a contradiction by showing $G$ is isomorphic to a subgroup of $S_6$.
+\end{enumerate}
+
+\newpage
+
+\textbf{COMPREHENSIVE EXAM}\\
+ALGEBRA 
+Sprint 2026
+
+\begin{enumerate}
+    \item Let $G$ be a finite group and let $p$ be the smallest prime dividing the order of $G$. If $H$ is a subgroup of $G$ of index $p$, prove that $H$ is a normal subgroup of $G$.
+    \item Let $G$ be a group of order $p^{\alpha}$ where $p$ is a prime and $\alpha$ is a positive integer.
+    \begin{enumerate}
+        \item Prove that $|Z(G)|>1$, where $Z(G)$ is the center of $G$.
+        \item Prove inductively that any group of order $p^{\alpha}$ contains a subgroup of order $p^{\alpha-1}$ for all $\alpha \geq 1$. You may use Cauchy's Theorem for abelian groups without proving it.
+    \end{enumerate}
+    \item Let $G$ be a group. A subgroup $H$ of $G$ is a \textit{characteristic subgroup} if $\phi(H)=H$ for all isomorphisms $\phi:G \longrightarrow G$.
+    \begin{enumerate}
+        \item If $H$ is a characteristic subgroup of $G$, prove that $H$ is a normal subgroup of $G$.
+        \item Prove that $Z(G)$ is a characteristic subgroup of $G$.
+    \end{enumerate}
+    \item Let $G$ be a group of order $p^3qr$, where $p,q$, and $r$ are primes and $p>q>r$. Suppose that $P$ and $Q$ are distict Sylow $p$ subgroups with $|P \cap Q| > 1$.
+    \begin{enumerate}
+        \item Prove that $|P \cap Q| = p^2$.\\
+        \textbf{Proof:} Let $P,Q \in Syl_p(G)$ be distinct. Let $|G| = p^3qr$ with $p,q,$ and $r$ primes, $p>q>r$, and $|P \cap Q| > 1$. 
+        
+        First, note that $|P|=|Q| = p^3$. Also note that $P \cap Q \leq P$ and $P \cap Q \leq Q$. Then, by La Grange's Theorem, $|P \cap Q| \big |P|$ and $|P \cap Q| \big |Q|$. Then $|P \cap Q| \in \{p,p^2,p^3\}$. Further, since $P$ and $Q$ are distinct, we know that $\exists a \in P$ such that $a \notin Q$. Similarly, $\exists b \in Q$ such that $b \notin P$. Then we must have that $P \cap Q$ is a proper subgroup of $P$ and also a proper subgroup of $Q$. Then we must have that $|P \cap Q| < p^3$, which means that $|P \cap Q| \in \{p,p^2\}$.
+        
+        Now, assume that $|P \cap Q| = p$. Then, since $P$ and $Q$ are both finite, we have
+        \begin{align*}
+            |PQ| &= \dfrac{|P||Q|}{|P \cap Q|} \\
+            &= \dfrac{p^3 \cdot p^3}{p} \\
+            &= p^5.
+        \end{align*}
+        Note that $PQ \leq G$, so $|PQ| \leq |G|$. Then we must have that $p^5 \leq p^3qr \Longrightarrow p^2 \leq qr$. Now, say $p = 5$, $q = 3$, and $r = 2$. Then $p^2 = 25$ and $qr = 6$. But this is a contradiction, which means that we would need for $p < q$ or $p < r$, which is a contradiction. Then we cannot have that $|P \cap Q| = p$. This means that the only remaining possibility is $|P \cap Q| = p^2$. $\square$
+        \item Prove that $N_G(P \cap Q)$ contains both $P$ and $Q$. Here $N_G(P \cap Q)$ is the normalizer of $P \cap Q$ in $G$.
+        \item Prove that $P \cap Q$ is normal in $G$.
+    \end{enumerate}
+    \item Let $G$ be a group of order $2 \cdot 3^2 \cdot 11 = 198$.
+    \begin{enumerate}
+        \item Prove that $G$ has a unique $11$-Sylow subgroup. \\
+        \textbf{Proof:} Note that $G$ has order $11^1 \cdot 18$. Then, by Sylow's Theorem, $\exists P \in Syl_{11}(G)$, so $n_{11} \geq 1$. Further, Sylow's Theorem also gives us that $n_{11} \equiv 1(\mod{11})$ and $n_{11} \big| 18$. Then we must have that $n_{11}=1$, so $P$ is unique. $\square$
+        \item Let $P$ be the unique $11$-Sylow subgroup of $G$. Prove $C_G(P)$ is a normal subgroup of $G$ where $C_G(P)$ is the centralizer of $P$ in $G$.\\
+        \textbf{Proof:} Let $P \in Syl_{11}(G)$ with $n_{11}=1$, and let $C_G(P) = \{c \in G: cp=pc \ \forall p \in P\}$ be the centralizer of $P$ in $G$. Note that, since $n_{11}=1$, we must have that $P \trianglelefteq G$. Then we need to show that $gC_G(P)g^{-1} = C_G(P) \ \forall g \in G$. That is, we need to show that $gcg^{-1} \in C_G(P), \ c \in C_G(P) \ \forall g \in G$. Let $p \in P$. We have 
+        \begin{align*}
+            p(gcg^{-1}) &= gg^{-1}p(gcg^{-1}) \\
+            &= g(g^{-1}p)gcg^{-1} \\
+            &= g(p_1g^{-1}g)cg^{-1} \text{ since } P \trianglelefteq G\\
+            &= gp_1cg^{-1} \\
+            &= gcp_1g^{-1} \\
+            &= (gcg^{-1})p \text{ since we established } p_1g^{-1} = g^{-1}p\\
+            &\Longrightarrow gcg^{-1} \in C_G(P) \\
+            &\Longrightarrow gC_G(P)g^{-1}=C_G(P) \\
+            &\Longrightarrow C_G(P) \trianglelefteq G. \ \square
+        \end{align*}
+        \item Prove that $G$ has a normal $3$-Sylow subgroup.\\
+        \textbf{Proof:} Let $G$ be defined as above. Then, since $|G| = 3^2 \cdot 22$, Sylow's Theorem tells us that $\exists Q \in Syl_3(G)$. Further, Sylow's Theorem also tells us that $n_3 \equiv 1(\mod{3})$ and $n_3 \big| 22$. Then we must have that $n_3 =1$. Then $Syl_3(G) = \{Q\}$.\\
+        Next, note that, since $Syl_3(G) = \{Q\}$ and $Q \leq G$, we have that $gQg^{-1} \leq G$ $\forall g \in G$. Next, let $\phi:Q \Longrightarrow gQg^{-1}$ be defined by $\phi(q)=gqg^{-1}$. We aim to show that this map is a bijection. Let $\phi(q_1)=\phi(q_2)$. Then we have
+        \begin{align*}
+            \phi(q_1)=\phi(q_2) &\Longrightarrow gq_1g^{-1} = gq_2g^{-1} \\
+            &\Longrightarrow gq_1g^{-1}g = gq_2g^{-1}g \\
+            &\Longrightarrow gq_1=gq_2 \\
+            &\Longrightarrow g^{-1}gq_1 = g^{-1}gq_2 \\
+            &\Longrightarrow q_1=q_2,
+        \end{align*}
+        so $\phi$ is one-to-one. Next, let $x \in gQg^{-1}$. Then we have
+        \begin{align*}
+            x \in gQg^{-1} &\Longrightarrow gqg^{-1} = x \text{ for some } q \in Q \\
+            &\Longrightarrow gqg^{-1}g = xg \\
+            &\Longrightarrow gq = xg \\
+            &\Longrightarrow g^{-1}gq = g^{-1}xg \\
+            &\Longrightarrow q = g^{-1}xg,
+        \end{align*}
+        so we must have that $\phi(g^{-1}xg)=q$. Then $\phi$ is a bijection and we must have that $|gQg^{-1}| = |Q|$. Then we must have that $gQg^{-1} = Q$, and thusly $Q \trianglelefteq G$. $\square$
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}

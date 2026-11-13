@@ -477,13 +477,13 @@ where the sum is taken in the same method as the previous version of the Class E
 
 This brings us to an interest result. We claim that if the order of a group $G$ is equal to the power of a prime $p$, then there exists some $x$ in the center of $G$ such that $x$ is not the identity element. This brings us to an important theorem.
 
-\textcolor{red}{Theorem 1.3.3:} Let $p$ be a prime. If $G$ is a group with $|G = p^k$, $k \in \mathbb{Z}^+$, then $|Z(G)| \geq p$.\\
+\textcolor{red}{Theorem 1.3.3:} Let $p$ be a prime. If $G$ is a group with $|G| = p^k$, $k \in \mathbb{Z}^+$, then $|Z(G)| \geq p$.\\
 \textbf{Proof:} By the class equation, $|G| = |Z(G)| + \sum{[G:C_G(x)]}$, where the sum is taken over all conjugacy classes of size more than one with one $x$ per conjugacy class. Then, since $|G|= p^k$ and $[G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}$ by La Grange, we must have
 \[
-    p^k = |Z(G)+\sum{\dfrac{p^k}{|C_G(x)|}}.
+    p^k = |Z(G)|+\sum{\dfrac{p^k}{|C_G(x)|}}.
 \]
-Note that, since we are only taking the sum over all conjugacy classes of size mroe than one with one $x$ per conjugacy class, we must have that $|C_G(x)| <p^k$. In other words, if $|C_G(x)| = p^k$, then we must have that $x \in Z(G)$. But we don't want to count any of the $x$'s more than once.
-Then $\forall x \notin Z(G)$, $C_G(x) \nleq G$. By La Grange, $|C_G(x)| \big| |G| = p^k$. Then $|C_G(x)| = p^{l_x}$ for some $0 \leq l_x < k$. This means that each term $\dfrac{p^k}{|C_G(x)|} = p^{k-l_x}$, which is divisible by $p$.
+Note that, since we are only taking the sum over all conjugacy classes of size more than one with one $x$ per conjugacy class, we must have that $|C_G(x)| <p^k$. In other words, if $|C_G(x)| = p^k$, then we must have that $x \in Z(G)$. But we don't want to count any of the $x$'s more than once.
+Then $\forall x \notin Z(G)$, $C_G(x) < G$. By La Grange, $|C_G(x)| \big| |G| = p^k$. Then $|C_G(x)| = p^{l_x}$ for some $0 \leq l_x < k$. This means that each term $\dfrac{p^k}{|C_G(x)|} = p^{k-l_x}$, which is divisible by $p$.
 Then $\sum{\dfrac{p^k}{|C_G(x)|}}$ (where the sum is again taken over all conjugacy classes of size more than one with one $x$ per conjugacy class) is the sum of elements that are all divisible by $p$. Thus, the entire sum is divisible by $p$. Then we have
 \[
     p^k = |Z(G)|+\sum{\dfrac{p^k}{|C_G(x)|}} \text{ and} 
@@ -491,7 +491,7 @@ Then $\sum{\dfrac{p^k}{|C_G(x)|}}$ (where the sum is again taken over all conjug
 \[
     p^k-\sum{\dfrac{p^k}{|C_G(x)|}} \text{ divides } p.
 \]
-Thusly, $|Z(G)| \big| p$, so we must have that $|Z(G)| \geq p$ and $Z(G)$ contains a non-identity element. $\square$
+Thusly, $p \big| |Z(G)|$, so we must have that $|Z(G)| \geq p$ and $Z(G)$ contains a non-identity element. $\square$
 
 \setcounter{subsection}{5}
 \subsection{Homomorphisms and Isomorphisms}
