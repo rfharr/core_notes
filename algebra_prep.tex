@@ -128,8 +128,46 @@ Sprint 2026
     \item Let $G$ be a finite group and let $p$ be the smallest prime dividing the order of $G$. If $H$ is a subgroup of $G$ of index $p$, prove that $H$ is a normal subgroup of $G$.
     \item Let $G$ be a group of order $p^{\alpha}$ where $p$ is a prime and $\alpha$ is a positive integer.
     \begin{enumerate}
-        \item Prove that $|Z(G)|>1$, where $Z(G)$ is the center of $G$.
-        \item Prove inductively that any group of order $p^{\alpha}$ contains a subgroup of order $p^{\alpha-1}$ for all $\alpha \geq 1$. You may use Cauchy's Theorem for abelian groups without proving it.
+        \item Prove that $|Z(G)|>1$, where $Z(G)$ is the center of $G$.\\
+        \textbf{Proof:} Let $G$ be a group of order $p^{\alpha}$ with $p$ a prime and $\alpha \in \mathbb{Z}^+$. We define $Z(G) = \{g \in G: gx = xg \ \forall x \in G\}$.  
+
+        Now, by the class equation, 
+        \[
+            |G| = |Z(G)| + \sum[G:C_G(x)]
+        \]
+        where the sum is taken over all conjugacy classes of size greater than $1$ with only $1$ $x$ per conjugacy class. Note that we only take the sum over conjugacy classes of size greater than one because if the conjugacy class only has one element, then that element must commute with all elements of $G$ and is thusly in the center (which is already being counted by $|Z(G)|$ in the class equation).
+
+        Now, by the Orbit-Stabilizer Theorem, $[G:C_G(x)]= \dfrac{|G|}{|C_G(x)|}$. Then we have
+        \begin{align*}
+            |G|=|Z(G)|+\sum[G:C_G(x)] &\Longrightarrow |G|=|Z(G)|+\sum{\dfrac{|G|}{|C_G(x)|}}\\
+            &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{|C_G(x)|}}
+        \end{align*}
+        Now, note that by La Grange's Theorem, $H \leq G \Longrightarrow |H| \big||G|$. Further, $C_G(x) \leq G$. Then we must have that $|C_G(x)| \big| |G|$, and thusly $|C_G(x)| = p^{l_x}$ with $1 \leq l_x < \alpha$. Then
+        \begin{align*}
+            p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{|C_G(x)|}} &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{p^{l_x}}} \\
+            &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{p^{\alpha-l_x}}\\
+            &\Longrightarrow p^{\alpha}-\sum{p^{\alpha-l_x}} =|Z(G)|\\
+            &\Longrightarrow p(p^{\alpha-1}-\sum{p^{\alpha-l_x-1}}) = |Z(G)| \\
+            &\Longrightarrow p \big| |Z(G)| \\
+            &\Longrightarrow |Z(G)| > 1. \ \square
+        \end{align*}
+        \item Prove inductively that any group of order $p^{\alpha}$ contains a subgroup of order $p^{\alpha-1}$ for all $\alpha \geq 1$. You may use Cauchy's Theorem for abelian groups without proving it.\\
+        \textbf{Proof:} Let $G$ be a group of order $p^{\alpha}$ with $p$ a prime and $\alpha \in \mathbb{Z}^+$. First, assume $\alpha = 1$. Then $|G| = p$ and we consider the trivial subgroup, $H = \{e\}$. Note that $|H| = 1 = p^{\alpha-1} = p^0$. Then our base case is true.
+
+        Now, assume that $|G| = p^{k}, k < \alpha \Longrightarrow \exists H \leq G$ with $|H| = p^{k-1}$ is true. We need to show that $|G| = p^{k+1} \Longrightarrow \exists H \leq G$ with $|H| = p^{k}$ is true. Then assume that $|G| = p^{\alpha}$. Note that, by our proof in part $(a)$ above, $p \big| |Z(G)|$. Then, by Cauchy's Theorem for abelian groups, $\exists N \leq Z(G)$ such that $|N| = p$. Further, since $N \leq Z(G)$, $N \trianglelefteq G$ (any subgroup of the center of a group must be a normal subgroup of the entire group).
+
+        Next, consider the quotient group $\sfrac{G}{N}$. Note that, since $G$ and $N$ are finite, 
+        \[
+            \big| \sfrac{G}{N} \big| = \sfrac{|G|}{|N|} = \dfrac{p^{\alpha}}{p} = p^{\alpha-1}.
+        \]
+        Then, by our inductive hypothesis, $\exists K \leq \sfrac{G}{N}$ such that $|K| = p^{\alpha-2}$. Then, by the Fourth Isomorphism Theorem, $\exists H \leq G$ such that $N \subseteq H$ and $\sfrac{H}{N} \cong K$. Then we have
+        \begin{align*}
+             |H| &= \big| \sfrac{H}{N} \big| \cdot |N| \\
+             &= |K| \cdot |N| \\
+             &= p^{\alpha-2} \cdot p \\
+             &= p^{\alpha -1} \\
+             &\Longrightarrow \exists H \leq G: |H| = p^{\alpha - 1}. \ \square
+        \end{align*}
     \end{enumerate}
     \item Let $G$ be a group. A subgroup $H$ of $G$ is a \textit{characteristic subgroup} if $\phi(H)=H$ for all isomorphisms $\phi:G \longrightarrow G$.
     \begin{enumerate}
