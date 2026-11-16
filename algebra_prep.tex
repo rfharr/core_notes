@@ -230,4 +230,132 @@ Sprint 2026
     \end{enumerate}
 \end{enumerate}
 
+\newpage
+
+\textbf{Spring 2025 Algebra Comprehensive Exam}
+
+\begin{enumerate}
+    \item Let $n \geq 3$ and let $i \in \{1,2, \dots, n\}$.
+    \begin{enumerate}
+        \item Show that $H = \{\sigma \in S_n: \sigma(i)=i\}$ is a subgroup of $S_n$.\\
+        \textbf{Proof:} Let $S_n$ denote the \textit{symmetric group of degree $n$}, $n \geq 3$, and $i \in \{1,2, \dots, n\}$. Define $H = \{\sigma \in S_n: \sigma(i)=i\}$. We will apply the subgroup test. First, note that the definition of the identity permutation is $e(i)=i$ for all $i \in \{1,2, \dots, n\}$. Then, by definition, $e \in H$ and $H$ is nonempty.
+
+        Next, let $\alpha, \beta \in H$. Then $\alpha(i)=i$ and $\beta(i)=i$. Further, we have
+        \begin{align*}
+            \beta(i)=i &\Longrightarrow \beta^{-1}(\beta(i)) = \beta^{-1}(i) \\
+            &\Longrightarrow i = \beta^{-1}(i) \\
+            &\Longrightarrow \beta^{-1}(i)=i.
+        \end{align*}
+        Then we have
+        \begin{align*}
+            \alpha \beta^{-1} &= \alpha(\beta^{-1}(i)) \\
+            &= \alpha(i) \\
+            &= i \\
+            &\Longrightarrow \alpha \beta^{-1} \in H. 
+        \end{align*}
+        Then we must have that $H$ is a subgroup of $S_n$. $\square$
+        \item In $S_8$, let $\alpha = (123)(45)(67)$. Determine the number of elements in $C_{S_8}(\alpha)$, the centralizer of $\alpha$ in $S_8$. \\
+        \textbf{Proof:} Let $\alpha = (123)(45)(67) \in S_8$. Denote the \textit{conjugacy class that contains $\alpha$} by $cl(\alpha)$ and the \textit{centralizer of $\alpha$ in $S_8$} by $C_{S_8}(\alpha) = \{\sigma \in S_8: \sigma \alpha = \alpha \sigma\}$. For $\sigma \in S_8$, let $A = \sigma C_G(\alpha) = \{\sigma \alpha: \alpha \in C_G(\alpha)\}$ be the set of left cosets of $C_G(\alpha)$ in $S_8$. 
+
+        Next, define a function $f: A \longrightarrow cl(\alpha)$ by $f(\sigma C_{S_8}(\alpha)) = \sigma \alpha \sigma^{-1}$. We claim that $f$ is a bijection. First, let $\sigma \alpha \sigma^{-1} \in cl(\alpha)$. Then $\exists \sigma C_G(\alpha) \in A$ such that $f(\sigma C_G(\alpha)) = \sigma \alpha \sigma^{-1}$, so we must have that $f$ is onto. 
+
+        Next, we show that $f$ is one-to-one. Let $f(\sigma_1 C_{S_8}(\alpha)) = f(\sigma_2 C_{S_8}(\alpha))$. Then we have 
+        \begin{align*}
+            f(\sigma_1 C_{S_8}(\alpha)) = f(\sigma_2 C_{S_8}(\alpha)) &\Longrightarrow \sigma_1 \alpha \sigma_1^{-1} = \sigma_2 \alpha \sigma_2^{-1} \\
+            &\Longrightarrow \sigma_1 \alpha = \sigma_2 \alpha \sigma_2^{-1} \sigma_1 \\
+            &\Longrightarrow \sigma_2^{-1} \sigma_1 \alpha = \alpha \sigma_2^{-1} \sigma_1 \\
+            &\Longrightarrow \sigma_2^{-1} \sigma_1 \in C_{S_8}(\alpha) \\
+            &\Longrightarrow \sigma_1 C_{S_8}(\alpha) = \sigma_2 C_{S_8}(\alpha),
+        \end{align*}
+        so we must have that $f$ is one-to-one. Then $f:A \longrightarrow cl(\alpha)$ is a bijection and we must have that 
+        \begin{align*}
+            |A| = |cl(\alpha)| &\Longrightarrow |\sigma C_G(\alpha)| = |cl(\alpha)|\\
+            &\Longrightarrow [S_8:C_G(\alpha)] = |cl(\alpha)| \\
+            &\Longrightarrow \dfrac{|S_8|}{|C_G(\alpha)|} = |cl(\alpha)| \\
+            &\Longrightarrow \dfrac{|S_8|}{|cl(\alpha)|} = |C_G(\alpha)| \\
+            &\Longrightarrow |C_G(\alpha)| = \dfrac{8!}{\dfrac{8 \cdot 7 \cdot 6}{3} \cdot \dfrac{\dfrac{5 \cdot 4}{2} \cdot \dfrac{3 \cdot 2}{2}}{2}} \\
+            &\Longrightarrow |C_G(\alpha)| = 24. \ \square
+        \end{align*}
+    \end{enumerate}
+    \begin{enumerate} \item Let $G$ be a group and let $x \in G$ with $\circ(x)=n$. Prove
+    \[
+        x^k=e \Longleftrightarrow n \big| k
+    \]
+    \textbf{Proof:} Let $G$ be a group, $x \in G$, $\circ(x)=n$, and $n \big| k$. Then we have
+    \begin{align*}
+        n \big| k &\Longrightarrow \exists m: nm = k \\
+        &\Longrightarrow x^{nm}= x^k \\
+        &\Longrightarrow (x^n)^m = x^k \\
+        &\Longrightarrow e^m = x^k \\
+        &\Longrightarrow e = x^k.
+    \end{align*}
+    For the other direction, assume $e = x^k$ and let $k = nq + r$, $0 \leq r < n$. Then we have 
+    \begin{align*}
+        e &= x^k \\
+        &= x^{nq + r} \\
+        &= x^{nq}x^r \\
+        &= (x^n)^qx^r \\
+        &= e^qx^r \\
+        &= x^r.
+    \end{align*}
+    But $r<n$, so we must have that $r = 0$. Then $nq = k$ and thusly $n \big| k$. $\square$
+    \item Prove that, in a finite Abelian group, for any $x,y \in G$, we have
+    \[
+        \circ(xy) \big| lcm(\circ(x),\circ(y))
+    \]
+    \end{enumerate}
+    \textbf{Proof:} Let $G$ be an abelian group with $x,y \in G$. Let $\circ(x) = n$ and $\circ(y)=m$. Let $lcm(n,m) = \alpha$, so $\exists a,b \in \mathbb{Z}$ such that $\alpha = an = bm$. Then we have
+    \begin{align*}
+        (xy)^{lcm(n,m)} &= (xy)^{\alpha} \\
+        &= x^{\alpha}y^{\alpha} \\
+        &= x^{an}y^{bm} \\
+        &= (x^n)^a(y^m)^b \\
+        &= e^ae^b \\
+        &= e \\
+        &\Longrightarrow ord(xy) \big| lcm(\circ(x), \circ(y)). \ \square
+    \end{align*}
+    \item Let $H$ and $K$ be subgroups of $G$ and define $HK = \{hk: h \in H, k \in K\}$.
+    \begin{enumerate}
+        \item Prove that $HK$ is a subgroup of $G$ if and only if $HK = KH$.\\
+        \textbf{Proof:} Let $H,K \leq G$ and define $HK = \{hk: h \in H, k \in K\}$. For the first direction, assume $HK \leq G$. Let $a,b \in HK$. Then $a = h_1k_1$ and $b = h_2k_2$, $h_1,h_2 \in H$ and $k_1, k_2 \in K$. Further, since $HK \leq G$, we have that $ab^{-1} \in HK$. Then $\exists c \in HK$ such that $c = h_3k_3$ with $ab^{-1}=c$. Then
+        \begin{align*}
+            ab^{-1} =c &\Longrightarrow h_1k_1(h_2k_2)^{-1} = h_3k_3 \\
+            &\Longrightarrow  h_1k_1k_2^{-1}h_2^{-1} = h_3k_3 \\
+            &\Longrightarrow h_1k_4h_2^{-1} = h_3k_3 \\
+            &\Longrightarrow h_3^{-1}h_1k_4h_2^{-1} = k_3 \\
+            &\Longrightarrow h_4k_4h_2^{-1} = k_3 \\
+            &\Longrightarrow h_4k_4 = k_3h_2 \\
+            &\Longrightarrow HK = KH.
+        \end{align*}
+        For the other direction, let $HK = KH$. First, since $H \leq G$ and $K \leq G$, $e \in H$ and $e \in K$. Then $ee \in HK$. Then let $a,b \in HK$. Then $a = h_1k_1$ and $b = h_2k_2$ for some $h_1,h_2 \in H$ and $k_1,k_2 \in K$. Then we have
+        \begin{align*}
+            ab^{-1} &= h_1k_1(h_2k_2)^{-1} \\
+            &= h_1k_1k_2^{-1}h_2^{-1} \\
+            &= h_1k_3h_2^{-1} \text{ since } K \leq G \\
+            &= h_1h_3k_4 \text{ since } HK = KH \\
+            &= h_4k_4 \in HK \text{ since } H \leq G \\
+            &\Longrightarrow HK \leq G. \ \square
+        \end{align*}
+        \item Prove that if $H \trianglelefteq G$, then $HK$ is a subgroup of $G$.\\
+        \textbf{Proof:} Let $H,K \leq G$ and define $HK = \{hk: h \in H, k \in K\}$. Let $H \trianglelefteq G$. First, note that $e \in H$ and $e \in K$ gives us that $e = ee \in HK$, so $HK$ is nonempty. Next, let $a,b \in HK$. Then $\exists h_1,h_2 \in H$ and $k_1,k_2 \in K$ such that $a = h_1k_1$ and $b=h_2k_2$. Then we need to show that $ab^{-1} = c \in HK$, with $c = h_3k_3$ for some $h_3 \in H$ and $k_3 \in K$. We have
+        \begin{align*}
+            ab^{-1} = c &\Longrightarrow  h_1k_1(h_2k_2)^{-1} = h_3k_3 \\
+            &\Longrightarrow  h_1k_1k_2^{-1}h_2^{-1} = h_3k_3 \\
+            &\Longrightarrow h_1k_4h_2^{-1} = h_3k_3 \text{ since } K \leq G \\
+            &\Longrightarrow h_3^{-1}h_1k_4h_2^{-1} = k_3 \\
+            &\Longrightarrow h_4k_4h_2^{-1} = k_3 \text{ since } H \leq G \\
+            &\Longrightarrow h_4k_4 = k_3h_2 \\
+            &\Longrightarrow HK = KH \\
+            &\Longrightarrow HK \leq G. \ \square 
+        \end{align*}
+    \end{enumerate}
+    \item Let $p$ be a prime, $n$ be a positive integer, and $G$ be a group of order $p^n$.
+    \begin{enumerate}
+        \item Prove that $Z(G) \neq \{e\}$. \\
+        \textbf{Proof:} Let $p$ be a prime, $n \in \mathbb{Z}^+$, and $G$ be a group with $|G| = p^n$. 
+        \item If $|G|=p^2$, prove that $G$ is abelian.\\
+        \item Determine, with proof, all groups (up to isomorphism) of order $11^2 \cdot 13^2$.\\
+    \end{enumerate}
+\end{enumerate}
+
 \end{document}
