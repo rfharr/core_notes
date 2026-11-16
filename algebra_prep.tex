@@ -352,8 +352,55 @@ Sprint 2026
     \item Let $p$ be a prime, $n$ be a positive integer, and $G$ be a group of order $p^n$.
     \begin{enumerate}
         \item Prove that $Z(G) \neq \{e\}$. \\
-        \textbf{Proof:} Let $p$ be a prime, $n \in \mathbb{Z}^+$, and $G$ be a group with $|G| = p^n$. 
+        \textbf{Proof:} Let $p$ be a prime, $n \in \mathbb{Z}^+$, and $G$ be a group with $|G| = p^n$ and $x \in G$. Then, by the class equation, we have
+        \[
+            |G| = |Z(G)| + \sum{[G:C_G(x)]}
+        \]
+        where $Z(G) = \{g \in G: xg=gx, x \in G\}$ is the center of $G$ and the sum of the set of left cosets of the center of $x$ in $G$ is taken over the conjugacy classes of size greater than one with only one $x$ per conjugacy class. Note that, if we were to include conjugacy classes of size one, then we would be double counting elements that are also in the center. This is because 
+        \begin{align*}
+            |C_G(x)| = 1 &\Longrightarrow x = gxg^{-1} \\
+            &\Longrightarrow xg = gx \\
+            &\Longrightarrow x \in Z(G).
+        \end{align*}
+        Further, $|G|= p^n$ and $[G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}$, so we have
+        \begin{align*}
+            |G| = |Z(G)| + \sum{[G:C_G(x)]} &\Longrightarrow p^n = |Z(G)| + \sum{\dfrac{|G|}{|C_G(x)|}} \\
+            &\Longrightarrow p^n = |Z(G)| + \sum{\dfrac{p^n}{|C_G(x)|}}.
+        \end{align*}
+        Now, since $C_G(x) < G$, by La Grange's Theorem, we have that $|C_G(x)| \big| |G|$, so 
+        \[
+            p^n = |Z(G)| + \sum{\dfrac{p^n}{|C_G(x)|}} \Longrightarrow p^n = |Z(G)| + \sum{\dfrac{p^n}{p^{l_x}}}
+        \]
+        with $0 \leq l_x < n$. Then we have 
+        \begin{align*}
+            p^n = |Z(G)| + \sum{\dfrac{p^n}{p^{l_x}}} &\Longrightarrow p^n = |Z(G)| + \sum{p^{n-l_x}}\\
+            &\Longrightarrow p^n-p^{n-l_x} = |Z(G)| \\
+            &\Longrightarrow p(p^{n-1}-p^{n-l_x-1}) = |Z(G)| \\
+            &\Longrightarrow p \big| |Z(G)| \\
+            &\Longrightarrow Z(G) \neq \{e\}. \ \square
+        \end{align*}
         \item If $|G|=p^2$, prove that $G$ is abelian.\\
+        \textbf{Proof:} Let $|G| = p^2$. Then, by part $(a)$, we must have that $G$ has a non-trivial center. That is, $p \big| |Z(G)|$. Then, by La Grange's Theorem, we must have that $|Z(G)| \in \{p,p^2\}$. We proceed by cases.\\
+        \textbf{Case 1: $|Z(G)| = p^2$} \\
+        If $|Z(G)| = p^2$, then $Z(G) = G$, so every element of $G$ is in the center of $G$, and thusly $G$ is abelian.
+
+        \textbf{Case 2: $|Z(G)| = p$} \\
+        If $|Z(G)| = p$, then we consider the quotient group $\sfrac{G}{Z(G)}$. Note that, since $G$, and thusly $Z(G)$, are finite, we have $\big| \sfrac{G}{Z(G)} \big| = \sfrac{|G|}{|Z(G)|} = \sfrac{p^2}{p} = p$. Further, note that the quotient group $\sfrac{G}{Z(G)} \leq G$, and note that any group (or in this case, subgroup) with prime order is cyclic. 
+
+        Now, let $x,y \in G$. Then we can consider their cosets $xZ(G)$ and $yZ(G)$, both in $\sfrac{G}{Z(G)}$. Then we can write both of these as powers of their generators. We ahve $xZ(G) = g^aZ(G)$ and $yZ(G) = g^bZ(G)$. Then we write $x$ and $y$ as $x=g^az_1$ and $y=g^bz_2$. Then we have
+        \begin{align*}
+            xy &= (g^az_1)(g^bz_2) \\
+            &= g^a(z_1g^b)z_2 \\
+            &= g^a(g^bz_1)z_2 \\
+            &= (g^ag^b)(z_1z_2) \\
+            &= g^{a+b}(z_2z_1) \\
+            &= g^{b+a}(z_2z_1) \\
+            &= g^b(g^az_2)z_1 \\
+            &= g^b(z_2g^a)z_1 \\
+            &= (g^bz_2)(g^az_1) \\
+            &= yx \\
+            &\Longrightarrow G \text{ is abelian. } \square 
+        \end{align*}
         \item Determine, with proof, all groups (up to isomorphism) of order $11^2 \cdot 13^2$.\\
     \end{enumerate}
 \end{enumerate}
