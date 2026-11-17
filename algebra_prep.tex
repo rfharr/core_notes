@@ -402,6 +402,26 @@ Sprint 2026
             &\Longrightarrow G \text{ is abelian. } \square 
         \end{align*}
         \item Determine, with proof, all groups (up to isomorphism) of order $11^2 \cdot 13^2$.\\
+        \textbf{Proof:} Let $G$ be a group with $|G| = 11^2 \cdot 13^2$. Then, by Sylow's Theorem, we have that 
+        \begin{align*}
+            |G| = 11^2 \cdot 169 &\Longrightarrow \exists H \in Syl_{11}(G), n_{11} \equiv 1(\mod{11}), \text{ and } n_{11} \big| 169 \\
+            &\Longrightarrow n_{11}=1 \\
+            &\Longrightarrow H \trianglelefteq G, \text{ and } \\
+            |G| = 13^2 \cdot 121 &\Longrightarrow \exists K \in Syl_{13}(G), n_{13} \equiv 1(\mod{13}), \text{ and } n_{13} \big| 121 \\
+            &\Longrightarrow n_{13} = 1 \\
+            &\Longrightarrow K \trianglelefteq G.
+        \end{align*}
+        Further, since $\gcd{(|H|,|K|)} = 1$, we must have that $H \cap K = \{e\}$. Thusly, 
+        \[
+            |HK| = \dfrac{|H| \cdot |K|}{|H \cap K|} = \dfrac{11^2 \cdot 13^2}{1} = |G|,
+        \]
+        which means that $HK = G$. Then, by the Normal Factoring Lemma, $G \cong H \times K$. Further, $H \trianglelefteq G$ and $K \trianglelefteq G$ gives us that $G$ is abelian. Then, by the fundamental theorem of finite abelian groups, we have:
+        \begin{align*}
+            G &\cong \mathbb{Z}_{11^2} \times \mathbb{Z}_{13^2}, \\
+            G &\cong \mathbb{Z}_{11} \times \mathbb{Z}_{11} \times \mathbb{Z}_{13} \times \mathbb{Z}_{13}, \\
+            G &\cong \mathbb{Z}_{11^2} \times \mathbb{Z}_{13} \times \mathbb{Z}_{13}, \text{ and } \\
+            G &\cong \mathbb{Z}_{11} \times \mathbb{Z}_{11} \times \mathbb{Z}_{13^2}. \ \square
+        \end{align*}
     \end{enumerate}
 \end{enumerate}
 
