@@ -125,7 +125,54 @@ ALGEBRA
 Sprint 2026
 
 \begin{enumerate}
-    \item Let $G$ be a finite group and let $p$ be the smallest prime dividing the order of $G$. If $H$ is a subgroup of $G$ of index $p$, prove that $H$ is a normal subgroup of $G$.
+    \item Let $G$ be a finite group and let $p$ be the smallest prime dividing the order of $G$. If $H$ is a subgroup of $G$ of index $p$, prove that $H$ is a normal subgroup of $G$.\\
+    \textbf{Proof:} Let $G$ act on $\sfrac{G}{H}$ by the map $g \cdot (xH) = (gx)H$, $g \in G, xH \in \sfrac{G}{H}$. Then each $g \in G$ induces a permutation $\sigma_g: \sfrac{G}{H} \longrightarrow \sfrac{G}{H}$ defined by $\sigma_g(xH) = g \cdot (xH)$. Next, we show $\sigma_g$ is a bijection. 
+
+    For one-to-one, let $\sigma_g(x_1H) = \sigma_g(x_2H)$. Then we have
+    \begin{align*}
+        \sigma_g(x_1H) = \sigma_g(x_2H) &\Longrightarrow g \cdot (x_1H) = g \cdot (x_2H) \\
+        &\Longrightarrow (gx_1)H = (gx_2)H \\
+        &\Longrightarrow (gx_2)^{-1}(gx_1) \in H \\
+        &\Longrightarrow x_2^{-1}g^{-1}gx_1 \in H \\
+        &\Longrightarrow x_2^{-1}x_1 \in H \\
+        &\Longrightarrow x_1H = x_2H,
+    \end{align*}
+    so $\sigma_g$ is one-to-one. For onto, let $(gx)H \in \dfrac{G}{H}$. Then we have
+    \begin{align*}
+        (gx)H &= g\cdot (xH) \\
+        &= \sigma_g(xH),
+    \end{align*}
+    so $\sigma_g$ is onto. Then $\sigma_g$ is a bijection. Further, since $\sigma_g$ maps onto itself and is a bijection, $\sigma_g$ is a permutation. That is, $\sigma_g \in S_{\sfrac{G}{H}}$. Now, since $[G:H] = p$, $\sigma_g \in S_p$.
+
+    Then we define a map $\phi:G \longrightarrow S_p$ by $\phi(g) = \sigma_g$. Then we will next show that $\phi$ is a homomorphism. Let $g_1,g_2 \in G$. We have 
+    \begin{align*}
+        \phi(g_1g_2) &= \sigma_{g_1g_2} \\
+        &= \sigma_{g_1} \circ \sigma{g_2} \\
+        &= \phi(g_1) \phi(g_2),
+    \end{align*}
+    so $\phi$ is a homomorphism. Then we consider the kernel, $K = \ker{(\phi)}$. Let $k \in K$ and consider the identity coset, $xH = eH = H$. Then we have
+    \begin{align*}
+        \phi(k) &= \sigma_k(xH) \\
+        &= \sigma_k(eH)
+        &= k \cdot eH \\
+        &= k \cdot H
+        &= (k)H \\
+        &= H.
+    \end{align*}
+    Then we must have that $K \subseteq H$. Now, by the First Isomorphism Theorem, we know 
+    \[
+        \sfrac{G}{K} \cong Im(\phi).
+    \]
+    Further, since $\phi:G \longrightarrow S_p$, we have that $Im(\phi) \leq S_p$. Then, by La Grange's Theorem, we have
+    \[
+        \big| \sfrac{G}{K} \big| \bigg| \big|S_p \big| \Longrightarrow [G:K] \big| p! 
+    \]
+    Next, by the Tower Law, we have
+    \begin{align*}
+        [G:K] &= [G:H] \cdot [H:K] \\
+        &= p \cdot [H:K].
+    \end{align*}
+    Note that $K \leq G$, so we know $[G:K] \big| |G|$. Now, since $p$ is the smallest prime divisor of $|G|$, $[G:K]$ has no prime divisors smaller than $p$. So we must have that $p$ is the only prime divisor of $[G:K]$, and thusly $[G:K] = p$. Then $[H:K] = 1$, so $H = K$. Lastly, since $K \trianglelefteq G$, we obtain $H \trianglelefteq G$. $\square$
     \item Let $G$ be a group of order $p^{\alpha}$ where $p$ is a prime and $\alpha$ is a positive integer.
     \begin{enumerate}
         \item Prove that $|Z(G)|>1$, where $Z(G)$ is the center of $G$.\\
