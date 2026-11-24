@@ -472,6 +472,69 @@
             G &\cong \mathbb{Z}_{11} \times \mathbb{Z}_{11} \times \mathbb{Z}_{13^2}. \ \square
         \end{align*}
     \end{enumerate}
+    \item Let $G$ be a group of order $105 = 3 \cdot 5 \cdot 7$.
+    \begin{enumerate}
+        \item Prove that $G$ has a cyclic subgroup of order $35$.\\
+        \textbf{Proof:} Let $G$ be a group of order $105 = 3 \cdot 35 = 5 \cdot 21 = 7 \cdot 15$. Then, by Sylow's Theorems, since $3,5$, 
+        and $7$ are primes that do not divide $35$, $21$, and $15$, $\exists H \in Syl_3(G), \exists P \in Syl_5(G)$, and 
+        $\exists K \in Syl_7(G)$. Let $PK = \{pk: p \in P, k \in K\}$. First, note that, since $P,K \leq G$ and are also both finite, 
+        \[
+            |PK| = \dfrac{|P| \cdot |K|}{|P \cap K|}.
+        \]
+        Next, note that $K \leq G$ and $P \leq G$ gives us that $ee = e \in PK$, so $PK$ is nonempty. Now let $a = p_1k_1$, $b = p_2k_2$ 
+        and $c = p_3k_3$. We need to show that $PK \leq G$. We have
+        \begin{align*}
+            ab = c &\Longrightarrow p_1k_1p_2k_2 = p_3k_3 \\
+            &\Longrightarrow p_1k_1p_2 = p_3k_3k_2^{-1} \\
+            &\Longrightarrow p_1k_1p_2 = p_3k_4 \\
+            &\Longrightarrow k_1p_2 = p_1^{-1}p_3k_4 \\
+            &\Longrightarrow k_1p_2 = p_4k_4 \\
+            &\Longrightarrow KP = PK. \\
+        \end{align*}
+        Again, starting with $a$ and $c$ in $PK$, we have
+        \begin{align*}
+            ab &= p_1k_1p_2k_2 \\
+            &= p_1p_3k_3k_2 \\
+            &= p_4k_4 \in PK \\
+            &\Longrightarrow ab \in PK \\
+            &\Longrightarrow PK \leq G.
+        \end{align*}
+        Now, since $P \in Syl_5(G)$ and $K \in Syl_7(G)$, $|P|=5$ and $|K| = 7$. Further, note that $P \cap K \leq P$ and $P \cap K \leq K$. 
+        Then, by La Grange's Theorem, $|P \cap K| \big| |P|$ and $|P \cap K| \big| |K|$. Now, the only common factor of $5$ and $7$ is $1$, 
+        so $|P \cap K| = 1$. Thusly, $P \cap K = \{e\}$. Then
+        \[
+            |PK| = \dfrac{|P||K|}{|P \cap K|} = \dfrac{5 \cdot 7}{1} = 35,
+        \]
+        so $|PK|=35$. Lastly, we must show that $PK$ is cyclic. Again citing Sylow's Theorems, note that, since $|PK| = 5 \cdot 7$, we know 
+        $P \in Syl_5(PK)$ and $K \in Syl_7(PK)$. Further, $n_5 \equiv 1(\mod{(5)})$ and $n_5 \big| 7$, so $n_5 = 1$ and we obtain $P
+        \trianglelefteq PK$. Similarly, $n_7 \equiv 1(\mod{(7)})$ and $n_7 \big| 5$, so $n_7 = 1$ and we obtain $K \trianglelefteq PK$. Then,
+        by the Normal Factoring Lemma, we have that $PK \cong P \times K$. Further, since $|P|=5$ and $|K| = 7$, we know $P \cong \mathbb{Z}_5$
+        and $K \cong \mathbb{Z}_7$. Then $PK \cong \mathbb{Z}_5 \times \mathbb{Z}_7$, so we must have that $PK$ is cyclic. $\square$
+        
+        \item Prove that $G$ has a unique $5$-Sylow and a unique $7$-Sylow subgroup.\\
+        
+        \textbf{Proof:} As in part (a) above, let $P \in Syl_5(G)$ and $K \in Syl_7(G)$. Now, since $n_5 \equiv 1(\mod{(5)})$ and $n_5 
+        \big| 21$, we must have that $n_5 \in \{1,21\}$. Similarly, $n_7 \equiv 1(\mod{(7)})$ and $n_7 \big| 15$, we must have that $n_7 
+        \in \{1,15\}$. 
+        
+        Now, assume that $n_5 = 21$ and $n_7= 15$. Since, for any $P \in Syl_5(G)$ and for any $K \in Syl_7(G)$, 
+        $P \cap K = \{e\}$ (see part (a)), all non-identity elements in any $P \in Syl_5(G)$ and $K \in Syl_7(G)$ must be unique. Then, 
+        since $|P| = 5$ and $|K|=7$ for any $P \in Syl_5(G)$ and $K \in Syl_7(G)$, we use a counting arguement. Then $4 \cdot 21+6 \cdot 
+        15 = 84+90=174 > 105$, which is a contradiction. Then we must have that at least one of $n_5=1$ or $n_7=1$ must be true. Then we
+        proceed by cases.
+
+        Case $1$: $n_5=1$ \\
+        Assume $n_5=1$. Then if we also have that $n_7 = 1$, then we must have that both $P \trianglelefteq G$ and $K \trianglelefteq G$ 
+        and we are done. Then assume that $n_7 = 15$. Now, note that for any $K \in Syl_7(G)$, we must have $P \cap K = \{e\}$. Then the
+        unique elements of $G$ that are accounted for so far add up to $4 \cdot 1 + 6 \cdot 15 + 1 = 95$, which leaves $10$ not accounted
+        for. Now we consider $H \in Syl_3(G)$. Note that $n_3 \equiv 1(\mod{(3)})$ and $n_3 \big| 35$, so we must have $n_3 \in \{1,7\}$.
+        Assume $n_3=7$. This would add $2 \cdot 7 = 14$ unique elements to our group $G$, which would put us at $|G|=109$, which is a
+        contradiction. Then we must have that $n_3=1$. 
+
+        Case $2$: $n_7=1$\\
+        Assume $n_7 = 1$. Then if we also have that $n_5 = 1$, then we must have that both $P \trianglelefteq G$ and $K \trianglelefteq G$
+        and we are done. Then assume that $n_5 = 21$.
+    \end{enumerate}
 \end{enumerate}
 
 \end{document}

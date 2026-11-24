@@ -29,14 +29,20 @@
 
 \setcounter{section}{-1}
 \section{Introduction}
-This document is a compilation of all notes taken in Dr. Craig Timmons' graduate level Abstract Algebra Class at California State University, Sacramento. Many of the sections follow those of Dummit and Foote's Abstract Algebra, 3rd Edition, though the notes are not directly aligned with the book. Specifically, many sections are ommitted, and many definitions, theorems, and examples are not from the book and do not follow a numbering system that is consistent with the book. Still, these notes may be very useful to students who are taking graduate level Abstract Algebra coursework.
+This document is a compilation of all notes taken in Dr. Craig Timmons' graduate level Abstract Algebra Class at California State 
+University, Sacramento. Many of the sections follow those of Dummit and Foote's Abstract Algebra, 3rd Edition, though the notes are 
+not directly aligned with the book. Specifically, many sections are ommitted, and many definitions, theorems, and examples are not from 
+the book and do not follow a numbering system that is consistent with the book. Still, these notes may be very useful to students who are 
+taking graduate level Abstract Algebra coursework.
 
 For my comprehensive exams. Good luck G.
 
 \section{Chapter 1: Introduction to Groups}
 \subsection{Basic Axioms and Examples}
 
-\textcolor{purple}{Definition 1.1.1:} A \textcolor{purple}{group} is a nonempty set $G$ with a binary operation $*$ from $G \times G \longrightarrow G$, where $G \times G = \{(g,h): g \in G, h \in H\}$. We may represent $*$ using notation that's more algebraic. For instance, we may write $g \times h$ or $gh$ instead of $f(g,h)$.
+\textcolor{purple}{Definition 1.1.1:} A \textcolor{purple}{group} is a nonempty set $G$ with a binary operation $*$ from 
+$G \times G \longrightarrow G$, where $G \times G = \{(g,h): g \in G, h \in H\}$. We may represent $*$ using notation that's more 
+algebraic. For instance, we may write $g \times h$ or $gh$ instead of $f(g,h)$.
 
 \textcolor{blue}{Example 1.1.1:} A binary operation on $S = \{1,2,3\}$ could be 
 \[
@@ -55,7 +61,9 @@ A set $G$ with a binary operation $*$ is a \textcolor{purple}{group} if
     \item for each $ a \in G$, $\exists b \in G$ such that $a * b = e = b * a$.
 \end{enumerate}
 
-That is, $G$ is a \textcolor{purple}{group} if $G$ is associative, contains an identity, and contains inverses for each element of $G$. We say $G$ is \textcolor{purple}{abelian} if $a * b = b * a \ \forall a,b \in G$ ($G$ is commutative). We say $G$ is a \textcolor{purple}{finite group} if $G$ as a set is finite (otherwise, $G$ is \textcolor{purple}{infinite}).
+That is, $G$ is a \textcolor{purple}{group} if $G$ is associative, contains an identity, and contains inverses for each element of $G$. 
+We say $G$ is \textcolor{purple}{abelian} if $a * b = b * a \ \forall a,b \in G$ ($G$ is commutative). We say $G$ is a 
+\textcolor{purple}{finite group} if $G$ as a set is finite (otherwise, $G$ is \textcolor{purple}{infinite}).
 
 \textcolor{blue}{Example 1.1.2:} Some examples of groups include:
 \begin{enumerate}
@@ -70,7 +78,10 @@ That is, $G$ is a \textcolor{purple}{group} if $G$ is associative, contains an i
     \item for $n \in \mathbb{Z}^+$, $\mathbb{Z} / n\mathbb{Z} = \{\text{equivalence classes under the relation }a \sim b \longleftrightarrow n|(a-b),a,b \in \mathbb{Z}\}$.
 \end{enumerate}
 
-\textcolor{purple}{Definition 1.1.2:} The \textcolor{purple}{equivalence class} containing $a$ is denoted $\overline{a}$. We have $a = \{a+nk: k \in \mathbb{Z}\}$. Note that the operation is $\overline{a}+\overline{b}=\overline{a+b}$, where $\overline{a}+\overline{b}$ is addition under the group operation while $\overline{a+b}$ is the equivalence class containing $a+b$ where $a+b$ is the usual addition of integers.
+\textcolor{purple}{Definition 1.1.2:} The \textcolor{purple}{equivalence class} containing $a$ is denoted $\overline{a}$. We have 
+$a = \{a+nk: k \in \mathbb{Z}\}$. Note that the operation is $\overline{a}+\overline{b}=\overline{a+b}$, where $\overline{a}+\overline{b}$ 
+is addition under the group operation while $\overline{a+b}$ is the equivalence class containing $a+b$ where $a+b$ is the usual addition 
+of integers.
 
 \textcolor{blue}{Example 1.1.3:} \[
 \begin{array}{c|cccc}
@@ -82,7 +93,9 @@ That is, $G$ is a \textcolor{purple}{group} if $G$ is associative, contains an i
 \end{array}
 \]
 
-The example above is the \textcolor{purple}{group of integers modulo n}. Note that in this case, $n=4$. For $n \in \mathbb{Z}^+,$ \\ $ \bigl( \sfrac{\mathbb{Z}}{n\mathbb{Z}} \bigr)^* = \{ \overline{a} \in \sfrac{\mathbb{Z}}{n\mathbb{Z}}: \gcd{(a,n)} = 1 \}$ and the operation is $\overline{a} \cdot \overline{b} = \overline{a \cdot b}$.\\
+The example above is the \textcolor{purple}{group of integers modulo n}. Note that in this case, $n=4$. For 
+$n \in \mathbb{Z}^+,$ \\ $ \bigl( \sfrac{\mathbb{Z}}{n\mathbb{Z}} \bigr)^* = \{ \overline{a} \in \sfrac{\mathbb{Z}}{n\mathbb{Z}}: \gcd{(a,n)} = 1 \}$ 
+and the operation is $\overline{a} \cdot \overline{b} = \overline{a \cdot b}$.\\
 
 \textcolor{blue}{Example 1.1.4:} Some examples of modular groups include
 \begin{enumerate}
@@ -92,9 +105,11 @@ The example above is the \textcolor{purple}{group of integers modulo n}. Note th
     \item $\mathbb{Z}_4 = (\{\overline{1}, \overline{3}\}, \cdot$), and
     \item $GL_2(\mathbb{R}) = M_{2 \times 2}(\mathbb{R})^*$.
 \end{enumerate}
-Note that $GL_2(\mathbb{R})$ is the group of all invertible $2 \times 2$ matrices with real enteries under matrix multiplication and $M_{2 \times 2}(\mathbb{R})^*$ is the group of all $2 \times 2$ matrices with real entries under addition.
+Note that $GL_2(\mathbb{R})$ is the group of all invertible $2 \times 2$ matrices with real enteries under matrix multiplication and 
+$M_{2 \times 2}(\mathbb{R})^*$ is the group of all $2 \times 2$ matrices with real entries under addition.
 
-\textcolor{purple}{Definition 1.1.3:} A \textcolor{purple}{direct product} of two groups $(A,*)$ and $(B, \circ)$ is the group whose elements are $(a,b)$ where $a \in A, \ b \in B$, and the operation is $(a,b)(c,d) = (a * c, b \circ d)$.
+\textcolor{purple}{Definition 1.1.3:} A \textcolor{purple}{direct product} of two groups $(A,*)$ and $(B, \circ)$ is the group whose 
+elements are $(a,b)$ where $a \in A, \ b \in B$, and the operation is $(a,b)(c,d) = (a * c, b \circ d)$.
 
 \textcolor{orange}{Proposition 1.1.1:} If $(G, \cdot)$ is a group, then
 \begin{enumerate}
@@ -102,10 +117,12 @@ Note that $GL_2(\mathbb{R})$ is the group of all invertible $2 \times 2$ matrice
     \item for each $a \in G$, $a^{-1}$ is unique,
     \item $(a^{-1})^{-1}=a$ $\forall a \in G$,
     \item $(ab)^{-1} = b^{-1}a^{-1} \ \forall a,b \in G$, and 
-    \item for any $a_1, a_2, \dots, a_n \in G$, their product $a_1 \cdot a_2 \cdots a_n$ does not depend on how the expression is bracketed.
+    \item for any $a_1, a_2, \dots, a_n \in G$, their product $a_1 \cdot a_2 \cdots a_n$ does not depend on how the expression is 
+    bracketed.
 \end{enumerate}
 
-Now, some comments on notation in groups. First, note that the default setting for group operations is multiplicative. That is, if $G$ is any group with $x \in G$, then
+Now, some comments on notation in groups. First, note that the default setting for group operations is multiplicative. That is, if $G$ 
+is any group with $x \in G$, then
 \begin{align*}
     x^0 &= e, \\
     x^n &= x \cdots x \ n \text{ times, } n \in \mathbb{Z}^+, \text{ and }\\
@@ -124,7 +141,8 @@ Next, note that if $G$ is abelian, we may change to additive notation. That is,
     &= (-a) + (-a) + \cdots + (-a) \ n \text{ times, } n \in \mathbb{Z}^+.
 \end{align*}
 
-\textcolor{purple}{Definition 1.1.4:} Let $D$ be a nonempty set. The \textcolor{purple}{power set} of $D$, $\mathcal{P}(D)$, is the set of all possible subsets of $D$. 
+\textcolor{purple}{Definition 1.1.4:} Let $D$ be a nonempty set. The \textcolor{purple}{power set} of $D$, $\mathcal{P}(D)$, is the set 
+of all possible subsets of $D$. 
 
 \textcolor{blue}{Example 1.1.5:} Let $D= \{a,b,c\}$. Then
 \[
@@ -159,26 +177,33 @@ Note that every element then has order $2$ or $1$ (we will discuss order in the 
 \end{array}
 \]
 
-\textcolor{purple}{Definition 1.1.5:} If $G$ is a group with $x \in G$, then the \textcolor{purple}{order} of $x$, denoted $|x|$, is the smallest positive integer $n$ such that $x^n = e$. If no such $n$ exists, then $x$ has infinite order.
+\textcolor{purple}{Definition 1.1.5:} If $G$ is a group with $x \in G$, then the \textcolor{purple}{order} of $x$, denoted $|x|$, is the 
+smallest positive integer $n$ such that $x^n = e$. If no such $n$ exists, then $x$ has infinite order.
 
-\textcolor{blue}{Example 1.1.8:} Let $\mathbb{C}^*$ be the group of nonzero complex numbers under multiplication. This group has elements of infinite order, such as $2$ or $2 + i$. There is also an element of order $1$ --- namely $e^*$. There is also an element of order $2$ (-1), and an element of order $4$ ($i$).
+\textcolor{blue}{Example 1.1.8:} Let $\mathbb{C}^*$ be the group of nonzero complex numbers under multiplication. This group has elements 
+of infinite order, such as $2$ or $2 + i$. There is also an element of order $1$ --- namely $e^*$. There is also an element of order $2$ 
+($-1$), and an element of order $4$ ($i$).
 
 \subsection{Dihedral Groups and Group Actions}
 
-\textcolor{purple}{Definition 1.2.1:} Let $G$ be a group and $A$ a set. A \textcolor{purple}{group action} of $G$ on $A$ is a function from $G \times A \longrightarrow A$ denoted $g \cdot a$ that satisfies
+\textcolor{purple}{Definition 1.2.1:} Let $G$ be a group and $A$ a set. A \textcolor{purple}{group action} of $G$ on $A$ is a function 
+from $G \times A \longrightarrow A$ denoted $g \cdot a$ that satisfies
 \begin{enumerate}
     \item $g_1 \cdot (g_2 \cdot a) = (g_1g_2) \cdot a \ \forall g_1, g_2 \in G$ and $\forall a \in A$ and 
     \item $e \cdot a = a \ \forall a \in A$.
 \end{enumerate}
-Note that for the items above, $\cdot$ denotes the group action, while the absence of $\cdot$ denotes the group operation on $G$. Further, $e$ is the identity in $G$.
+Note that for the items above, $\cdot$ denotes the group action, while the absence of $\cdot$ denotes the group operation on $G$. Further, 
+$e$ is the identity in $G$.
 
 \textcolor{blue}{Example 1.2.1:} Take $\mathbb{R}^*$ and $\mathbb{R}^n = \{(x_1, x_2, \dots, x_n)\: x_i \in \mathbb{R}\}$. Then
 \[\alpha(x_1, x_2, \dots, x_n) = (\alpha x_1, \alpha x_2, \dots, \alpha x_n)\]
 is a group action in which the group operation is scalar multiplication.
 
-\textcolor{purple}{Definition 1.2.2:} For $n \geq 3$, the \textcolor{purple}{Dihedral Group} of order $2n$, denoted $D_{2n}$, is the set of symmetries of a regular $n$-gon.
+\textcolor{purple}{Definition 1.2.2:} For $n \geq 3$, the \textcolor{purple}{Dihedral Group} of order $2n$, denoted $D_{2n}$, is the set 
+of symmetries of a regular $n$-gon.
 
-\textcolor{blue}{Example 1.2.2:} $D_6 = D_{2 \cdot 3}$ is the set of symmetries of a regular $3$-gon (that is, of an equilateral triangle). The $6$ symmetries are
+\textcolor{blue}{Example 1.2.2:} $D_6 = D_{2 \cdot 3}$ is the set of symmetries of a regular $3$-gon (that is, of an equilateral triangle). 
+The $6$ symmetries are
 \begin{enumerate}
     \item rotate clockwise by $120^{\circ}$,
     \item rotate clockwise by $240^{\circ}$,
@@ -245,11 +270,14 @@ Thus, we treat the dihedral group of order $6$ (or of any other order) like func
 
 The notation we will use with $D_{2n}$ is $D_{2n} = \{e,r,r^2, \dots, r^{n-1},s,sr, \dots, sr^{n-1}\}$.
 
-\textcolor{purple}{Definition 1.2.3:} Let $G$ be a group acting on a set $A$ with $a \in A$. The \textcolor{purple}{stabilizer} is the set $Stab(a) = \{g \in G: g \cdot a = a\}$. Next, we prove that the stabilizer forms a subgroup.
+\textcolor{purple}{Definition 1.2.3:} Let $G$ be a group acting on a set $A$ with $a \in A$. The \textcolor{purple}{stabilizer} is the 
+set $Stab(a) = \{g \in G: g \cdot a = a\}$. Next, we prove that the stabilizer forms a subgroup.
 
-\textbf{Proof:} Let $G$ and $A$ be defined as above with $a \in A$. Since $G$ is a group, $e \in G$. Further, $e \cdot a = a$, so $e \in Stab(a)$, and thusly $Stab(a) \neq \emptyset$. 
+\textbf{Proof:} Let $G$ and $A$ be defined as above with $a \in A$. Since $G$ is a group, $e \in G$. Further, $e \cdot a = a$, so 
+$e \in Stab(a)$, and thusly $Stab(a) \neq \emptyset$. 
 
-Next, let $g,h \in Stab(a)$. Then $g \cdot a = a$ and $h \cdot a = a$. We want to show $(gh) \cdot a = a$. By definition of a group action, we know
+Next, let $g,h \in Stab(a)$. Then $g \cdot a = a$ and $h \cdot a = a$. We want to show $(gh) \cdot a = a$. By definition of a group 
+action, we know
 \begin{align*}
     (gh) \cdot a &= g \cdot (h \cdot a) \\
     &= g \cdot a \\
@@ -264,7 +292,8 @@ Then $(gh) \cdot a = a$, so $(gh) \in Stab(a)$. Next, we need to show $g^{-1} \i
 \end{align*}
 Then, since $a \in Stab(a)$, we must have that $g^{-1} \in Stab(a) \ \forall g \in Stab(a)$. Then $Stab(a) \leq G$. $\square$
 
-\textcolor{blue}{Example 1.2.4:} Let $G$ act on $G$ by the rule $g \cdot x = gxg^{-1}$. Let's check that this defines an action. For any $x \in G$, $e \cdot x = e \cdot x \cdot e^{-1} = x$. Next, for any $g,h \in G$ and $x \in G$, we have
+\textcolor{blue}{Example 1.2.4:} Let $G$ act on $G$ by the rule $g \cdot x = gxg^{-1}$. Let's check that this defines an action. For any 
+$x \in G$, $e \cdot x = e \cdot x \cdot e^{-1} = x$. Next, for any $g,h \in G$ and $x \in G$, we have
 \begin{align*}
     (g \cdot h) \cdot x &= g \cdot (h \cdot x)  \\
     &= g \cdot (hxh^{-1}) \\
@@ -280,13 +309,21 @@ so we must have that $g \cdot x = gxg^{-1}$ defines an action of $G$ on $G$. Nex
     &= \{ g \in G: gx = xg\} \\
     &= C(x) \text{ or } C_G(x)
 \end{align*}
-\textcolor{purple}{Definition 1.2.4:} Let $G$ be a group with $g \in G$ and $x \in A$ with $A$ a set. The collection of elements in $G$ that commute with $x$ is called the \textcolor{purple}{centralizer} of $x$ and is denoted $C(x)$ or $C_G(x)$. Similarly, if $S$ is a set, then $C(S) = \{ g \in G: gx = xg \ \forall x \in S\}$. Note that this is not to be confused with the \textcolor{purple}{center} of $G$, defined below.
+\textcolor{purple}{Definition 1.2.4:} Let $G$ be a group with $g \in G$ and $x \in A$ with $A$ a set. The collection of elements in $G$ 
+that commute with $x$ is called the \textcolor{purple}{centralizer} of $x$ and is denoted $C(x)$ or $C_G(x)$. Similarly, if $S$ is a set, 
+then $C(S) = \{ g \in G: gx = xg \ \forall x \in S\}$. Note that this is not to be confused with the \textcolor{purple}{center} of $G$, 
+defined below.
 
-\textcolor{purple}{Definition 1.2.5:} Let $G$ be a group. Then the \textcolor{purple}{center} of $G$ is $Z(G) = \{g \in G: gx = xg \ \forall x \in G\}$. That is, the center of $G$ is the set of all elements in $G$ which commute with every element of $G$. Note that $Z(G) = G \Longrightarrow G$ is abelian.
+\textcolor{purple}{Definition 1.2.5:} Let $G$ be a group. Then the \textcolor{purple}{center} of $G$ is $Z(G) = \{g \in G: gx = xg \ \forall x \in G\}$. 
+That is, the center of $G$ is the set of all elements in $G$ which commute with every element of $G$. Note that $Z(G) = G \Longrightarrow G$ 
+is abelian.
 
-Now, some notes on notation and a relation that is used in $D_{2n}$. Remember, $D_{2n} = \{e,r,r^2, \dots, r^{n-1}, s, sr, sr^2, \dots, sr^{n-1}\}$. Then $|r| = n$ and $|s|=2$, where $r$ denotes a rotation and $s$ denotes a reflection. Further, $r^is = sr^{-i}$ $\forall 0 \leq i \leq n$. In particular, when $i=1$, $rs = sr^{-1} = sr^{n-1}$. Similarly, $r^{n-1}s = sr$.
+Now, some notes on notation and a relation that is used in $D_{2n}$. Remember, $D_{2n} = \{e,r,r^2, \dots, r^{n-1}, s, sr, sr^2, \dots, sr^{n-1}\}$. 
+Then $|r| = n$ and $|s|=2$, where $r$ denotes a rotation and $s$ denotes a reflection. Further, $r^is = sr^{-i}$ $\forall 0 \leq i \leq n$. 
+In particular, when $i=1$, $rs = sr^{-1} = sr^{n-1}$. Similarly, $r^{n-1}s = sr$.
 
-\textcolor{blue}{Example 1.2.5:} Let $n=5$. Then $r^3s = sr^{-3} = sr^2$ with $D_{2 \cdot 5} = \{e,r,r^2,r^3,r^4,s,sr,sr^2,sr^3,sr^4\}$. Next, let $n=15$. Then $rsr^3 = rr^{12}s = r^{13}s$. Lastly, let $n = 12$. Then 
+\textcolor{blue}{Example 1.2.5:} Let $n=5$. Then $r^3s = sr^{-3} = sr^2$ with $D_{2 \cdot 5} = \{e,r,r^2,r^3,r^4,s,sr,sr^2,sr^3,sr^4\}$. 
+Next, let $n=15$. Then $rsr^3 = rr^{12}s = r^{13}s$. Lastly, let $n = 12$. Then 
 \begin{align*}
     (sr^9)(sr^6) &= sr^9r^{-6}s \\
     &= sr^3s \\
@@ -296,13 +333,17 @@ Now, some notes on notation and a relation that is used in $D_{2n}$. Remember, $
 \end{align*}
 
 \subsection{Symmetric Groups}
-\textcolor{purple}{Definition 1.3.1:} Let $\Omega$ be a nonempty set. Let $S_{\Omega}$ be the set of all bijections from $\Omega$ to $\Omega$. The set $S_{\Omega}$ forms a group, the \textcolor{purple}{symmetric group on $\Omega$}, under function composition. The identity function in this set is denoted $\mathbb{1}$, or sometimes $Id(S_{\Omega})$. What this means is $\mathbb{1}(x)=x$ $\forall x \in \Omega$.
+\textcolor{purple}{Definition 1.3.1:} Let $\Omega$ be a nonempty set. Let $S_{\Omega}$ be the set of all bijections from $\Omega$ to 
+$\Omega$. The set $S_{\Omega}$ forms a group, the \textcolor{purple}{symmetric group on $\Omega$}, under function composition. The 
+identity function in this set is denoted $\mathbb{1}$, or sometimes $Id(S_{\Omega})$. What this means is $\mathbb{1}(x)=x$ $\forall x \in \Omega$.
 
-In a special case that this set $\Omega = \{1,2,3, \dots, n\}$, we write $S_n$ instead of $S_{1,2,3,\dots,n}$. $S_n$ is called the \textcolor{purple}{symmetric group of degree $n$}. Elements in $S_n$ are called \textcolor{purple}{permutations}.
+In a special case that this set $\Omega = \{1,2,3, \dots, n\}$, we write $S_n$ instead of $S_{1,2,3,\dots,n}$. $S_n$ is called the 
+\textcolor{purple}{symmetric group of degree $n$}. Elements in $S_n$ are called \textcolor{purple}{permutations}.
 
 \textcolor{blue}{Example 1.3.1:} One way we can represent permutations is with two line notation, as seen below:
 
-Let $\alpha \in S_7$ such that $\alpha(1)=5, \alpha(2) = 1, \alpha(3)=7, \alpha(4)=6, \alpha(5)=2, \alpha(6)=4,$ and $\alpha(7)=3$. Then the two line notation for $\alpha$ looks like 
+Let $\alpha \in S_7$ such that $\alpha(1)=5, \alpha(2) = 1, \alpha(3)=7, \alpha(4)=6, \alpha(5)=2, \alpha(6)=4,$ and $\alpha(7)=3$. Then 
+the two line notation for $\alpha$ looks like 
 
 \[
     \alpha = \begin{pmatrix}
@@ -316,7 +357,8 @@ Let $\alpha \in S_7$ such that $\alpha(1)=5, \alpha(2) = 1, \alpha(3)=7, \alpha(
     1 & 5 & 2 & 4 & 3 & 6
 \end{pmatrix}$, then $\beta = (2 \ 5 \ 3)$. 
 
-\textcolor{purple}{Definition 1.3.2:} Two cycles $(a_1 \ a_2 \ \cdots \ a_n)$ and $(b_1 \ b_2 \ \cdots b_m)$ are \textcolor{purple}{disjoint} if $\{a_1, a_2, \dots, a_n\} \cap \{b_1, b_2, \dots, b_m\} = \emptyset$. 
+\textcolor{purple}{Definition 1.3.2:} Two cycles $(a_1 \ a_2 \ \cdots \ a_n)$ and $(b_1 \ b_2 \ \cdots b_m)$ are 
+\textcolor{purple}{disjoint} if $\{a_1, a_2, \dots, a_n\} \cap \{b_1, b_2, \dots, b_m\} = \emptyset$. 
 
 \textcolor{blue}{Example 1.3.3:} In $S_7$, $\alpha = \begin{pmatrix}
     1 & 2 & 3 & 4 & 5 & 6 & 7 \\
@@ -331,9 +373,11 @@ Let $\alpha \in S_7$ such that $\alpha(1)=5, \alpha(2) = 1, \alpha(3)=7, \alpha(
     &= (1 \ 12 \ 8 \ 10 \ 4)(2 \ 13)(5 \ 11 \ 7)(6 \ 9). 
 \end{align*}
 
-It is useful to note that $1$-cycles are typically ommitted from products of cycles. Further, it is important to note that disjoint cycles commute.
+It is useful to note that $1$-cycles are typically ommitted from products of cycles. Further, it is important to note that disjoint cycles 
+commute.
 
-\textcolor{purple}{Definition 1.3.3:} The \textcolor{purple}{length} of cycle $(a_1 \ a_2 \ \cdots \ a_n)$ is $n$, and this is commonly referred to as an \textcolor{purple}{$n$-cycle}. Further, note that $2$-cycles are also called \textcolor{purple}{transpositions}.
+\textcolor{purple}{Definition 1.3.3:} The \textcolor{purple}{length} of cycle $(a_1 \ a_2 \ \cdots \ a_n)$ is $n$, and this is commonly 
+referred to as an \textcolor{purple}{$n$-cycle}. Further, note that $2$-cycles are also called \textcolor{purple}{transpositions}.
 
 \textcolor{blue}{Example 1.3.4:} Let us write all elements of $s_4$ as products of disjoint cycles. First, we start with the $1$-cycle --- 
 namely, $\{(1)\}$. Note that we could have written this as $\{(2)\}, \ \{(3)\}$, or $\{(4)\}$. Next, we consider the 
@@ -374,8 +418,10 @@ Note that the total number of permutations in $S_n$ is $n!$.
     \dfrac{50 \cdot 49}{2} \cdot \dfrac{\dfrac{48 \cdot 47 \cdot 46}{3} \cdot \dfrac{45 \cdot 44 \cdot 43}{3}}{2}=601,304,088,000.
 \]
 
-\textcolor{purple}{Definition 1.3.3:} Let $G$ be a group. For $x,y \in G$, lets say that $x$ is a \textcolor{purple}{conjugate} of $y$ if $x = gyg^{-1}$ for some
-$g \in G$. Another notation for this is to say that $x \in cl(y)$, or $x \sim y$. Further, the \textcolor{purple}{conjugacy class} that contains $y$ is
+\textcolor{purple}{Definition 1.3.3:} Let $G$ be a group. For $x,y \in G$, lets say that $x$ is a \textcolor{purple}{conjugate} of $y$ if 
+$x = gyg^{-1}$ for some
+$g \in G$. Another notation for this is to say that $x \in cl(y)$, or $x \sim y$. Further, the \textcolor{purple}{conjugacy class} that 
+contains $y$ is
 $cl(y) = \{gyg^{-1}:g \in G\}$. 
 
 \textcolor{blue}{Example 1.3.7:} In $S_3$, what is $cl((1 \ 2))$? To find out, we must find all unique conjugates of $(1 \ 2)$. We have
@@ -391,7 +437,8 @@ Then $cl((1 \ 2)) = \{(1 \ 2), (1 \ 3), (2 \ 3)\}$.
 
 \textcolor{red}{Theorem 1.3.1:} The relation $\sim$ is an equivalence relation on $G$.
 
-\textbf{Proof:} First, we will show that $\sim$ is reflexive. Note that $x \sim x$ $\forall x \in G$ since $x = exe^{-1} \ \forall x \in G$. Next, we need to show that $\sim$ is symmetric. 
+\textbf{Proof:} First, we will show that $\sim$ is reflexive. Note that $x \sim x$ $\forall x \in G$ since $x = exe^{-1} \ \forall x \in G$. 
+Next, we need to show that $\sim$ is symmetric. 
 Suppose $x \sim y$. Then we have
 \begin{align*}
     x \sim y &\Longrightarrow x = gyg^{-1} \text{ for some } g \in G \\
@@ -402,7 +449,8 @@ Suppose $x \sim y$. Then we have
     &\Longrightarrow y = (g^{-1})x(g^{-1})^{-1} \\
     &\Longrightarrow y \sim x,
 \end{align*}
-so $\sim$ is symmetric. Lastly, we check for transitivity. Suppose $x \sim y$ and $y \sim z$. Then $x = gyg^{-1}$ and $y = hzh^{-1}$ for some $g,h \in G$. Then
+so $\sim$ is symmetric. Lastly, we check for transitivity. Suppose $x \sim y$ and $y \sim z$. Then $x = gyg^{-1}$ and $y = hzh^{-1}$ for 
+some $g,h \in G$. Then
 \begin{align*}
     x &= g(hzh^{-1})g^{-1} \\
     &= (gh)z(h^{-1}g^{-1}) \\
@@ -422,11 +470,14 @@ One last observation that is important to note is that $x \in cl(x)$. Next, we c
     &\Longleftrightarrow xg = gx \ \forall g \in G \\
     &\Longleftrightarrow x \in Z(G). \ \square 
 \end{align*}
-Our big takeaway from this is that conjugacy classes partition the group. Further, if $\{x\}$ is a conjugacy class, then $x \in Z(G)$. In particular, when $G$ is a finite group, it's order can be described as follows:
+Our big takeaway from this is that conjugacy classes partition the group. Further, if $\{x\}$ is a conjugacy class, then $x \in Z(G)$. In 
+particular, when $G$ is a finite group, it's order can be described as follows:
 \[
     |G| = |Z(G)| + \sum{|cl(x)|}
 \]
-where the summation is taken over the distinct conjugacy classes of size more than one. The equation above is known as the \textcolor{purple}{Class Equation}, which we will discuss soon. Note that we can write the class equation in terms of centralizers (subgroups of the form $C_G(x)$).
+where the summation is taken over the distinct conjugacy classes of size more than one. The equation above is known as the 
+\textcolor{purple}{Class Equation}, which we will discuss soon. Note that we can write the class equation in terms of centralizers 
+(subgroups of the form $C_G(x)$).
 
 \textcolor{blue}{Example 1.3.8:} Consider $S_4$. Then we have 
 \begin{align*}
@@ -435,9 +486,13 @@ where the summation is taken over the distinct conjugacy classes of size more th
 \end{align*}
 Note that for each conjugacy class, it divides the order of the group. That is, $|cl(x)| \big| |G|$. 
 
-It is important to note some important facts on the order of groups before we move on. First, if $G$ is a group of even order, then $G$ has an element of order $2$. Further, if the order of a group $G$ is the power of a prime (that is, if $|G| = p^n$ with $p$ prime), then $Z(G) \neq 1$.
+It is important to note some important facts on the order of groups before we move on. First, if $G$ is a group of even order, then $G$ 
+has an element of order $2$. Further, if the order of a group $G$ is the power of a prime (that is, if $|G| = p^n$ with $p$ prime), then 
+$Z(G) \neq 1$.
 
-\textcolor{purple}{Definition 1.3.4:} Let $G$ be a group with $H \subseteq G$. For $x \in G$, define $xH = \{xh: h \in H\}$ and $Hx = \{hx: h \in H\}$. When $H \leq G$, we call $xH$ a \textcolor{purple}{left coset} of $H$ in $G$ and $Hx$ a \textcolor{purple}{right coset} of $H$ in $G$. 
+\textcolor{purple}{Definition 1.3.4:} Let $G$ be a group with $H \subseteq G$. For $x \in G$, define $xH = \{xh: h \in H\}$ and 
+$Hx = \{hx: h \in H\}$. When $H \leq G$, we call $xH$ a \textcolor{purple}{left coset} of $H$ in $G$ and $Hx$ a 
+\textcolor{purple}{right coset} of $H$ in $G$. 
 
 Recall that $G_G(x) \{y \in G: yx=xy\}$. Can we say anything if $aC_G(x) = bC_G(x)$? Consider the following claim:
 Let $H \leq G$. Then $xH=yH$ if and only if $y^{-1}x \in H$.\\
@@ -449,17 +504,23 @@ Let $H \leq G$. Then $xH=yH$ if and only if $y^{-1}x \in H$.\\
 \end{align*}
 Note that, since $h_1,h_2 \in H$, we must have that $h_1^{-1} \in H$ and $h_2h_1^{-1}\in H$. Then $y^{-1}x\in H$. $\square$
 
-Next, let $A$ be the set of all left cosets of $C_G(x)$ in $G$. That is, let $A = \{yC_G(x):y \in G\}$. Next, define a function $f: A \longrightarrow cl(x)$ by $f(yC_G(x)) = yxy^{-1}$. We claim that $f$ is a bijection.\\
+Next, let $A$ be the set of all left cosets of $C_G(x)$ in $G$. That is, let $A = \{yC_G(x):y \in G\}$. Next, define a function 
+$f: A \longrightarrow cl(x)$ by $f(yC_G(x)) = yxy^{-1}$. We claim that $f$ is a bijection.\\
 
 \textbf{Proof:} Let $axa^{-1}\in cl(x)$. Then $f(aC_G(x)) = axa^{-1}$, so $\exists aC_G(x) \in A$, and thusly $f$ is onto.
 
-Next, suppose you have two equal outputs $f(aC_G(x))=f(bC_G(x))$. Then we have $axa^{-1}=bxb^{-1}$. But this implies $aC_G(x)=bC_G(x)$, so we must have that $f$ is one-to-one. $\square$.
+Next, suppose you have two equal outputs $f(aC_G(x))=f(bC_G(x))$. Then we have $axa^{-1}=bxb^{-1}$. But this implies $aC_G(x)=bC_G(x)$, so 
+we must have that $f$ is one-to-one. $\square$.
 
-By an earlier claim, for any $x \in G$, the number of conjugates of $x$ is the same as the number of left cosets of $C_G(x)$ in $G$. Notationally speaking, for $H \leq G$, we write $[G:H]$ (which reads as the \textcolor{purple}{index} of $H$ in $G$), for the number of left cosets of $H$ in $G$. Then we would say $|cl(x)| = [G:H]$.
+By an earlier claim, for any $x \in G$, the number of conjugates of $x$ is the same as the number of left cosets of $C_G(x)$ in $G$. 
+Notationally speaking, for $H \leq G$, we write $[G:H]$ (which reads as the \textcolor{purple}{index} of $H$ in $G$), for the number of 
+left cosets of $H$ in $G$. Then we would say $|cl(x)| = [G:H]$.
 
 This brings our discussion on the order of groups to the Class equation --- but first, we must define another theorem.
 
-\textcolor{red}{Theorem 1.3.2:} Let $G$ be a group, $x \in G$, and $C_G(x)$ be the centralizer of $x$ in $G$. Then \textcolor{red}{La Grange's Theorem} states that the index of $C_G(x)$ in $G$ is equal to the order of $G$ divided by the order of $C_G(x)$. That is,
+\textcolor{red}{Theorem 1.3.2:} Let $G$ be a group, $x \in G$, and $C_G(x)$ be the centralizer of $x$ in $G$. Then 
+\textcolor{red}{La Grange's Theorem} states that the index of $C_G(x)$ in $G$ is equal to the order of $G$ divided by the order of 
+$C_G(x)$. That is,
 \[
     [G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}.
 \]
@@ -469,22 +530,30 @@ We will use this to better understand the equation given below.
 \[
     |G| = |Z(G)| + \sum{|cl(x)|}.
 \]
-That is, the number of elements in $G$ is equal to the number of commutative elements in $G$ plus the sum of the sizes of conjugacy classes containing $x$ where that sum is taken over all conjugacy classes of size more than one with just one $x$ per conjugacy class. Now, we can write this similarly with indeces:
+That is, the number of elements in $G$ is equal to the number of commutative elements in $G$ plus the sum of the sizes of conjugacy 
+classes containing $x$ where that sum is taken over all conjugacy classes of size more than one with just one $x$ per conjugacy class. 
+Now, we can write this similarly with indeces:
 \[
     |G| = |Z(G)|+\sum{[G:C_G(x)]},
 \]
 where the sum is taken in the same method as the previous version of the Class Equation.
 
-This brings us to an interest result. We claim that if the order of a group $G$ is equal to the power of a prime $p$, then there exists some $x$ in the center of $G$ such that $x$ is not the identity element. This brings us to an important theorem.
+This brings us to an interest result. We claim that if the order of a group $G$ is equal to the power of a prime $p$, then there exists 
+some $x$ in the center of $G$ such that $x$ is not the identity element. This brings us to an important theorem.
 
 \textcolor{red}{Theorem 1.3.3:} Let $p$ be a prime. If $G$ is a group with $|G| = p^k$, $k \in \mathbb{Z}^+$, then $|Z(G)| \geq p$.\\
-\textbf{Proof:} By the class equation, $|G| = |Z(G)| + \sum{[G:C_G(x)]}$, where the sum is taken over all conjugacy classes of size more than one with one $x$ per conjugacy class. Then, since $|G|= p^k$ and $[G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}$ by La Grange, we must have
+\textbf{Proof:} By the class equation, $|G| = |Z(G)| + \sum{[G:C_G(x)]}$, where the sum is taken over all conjugacy classes of size more 
+than one with one $x$ per conjugacy class. Then, since $|G|= p^k$ and $[G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}$ by La Grange, we must have
 \[
     p^k = |Z(G)|+\sum{\dfrac{p^k}{|C_G(x)|}}.
 \]
-Note that, since we are only taking the sum over all conjugacy classes of size more than one with one $x$ per conjugacy class, we must have that $|C_G(x)| <p^k$. In other words, if $|C_G(x)| = p^k$, then we must have that $x \in Z(G)$. But we don't want to count any of the $x$'s more than once.
-Then $\forall x \notin Z(G)$, $C_G(x) < G$. By La Grange, $|C_G(x)| \big| |G| = p^k$. Then $|C_G(x)| = p^{l_x}$ for some $0 \leq l_x < k$. This means that each term $\dfrac{p^k}{|C_G(x)|} = p^{k-l_x}$, which is divisible by $p$.
-Then $\sum{\dfrac{p^k}{|C_G(x)|}}$ (where the sum is again taken over all conjugacy classes of size more than one with one $x$ per conjugacy class) is the sum of elements that are all divisible by $p$. Thus, the entire sum is divisible by $p$. Then we have
+Note that, since we are only taking the sum over all conjugacy classes of size more than one with one $x$ per conjugacy class, we must 
+have that $|C_G(x)| <p^k$. In other words, if $|C_G(x)| = p^k$, then we must have that $x \in Z(G)$. But we don't want to count any of the 
+$x$'s more than once.
+Then $\forall x \notin Z(G)$, $C_G(x) < G$. By La Grange, $|C_G(x)| \big| |G| = p^k$. Then $|C_G(x)| = p^{l_x}$ for some $0 \leq l_x < k$. 
+This means that each term $\dfrac{p^k}{|C_G(x)|} = p^{k-l_x}$, which is divisible by $p$.
+Then $\sum{\dfrac{p^k}{|C_G(x)|}}$ (where the sum is again taken over all conjugacy classes of size more than one with one $x$ per 
+conjugacy class) is the sum of elements that are all divisible by $p$. Thus, the entire sum is divisible by $p$. Then we have
 \[
     p^k = |Z(G)|+\sum{\dfrac{p^k}{|C_G(x)|}} \text{ and} 
 \]
@@ -495,34 +564,41 @@ Thusly, $p \big| |Z(G)|$, so we must have that $|Z(G)| \geq p$ and $Z(G)$ contai
 
 \setcounter{subsection}{5}
 \subsection{Homomorphisms and Isomorphisms}
-\textcolor{purple}{Definition 1.6.1:} Let $(G, \cdot)$ and $(H, \circ)$ be groups. A function $\phi:G \longrightarrow H$ is a \textcolor{purple}{homomorphism} if
+\textcolor{purple}{Definition 1.6.1:} Let $(G, \cdot)$ and $(H, \circ)$ be groups. A function $\phi:G \longrightarrow H$ is a 
+\textcolor{purple}{homomorphism} if
 \[
     \phi(g_1 \cdot g_2) = \phi(g_1) \circ \phi(g_2) \ \forall g_1, g_2 \in G.
 \]
 Note that typically this is written in shorthand as $\phi(g_1g_2) = \phi(g_1)\phi(g_2)$. 
 
-\textcolor{purple}{Definition 1.6.2:} A bijective homomorphism is called an \textcolor{purple}{isomorphism}. If there is an isomorphism from $G$ to $H$, we write $G \cong H$ and say $G$ is \textcolor{purple}{isomorphic} to $H$.
+\textcolor{purple}{Definition 1.6.2:} A bijective homomorphism is called an \textcolor{purple}{isomorphism}. If there is an isomorphism 
+from $G$ to $H$, we write $G \cong H$ and say $G$ is \textcolor{purple}{isomorphic} to $H$.
 
-\textcolor{blue}{Example 1.6.1:} Let $(\mathbb{R},+)$ be the group of real numbers under addition and let $(\mathbb{R}^+, \cdot)$ be the group of positive real numbers under multiplication. Then the function $f:\mathbb{R} \longrightarrow \mathbb{R}^+$ defined by $f(x)=e^x$ is an isomorphism. \\
+\textcolor{blue}{Example 1.6.1:} Let $(\mathbb{R},+)$ be the group of real numbers under addition and let $(\mathbb{R}^+, \cdot)$ be the 
+group of positive real numbers under multiplication. Then the function $f:\mathbb{R} \longrightarrow \mathbb{R}^+$ defined by $f(x)=e^x$ 
+is an isomorphism. \\
 To show this, first, we must check that $f$ is a homomorphism. Let $x_1, x_2 \in \mathbb{R}$. Then
 \begin{align*}
     f(x_1+x_2) &= e^{x_1+x_2} \\
     &= e^{x_1}e^{x_2} \\
     &= f(x_1)f(x_2).
 \end{align*}
-Then $f$ is operation preserving and thusly a homomorphism. To check that this is also an isomorphism, we must check that $f$ is a bijection. First, we check that $f$ is one-to-one. Let $f(x_1)=f(x_2)$. Then we have 
+Then $f$ is operation preserving and thusly a homomorphism. To check that this is also an isomorphism, we must check that $f$ is a 
+bijection. First, we check that $f$ is one-to-one. Let $f(x_1)=f(x_2)$. Then we have 
 \begin{align*}
     f(x_1)=f(x_2) &\Longrightarrow e^{x_1} = e^{x_2} \\
     &\Longrightarrow \ln{e^{x_1}} = \ln{e^{x_2}} \\
     &\Longrightarrow x_1 = x_2,
 \end{align*}
-so $f$ is one-to-one. Next, we check that $f$ is onto. Let $y = f(x)$. Then $y = e^x$ and we have $\ln{y} = \ln{e^x}$, so $\ln{y}=x$. Thusly, we have
+so $f$ is one-to-one. Next, we check that $f$ is onto. Let $y = f(x)$. Then $y = e^x$ and we have $\ln{y} = \ln{e^x}$, so $\ln{y}=x$. 
+Thusly, we have
 \[
     f(\ln{y}) = e^{\ln{y}} = y,
 \]
 so $f$ is onto. Then $f$ is a bijective homomorphism, and thusly, $f$ is an isomorphism. 
 
-Interestingly, isomorphisms preserve may properties. Assume $\phi: G \longrightarrow H$ is a function with $G$ isomorphic to $H$. Then we have
+Interestingly, isomorphisms preserve may properties. Assume $\phi: G \longrightarrow H$ is a function with $G$ isomorphic to $H$. Then we 
+have
 \begin{enumerate}
     \item $|G| = |H|$ 
     \item $ord_G(x) = ord_H(x)$
@@ -531,11 +607,13 @@ Interestingly, isomorphisms preserve may properties. Assume $\phi: G \longrighta
 \end{enumerate}
 
 \textcolor{blue}{Example 1.6.2:} Is $(\mathbb{R}, +) \cong (\mathbb{R} \backslash \{0\}, \cdot)$?\\
-No! Consider $(-1)^2 = e \in (\mathbb{R} \backslash \{0\}, \cdot)$. Then that $|-1| = 2$ but $\nexists x \in (\mathbb{R}, +)$ such that $|x|=2$ and $x \neq e$.
+No! Consider $(-1)^2 = e \in (\mathbb{R} \backslash \{0\}, \cdot)$. Then that $|-1| = 2$ but $\nexists x \in (\mathbb{R}, +)$ such that 
+$|x|=2$ and $x \neq e$.
 
 Now, let us look at a particular family of permutations coming from group actions:
 
-Consider the group $G$ and set $A$ with a fixed $g \in G$. Let our group $G$ act on set $A$ via group action $G \times A \longrightarrow A$ be defined by 
+Consider the group $G$ and set $A$ with a fixed $g \in G$. Let our group $G$ act on set $A$ via group action $G \times A \longrightarrow A$ 
+be defined by 
 \begin{center}
     \begin{tikzpicture}
         \node (a1) at (0,3) {$g \cdot a_1$};
@@ -555,7 +633,8 @@ Consider the group $G$ and set $A$ with a fixed $g \in G$. Let our group $G$ act
     \end{tikzpicture}
 \end{center}
 
-Then we can associage to $g$ a map $\sigma_g: A \longrightarrow A$ where $\sigma_g(a) = g \cdot a$. It turns out that $\sigma_g$ is a bijection, and thus it is a permutation on $A$.
+Then we can associage to $g$ a map $\sigma_g: A \longrightarrow A$ where $\sigma_g(a) = g \cdot a$. It turns out that $\sigma_g$ is a 
+bijection, and thus it is a permutation on $A$.
 \textbf{Proof:} Suppose $\sigma_g(a_1) = \sigma_g(a_2)$. Then we must have
 \begin{align*}
     g \cdot a_1 = g \cdot a_2 &\Longrightarrow g^{-1} \cdot (g \cdot a_1) = g^{-1} \cdot(g \cdot a_2) \\
@@ -596,11 +675,16 @@ This shows that $\sigma_{g_1g_2} = \sigma_{g_1} \circ \sigma_{g_2}$. therefore
     &= \phi(g_1) \circ \phi(g_2). \ \square
 \end{align*}
 
-\textcolor{purple}{Definition 1.6.3:} The map $\phi$ is called the \textcolor{purple}{permutation representation of the action}. If $\phi$ is one-to-one (this means distinct elements of $G$ give distinct permutations of $A$), then the action is said to be \textcolor{purple}{faithful}.
+\textcolor{purple}{Definition 1.6.3:} The map $\phi$ is called the \textcolor{purple}{permutation representation of the action}. If 
+$\phi$ is one-to-one (this means distinct elements of $G$ give distinct permutations of $A$), then the action is said to be 
+\textcolor{purple}{faithful}.
 
-\textcolor{purple}{Definition 1.6.4:} The \textcolor{purple}{kernel} of $G$ acting on a set $A$ is $\{g \in G: g \cdot a = a \ \forall a \in A\}$. This is the same thing as $\ker{(\phi)} = \{g \in G: \phi(g) = id_A\}$, where $id_A$ is the identity element in $S_A$.
+\textcolor{purple}{Definition 1.6.4:} The \textcolor{purple}{kernel} of $G$ acting on a set $A$ is $\{g \in G: g \cdot a = a \ \forall a \in A\}$. 
+This is the same thing as $\ker{(\phi)} = \{g \in G: \phi(g) = id_A\}$, where $id_A$ is the identity element in $S_A$.
 
-\textcolor{blue}{Example 1.6.3:} Look at the cosets of $H = <(1 \ 2)> = \{(1 \ 2),(1)\}$ in $G = S_3$. Let $A = \{(1),H, (1 \ 3)H, (2 \ 3)H\}$. Then $G$ acts on $A$ by the rule $\alpha \cdot \beta H = \alpha\beta H$, where $\alpha \in G$, $\beta H$ is a coset in $A$, and $\alpha \beta H$ is a coset in $A$.
+\textcolor{blue}{Example 1.6.3:} Look at the cosets of $H = <(1 \ 2)> = \{(1 \ 2),(1)\}$ in $G = S_3$. Let $A = \{(1),H, (1 \ 3)H, (2 \ 3)H\}$. 
+Then $G$ acts on $A$ by the rule $\alpha \cdot \beta H = \alpha\beta H$, where $\alpha \in G$, $\beta H$ is a coset in $A$, and $\alpha \beta H$ 
+is a coset in $A$.
 \[
     \begin{tabular}{c|c|c}
         (1)H & (1 \ 3)H & (2 \ 3)H \\
@@ -619,7 +703,8 @@ Lets try $\alpha = (1 \ 2)$. Then we have
 \newpage 
 \section{Chapter 2: Subgroups}
 \subsection{Subgroups and Examples}
-\textcolor{purple}{Definition 2.1.1:} Let $G$ be a group. The subset $H$ of $G$ is a \textcolor{purple}{subgroup} of $G$ if $H$ is nonempty and $H$ is closed under products and inverses. That is, $H$ is a subgroup of $G$ if
+\textcolor{purple}{Definition 2.1.1:} Let $G$ be a group. The subset $H$ of $G$ is a \textcolor{purple}{subgroup} of $G$ if $H$ is 
+nonempty and $H$ is closed under products and inverses. That is, $H$ is a subgroup of $G$ if
 \begin{enumerate}
     \item $xy \in H \ \forall x,y \in H$ and 
     \item $x^{-1} \in H \ \forall x \in H$.
@@ -629,26 +714,32 @@ If $H$ is a subgroup of $G$ then we write $H \leq G$.
 \textcolor{blue}{Example 2.1.1:} Consider the following examples of subgroups:
 \begin{enumerate}
     \item $\mathbb{Z} \leq \mathbb{Q}$ and $\mathbb{Q} \leq \mathbb{R}$ (both under addition).
-    \item Any group $G$ has at least two subgroups --- $H = G$ and $H = \{e\}$. Note that the latter is called the \textcolor{purple}{trivial subgroup} (this is denoted by $1$ in Dummit and Foote).
-    \item Let $G = D_{2n}$ be the dihedral group of order $2n$, and let $H = \{1,r,r^2, \dots, r^{n-1}\}$ be the set of all rotations in $G$. Since the product of two rotations is again a rotation and the inverse of a rotation is also a rotation, it follows that $H \leq _{2n}$ with $|H| = n$.
+    \item Any group $G$ has at least two subgroups --- $H = G$ and $H = \{e\}$. Note that the latter is called the 
+    \textcolor{purple}{trivial subgroup} (this is denoted by $1$ in Dummit and Foote).
+    \item Let $G = D_{2n}$ be the dihedral group of order $2n$, and let $H = \{1,r,r^2, \dots, r^{n-1}\}$ be the set of all rotations in 
+    $G$. Since the product of two rotations is again a rotation and the inverse of a rotation is also a rotation, it follows that 
+    $H \leq _{2n}$ with $|H| = n$.
 \end{enumerate}
 
 \textcolor{blue}{Example 2.1.2:} Consider the following non-examples of subgroups:
 \begin{enumerate}
-    \item $\mathbb{Q} \backslash \{0\}$ under multiplication is not a subgroup of $\mathbb{R}$ under addition, even though both are groups and $\mathbb{Q} \backslash \{0\}$ is a subset of $\mathbb{R}$.
+    \item $\mathbb{Q} \backslash \{0\}$ under multiplication is not a subgroup of $\mathbb{R}$ under addition, even though both are 
+    groups and $\mathbb{Q} \backslash \{0\}$ is a subset of $\mathbb{R}$.
     \item $\mathbb{Z}^+ \nleq \mathbb{Z}$ since $e \notin \mathbb{Z}^+$.
     \item $D_6 \nleq D_8$ since $D_6 \nsubseteq D_8$.
 \end{enumerate}
 
 Note that the subgroup relationship is transitive: that is, $H \leq G \leq K \Longrightarrow H \leq K$.
 
-\textcolor{red}{Proposition 2.1.1:} The \textcolor{purple}{Subgroup Criterion} --- A subset $H$ of a subgroup $G$ is a subgroup if and only if
+\textcolor{red}{Proposition 2.1.1:} The \textcolor{purple}{Subgroup Criterion} --- A subset $H$ of a subgroup $G$ is a subgroup if and 
+only if
 \begin{enumerate}
     \item $H \neq \emptyset$ and 
     \item $xy^{-1} \in H \ \forall x,y \in H$.
 \end{enumerate}
 
-\textcolor{blue}{Example 2.1.3:} Let $G$ be a group with $x \in G$, and let $<x>$ be the smallest subgroup of $G$ that contains $x$. It turns out that $<x>$ can easily be described:
+\textcolor{blue}{Example 2.1.3:} Let $G$ be a group with $x \in G$, and let $<x>$ be the smallest subgroup of $G$ that contains $x$. It 
+turns out that $<x>$ can easily be described:
 \begin{enumerate}
     \item Case $1$: $|x| = n$ (that is, the order of $x$ is finite). Then $<x> = \{e,x,x^2, \dots, x^{n-1}\}$, and
     \item Case $2$: $|x| = \infty$ (that is, the order of $x$ is infinite). Then $<x> = \{\dots, x^{-2}, x^{-1}, e, x, x^2, \dots\}$.
@@ -657,7 +748,8 @@ Lets prove case $1$ --- that $H = <x> \leq G$.
 
 \textbf{Proof:} Let $H \leq G$ with $x \in H$. Since $H$ is closed, $x,x^2, x^3, \dots, x^n \in H$. Then $\{e,x,x^2, \dots, x^{n-1}\} \subseteq H$. Now we claim that $\{e,x,x^2, \dots, x^n\} \leq G$. Let $x^i, x^j \in \{e,x,x^2, \dots, x^{n-1}\}$. Then $i,j \in \{0,1,2,\dots,n-1\}$. Then $x^ox^j = x^{i+j} = x^r$ for some $r = 0,1,2, \dots, n-1^*$. Thus we have closure under products.
 
-Similarly, $(x^i)^{-1} = x^{-i} = x^{r'}$. Then we have shown that $\{e,x,x^2, \dots, x^{n-1}\}$ forms a subgroup. Further, since any subgroup $H$ containing $x$ must contain $\{e,x,x^2, \dots, x^{n-1}\}$, we may say that $<x> = \{e,x,x^2, \dots, x^{n-1}\}$. $\square$
+Similarly, $(x^i)^{-1} = x^{-i} = x^{r'}$. Then we have shown that $\{e,x,x^2, \dots, x^{n-1}\}$ forms a subgroup. Further, since any 
+subgroup $H$ containing $x$ must contain $\{e,x,x^2, \dots, x^{n-1}\}$, we may say that $<x> = \{e,x,x^2, \dots, x^{n-1}\}$. $\square$
 
 For a quick note on $*$, suppose $|x| = n$. If $m \in \mathbb{Z}$, then $x^m \in \{e,x,x^2, \dots, x^{n-1}\}$ since $x^m = x^{nq+r} = x^r$.
 
@@ -673,9 +765,12 @@ and the \textcolor{purple}{normalizer} of $A$ in $G$ is
     gAg^{-1} = \{gag^{-1}:a \in A\}.
 \]
 
-Note that, if $g \in C_G(A)$, then $g$ commutes with all elements of $A$, whereas if $g \in N_G(A)$, then $ga_1 = a_2g$. That is, we might not get back the same element in $A$ after conjugation.
+Note that, if $g \in C_G(A)$, then $g$ commutes with all elements of $A$, whereas if $g \in N_G(A)$, then $ga_1 = a_2g$. That is, we might 
+not get back the same element in $A$ after conjugation.
 
-\textcolor{blue}{Example 2.2.1:} Let $G = D_{2 \cdot 4} = \{e,r,r^2, r^3, s,sr,sr^2, sr^3\}$, and let $A = \{e,r,r^2,r^3\} \leq D_{2 \cdot 4}$. Consider that $sr = r^3s$, so $s$ does not commute with $r$ (similarly with $sr, sr^2, sr^3)$. Then $C_G(A) = A$ (this is strictly a coincidence). 
+\textcolor{blue}{Example 2.2.1:} Let $G = D_{2 \cdot 4} = \{e,r,r^2, r^3, s,sr,sr^2, sr^3\}$, and let $A = \{e,r,r^2,r^3\} \leq D_{2 \cdot 4}$. 
+Consider that $sr = r^3s$, so $s$ does not commute with $r$ (similarly with $sr, sr^2, sr^3)$. Then $C_G(A) = A$ (this is strictly a 
+coincidence). 
 
 Now, since $C_G(A) \leq N_G(A)$, we know $\{e,r,r^2, r^3\} \subseteq N_G(A)$. Consider $sAs^{-1}$. We have
 \begin{align*}
@@ -688,11 +783,14 @@ Then $s \in N_G(A)$.
 
 \subsection{Cyclic Groups and Cyclic Subgroups}
 \textcolor{red}{Theorem 2.3.1:} If $H$ is a cyclic group with $K \leq H$, then $K$ is cyclic.\\
-\textbf{Proof:} Let $<x>$ be a generator of $H$, so $<x> = H$. Let $K \leq H$ and assume $K \neq \{e_H\}$. Let $x^d \in K$ where $d$ is the smallest positive integer with the following claim:
+\textbf{Proof:} Let $<x>$ be a generator of $H$, so $<x> = H$. Let $K \leq H$ and assume $K \neq \{e_H\}$. Let $x^d \in K$ where $d$ is 
+the smallest positive integer with the following claim:
 
 Claim: $<x^d> = K$.
 
-First, since $x^d \in K$ and $K$ is a subgroup, $<x^d> \subseteq K$. Let $y \in K$. Since $y \in H$, we can write $y=x^m$ for some $m \in \mathbb{Z}$. By the division algorithm, we can write $m = dq+r$ with $dq \in \mathbb{Z}$ and $r \in \{0,1,2, \dots, d-1\}$. Then we have
+First, since $x^d \in K$ and $K$ is a subgroup, $<x^d> \subseteq K$. Let $y \in K$. Since $y \in H$, we can write $y=x^m$ for some 
+$m \in \mathbb{Z}$. By the division algorithm, we can write $m = dq+r$ with $dq \in \mathbb{Z}$ and $r \in \{0,1,2, \dots, d-1\}$. Then 
+we have
 \begin{align*}
     x^m = x^{dq+r} &\Longrightarrow x^mx^{-dq}=x^r \\
     &\Longrightarrow x^r \in K.
@@ -729,11 +827,13 @@ But, by the way that $d$ was chosen, we must have $r=0$, so $m=dq$. Thus, we hav
     \item if $|H| = \infty$, then $|x| = \infty$ and $H = \{ \dots, x^{-1}, x^{-1}, e,x,x^2, \dots \}$.
 \end{enumerate}
 
-\textcolor{red}{Theorem 2.3.3:} If $H_1$ and $H_2$ are cyclic groups such that $|H_1|=|H_2|$, then $H_1 \cong H_2$. In particular, if $|H|=n$, then $H \cong \mathbb{Z}_n$ and if $|H| = \infty$, then $H \cong \mathbb{Z}$. We intend to prove the second part of the theorem above. 
+\textcolor{red}{Theorem 2.3.3:} If $H_1$ and $H_2$ are cyclic groups such that $|H_1|=|H_2|$, then $H_1 \cong H_2$. In particular, if 
+$|H|=n$, then $H \cong \mathbb{Z}_n$ and if $|H| = \infty$, then $H \cong \mathbb{Z}$. We intend to prove the second part of the theorem 
+above. 
 
-\textbf{Proof:} Assume $|H| = \infty$, and let $<x> = H$. Define $\phi:H \longrightarrow \mathbb{Z}$ by $\phi(x^i)=i$ with $i \in \mathbb{Z}$. By proposition 
-$2.3.1$, since $|H| = \infty$, we have $H = \{\dots, x^{-2}, x^{-1}, e,x,x^2, \dots \}$, with each $x^i$ distinct. Next, we must show 
-that $\phi$ is bijective. 
+\textbf{Proof:} Assume $|H| = \infty$, and let $<x> = H$. Define $\phi:H \longrightarrow \mathbb{Z}$ by $\phi(x^i)=i$ with $i \in \mathbb{Z}$. 
+By proposition $2.3.1$, since $|H| = \infty$, we have $H = \{\dots, x^{-2}, x^{-1}, e,x,x^2, \dots \}$, with each $x^i$ distinct. Next, we 
+must show that $\phi$ is bijective. 
 
 Assume $\phi(x^i)=\phi(x^j)$. Then we have 
 \begin{align*}
@@ -750,8 +850,8 @@ $\phi(x^i)=i$, so $\phi$ is onto. Next, we aim to show that $\phi$ is operation 
 
 Then $H \cong \mathbb{Z}$. Now, we consider the second case.
 
-Assume $|H| = n < \infty$. Define $\phi:H \longrightarrow \mathbb{Z}_n$ by $\phi(x^i)=i$ for $i \in \{0,1,2, \dots, n-1\}$. By proposition $2.3.1$, 
-$H = \{e,x,x^2, \dots, x^{n-1}\}$ with each $x^i$ distinct. Next, we must show 
+Assume $|H| = n < \infty$. Define $\phi:H \longrightarrow \mathbb{Z}_n$ by $\phi(x^i)=i$ for $i \in \{0,1,2, \dots, n-1\}$. By proposition 
+$2.3.1$, $H = \{e,x,x^2, \dots, x^{n-1}\}$ with each $x^i$ distinct. Next, we must show 
 that $\phi$ is bijective. 
 
 Assume $\phi(x^i)=\phi(x^j)$. Then we have 
@@ -760,7 +860,8 @@ Assume $\phi(x^i)=\phi(x^j)$. Then we have
     &\Longrightarrow x^i=x^j,
 \end{align*} 
 so we must have that $\phi$ is one-to-one. Next, let $i \in \mathbb{Z}$. Then by definition of $\phi$, $\exists x^i \in <x>$ such that 
-$\phi(x^i)=i$, so $\phi$ is onto. Next, we aim to show that $\phi$ is operation preserving. Consider $i,j \in \{0,1,2, \dots, n-1\}$. Then we have
+$\phi(x^i)=i$, so $\phi$ is onto. Next, we aim to show that $\phi$ is operation preserving. Consider $i,j \in \{0,1,2, \dots, n-1\}$. Then 
+we have
 \begin{align*}
     \phi(x^ix^j) &= \phi(x^{i+j}) \\
     &= i+j \text{ if } i+j \in \{0,1,2, \dots, n-1\}.
@@ -798,7 +899,8 @@ So $|x^m| \leq \dfrac{n}{\gcd{(n,m)}}$. Now, suppose $t \in \mathbb{N}$ such tha
     &\Longrightarrow n \big| mt \text{ since } |x|=n \\
     &\Longrightarrow \dfrac{n}{\gcd{(n,m)}} \bigg| \dfrac{m}{\gcd{(n,m)}} \cdot t.
 \end{align*}
-Then note that $\dfrac{n}{\gcd{(n,m)}}$ is relatively prime to $\dfrac{m}{\gcd{(n,m)}}$. Then we have that $\dfrac{n}{\gcd{(n,m)}} \bigg| t$, which implies that $\dfrac{n}{\gcd{(n,m)}} \leq t$. Thusly, we conclude that $|x^m| = \dfrac{n}{\gcd{(n,m)}}$. $\square$.
+Then note that $\dfrac{n}{\gcd{(n,m)}}$ is relatively prime to $\dfrac{m}{\gcd{(n,m)}}$. Then we have that $\dfrac{n}{\gcd{(n,m)}} \bigg| t$, 
+which implies that $\dfrac{n}{\gcd{(n,m)}} \leq t$. Thusly, we conclude that $|x^m| = \dfrac{n}{\gcd{(n,m)}}$. $\square$.
 
 \textcolor{red}{Proposition 2.3.3:} Let $H = <x>$. Then 
 \begin{enumerate}
@@ -806,20 +908,24 @@ Then note that $\dfrac{n}{\gcd{(n,m)}}$ is relatively prime to $\dfrac{m}{\gcd{(
     \item $|H| = n \Longrightarrow H = <x^m> \Longleftrightarrow \gcd{(n,m)} = 1$.
 \end{enumerate}
 
-\textcolor{purple}{Definition 2.3.1:} Let $n \in \mathbb{N}$, and let $\phi(n)$ be the number of integers in $\{1,2, \dots, n-1\}$ that are relatively prime with $n$. This is called the \textcolor{purple}{Euler Phi Function}.
+\textcolor{purple}{Definition 2.3.1:} Let $n \in \mathbb{N}$, and let $\phi(n)$ be the number of integers in $\{1,2, \dots, n-1\}$ that 
+are relatively prime with $n$. This is called the \textcolor{purple}{Euler Phi Function}.
 
 Note that we can use part $2$ of the proposition above to prove that the number of generators of $\mathbb{Z}_n$ is $\phi(n)$.
 
 \textcolor{red}{Proposition 2.3.4:} Let $H = <x>$. Then
 \begin{enumerate}
-    \item $K \leq H \Longrightarrow K$ is cyclic and a generator of $K$ is $x^d$ where $d$ is the smallest positive integer such that $x^d \in K$.
+    \item $K \leq H \Longrightarrow K$ is cyclic and a generator of $K$ is $x^d$ where $d$ is the smallest positive integer such that 
+    $x^d \in K$.
     \item $|H| = \infty \Longrightarrow$ for any distinct integers $a,b \geq 0$, $<x^a> \neq <x^b>$ and $<x^m>=<x^{-m}>$.
-    \item $|H| = n \Longrightarrow$ for each divisor $a$ of $n$, there is a unique subgroup of $H$ with $a$ elements, and this subgroup is $<x^{\sfrac{n}{a}}>$. Also, $<x^m> = <x^{\gcd{(n,m)}}>$.
+    \item $|H| = n \Longrightarrow$ for each divisor $a$ of $n$, there is a unique subgroup of $H$ with $a$ elements, and this subgroup is 
+    $<x^{\sfrac{n}{a}}>$. Also, $<x^m> = <x^{\gcd{(n,m)}}>$.
 \end{enumerate}
 
 \setcounter{subsection}{4}
 \subsection{Subgroup Lattices}
-This section is a short compilation of examples of subgroup lattices. Lattices are simply graphs associated with groups that can help us to visualize the relationships between groups and their subgroups.
+This section is a short compilation of examples of subgroup lattices. Lattices are simply graphs associated with groups that can help us 
+to visualize the relationships between groups and their subgroups.
 
 \textcolor{blue}{Example 2.5.1:} Consier $\mathbb{Z}_6 = \{0,1,2,3,4,5\}$. Then we have
 \begin{center}
@@ -875,7 +981,8 @@ This section is a short compilation of examples of subgroup lattices. Lattices a
 \section{Chapter 3: Quotient Groups and Homomorphisms}
 \subsection{Definitions and Examples}
 
-\textcolor{purple}{Definition 3.1.1:} Let $\phi:G \longrightarrow$ be a group homomorphism. The \textcolor{purple}{kernel} of this map is $\ker{(\phi)} = \{g \in G: \phi(g) = e_H\}$.
+\textcolor{purple}{Definition 3.1.1:} Let $\phi:G \longrightarrow$ be a group homomorphism. The \textcolor{purple}{kernel} of this map is 
+$\ker{(\phi)} = \{g \in G: \phi(g) = e_H\}$.
 
 \textcolor{red}{Proposition 3.1.1:} Let $\phi:G \longrightarrow H$ be a group homomorphism. Then
 \begin{enumerate}
@@ -895,11 +1002,17 @@ Let us sketch a proof for the first statement in the proposition above.
 \end{align*}
 Since $\phi(e_G) \in H$ and $\phi(e_G) = \phi(e_G) \cdot \phi(e_G)$, we must have that $\phi(E_G) = e_H$. $\square$
 
-\textcolor{purple}{Definition 3.1.2:} For $N \leq G$ and $g \in G$, $gN = \{gn: n \in N\}$ is a \textcolor{purple}{left coset} of $N$ in $G$ and $Ng = \{ng: n \in N\}$ is a \textcolor{purple}{right coset} of $N$ in $G$. An element $x \in gN$ or $x \in Ng$ is called a \textcolor{purple}{coset representative}.
+\textcolor{purple}{Definition 3.1.2:} For $N \leq G$ and $g \in G$, $gN = \{gn: n \in N\}$ is a \textcolor{purple}{left coset} of $N$ in 
+$G$ and $Ng = \{ng: n \in N\}$ is a \textcolor{purple}{right coset} of $N$ in $G$. An element $x \in gN$ or $x \in Ng$ is called a 
+\textcolor{purple}{coset representative}.
 
-Now, let $G$ be a group with $N \leq G$. Given any two left cosets of $N$ in $G$, say $g_1N$ and $g_2N$, we can combine the cosets by defining $g_1N \cdot g_2N = (g_1g_2)N$, where $\cdot$ is the rule that we are defining and $(g_1g_2)$ is the product of $g_1$ and $g_2$ in $G$. In general, this rule is \textit{not} an operation.
+Now, let $G$ be a group with $N \leq G$. Given any two left cosets of $N$ in $G$, say $g_1N$ and $g_2N$, we can combine the cosets by 
+defining $g_1N \cdot g_2N = (g_1g_2)N$, where $\cdot$ is the rule that we are defining and $(g_1g_2)$ is the product of $g_1$ and $g_2$ 
+in $G$. In general, this rule is \textit{not} an operation.
 
-\textcolor{purple}{Definition 3.1.3:} $N \leq G$ is a normal subgroup if $gN = Ng$ $\forall g \in G$. Equivalently, $gNg^{-1} = N$ $\forall g \in G$. Notationally, we say $N$ is a normal subgroup of $G$ by saying $N \vartriangleleft G$. In terms of $N_G(N)$ (the normalizer of $N$ in $G$), $N$ is normal in $G$ if and only if $N_G(N) = G$.
+\textcolor{purple}{Definition 3.1.3:} $N \leq G$ is a normal subgroup if $gN = Ng$ $\forall g \in G$. Equivalently, $gNg^{-1} = N$ $\forall g \in G$. 
+Notationally, we say $N$ is a normal subgroup of $G$ by saying $N \vartriangleleft G$. In terms of $N_G(N)$ (the normalizer of $N$ in $G$), $N$ 
+is normal in $G$ if and only if $N_G(N) = G$.
 
 \textcolor{red}{Theorem 3.1.1:} Let $G$ be a group with $N \leq G$. Then the following are equivalent:
 \begin{enumerate}
@@ -911,9 +1024,12 @@ Now, let $G$ be a group with $N \leq G$. Given any two left cosets of $N$ in $G$
 \end{enumerate}
 
 We will utilize a chain of proofs for the theorem above. First, we prove that the first item implies the second.
-\textbf{Proof ($1 \Longrightarrow 2$):} Let $G$ be a group with $N \leq G$. Assume $N \trianglelefteq G$. Then, by definition, $gNg^{-1} = N \ \forall g \in G$. Therefore, $g \in G \Longrightarrow g \in N_G(N)$, so $N_G(N) = G$. $\square$
+\textbf{Proof ($1 \Longrightarrow 2$):} Let $G$ be a group with $N \leq G$. Assume $N \trianglelefteq G$. Then, by definition, 
+$gNg^{-1} = N \ \forall g \in G$. Therefore, $g \in G \Longrightarrow g \in N_G(N)$, so $N_G(N) = G$. $\square$
 
-\textbf{Proof ($2 \Longrightarrow 3$):} Assume $N_G(N) = G$. First, we claim that $gN \subseteq Ng$. Let $gn \in gN$. Since $g \in N_G(N), \ gng^{-1} \in N$. Then $gng^{-1} = n_2 \in N$. We have $gng^{-1} = n_2 \Longrightarrow gn = n2g \in Ng$, then $gN \subseteq Ng$.\\
+\textbf{Proof ($2 \Longrightarrow 3$):} Assume $N_G(N) = G$. First, we claim that $gN \subseteq Ng$. Let $gn \in gN$. Since 
+$g \in N_G(N), \ gng^{-1} \in N$. Then $gng^{-1} = n_2 \in N$. We have $gng^{-1} = n_2 \Longrightarrow gn = n2g \in Ng$, then 
+$gN \subseteq Ng$.\\
 Next, we claim that $Ng \subseteq gN$. In doing so, we claim $g^{-1} \in N_G(N)$. We have
 \begin{align*}
     g^{-1} \in N_G(N) &\Longrightarrow g^{-1} \in G: g^{-1}N(g^{-1})^{-1} = N \\
@@ -925,7 +1041,8 @@ Next, we claim that $Ng \subseteq gN$. In doing so, we claim $g^{-1} \in N_G(N)$
 \end{align*}
 Now, note that $n_1g \in Ng$ and $gn_2 \in gN$, so $n_1g = gn_2 \Longrightarrow n_1g \in gN \Longrightarrow Ng \subseteq gN$. $\square$
 
-\textbf{Proof ($3 \Longrightarrow 4$):} Assume $gN = Ng \ \forall g \in G$. Suppose $g_1N = g_2N$ and $h_1N = h_2N$. We need to show $(g_1h_1)N = N(g_2h_2)$. Note that 
+\textbf{Proof ($3 \Longrightarrow 4$):} Assume $gN = Ng \ \forall g \in G$. Suppose $g_1N = g_2N$ and $h_1N = h_2N$. We need to show 
+$(g_1h_1)N = N(g_2h_2)$. Note that 
 \begin{align*}
     g_1N = g_2N &\Longrightarrow \exists n_1 \in N : g_2^{-1}g_1=n_1 \text{ and }\\
     h_1N = h_2N &\Longrightarrow \exists n_2 \in N : h_2^{-1}h_1=n_2.
@@ -940,7 +1057,8 @@ Solving for $g_1$ and $h_1$ gives us $g_1 = g_2n_1$ and $h_1=h_2n_2$. Then we ha
     &=(g_2h_2)N 
 \end{align*}
 
-\textbf{Proof ($4 \Longrightarrow 5$):} Assume $g_1N \star g_2N = (g_1g_2)N$, with $\star$ on left cosets being well-defined. We want to show $gNg^{-1} \subseteq N \ \forall g \in G$. We have
+\textbf{Proof ($4 \Longrightarrow 5$):} Assume $g_1N \star g_2N = (g_1g_2)N$, with $\star$ on left cosets being well-defined. We want to 
+show $gNg^{-1} \subseteq N \ \forall g \in G$. We have
 \begin{align*}
     gng^{-1}N &= (gnN)(g^{-1}N) \\
     &= (gN)(g^{-1}N) \\
@@ -950,7 +1068,8 @@ Solving for $g_1$ and $h_1$ gives us $g_1 = g_2n_1$ and $h_1=h_2n_2$. Then we ha
 \end{align*}
 so we must have that $gng^{-1} \in N \ \forall g \in G \ \forall n \in N$, and thusly $gNg^{-1} \subseteq N \ \forall g \in G$. $\square$
 
-\textbf{Proof ($5 \Longrightarrow 1$):} Assume $gNg^{-1} \subseteq N \ \forall g \in G$. Then we need to show $N \subseteq gNg^{-1} \ \forall g \in G$. Let $n \in N$. We need to show $n \in gNg^{-1}$. We have 
+\textbf{Proof ($5 \Longrightarrow 1$):} Assume $gNg^{-1} \subseteq N \ \forall g \in G$. Then we need to show 
+$N \subseteq gNg^{-1} \ \forall g \in G$. Let $n \in N$. We need to show $n \in gNg^{-1}$. We have 
 \begin{align*}
     n &= (gg^{-1})n(gg^{-1}) \\
     &= g(g^{-1}ng)g^{-1} \\
@@ -961,11 +1080,15 @@ so $n \in gNg^{-1} \ \forall g \in G$. Thusly, $N \subseteq gNg^{-1}$ and theref
 
 As a consequence, we can now define \textcolor{purple}{quotient groups}. 
 
-\textcolor{purple}{Definition 3.1.4:} We say that if $N \trianglelefteq G$, then we have a well-defined operation $\sfrac{G}{N}$ (the set of all left cosets of $N$ in $G$). In fact, $\sfrac{G}{N}$ forms a group under this operation. This group is called a \textcolor{purple}{quotient group} or \textcolor{purple}{factor group}.
+\textcolor{purple}{Definition 3.1.4:} We say that if $N \trianglelefteq G$, then we have a well-defined operation $\sfrac{G}{N}$ (the set 
+of all left cosets of $N$ in $G$). In fact, $\sfrac{G}{N}$ forms a group under this operation. This group is called a 
+\textcolor{purple}{quotient group} or \textcolor{purple}{factor group}.
 
-\textcolor{red}{Proposition 3.1.2:} Let $N \leq G$. Then $N \trianglelefteq G$ if and only if $N = \ker{(\phi)}$ with $\phi$ a homomorphism.
+\textcolor{red}{Proposition 3.1.2:} Let $N \leq G$. Then $N \trianglelefteq G$ if and only if $N = \ker{(\phi)}$ with $\phi$ a 
+homomorphism.
 
-\textbf{Proof:} Assume $N \trianglelefteq G$. Then define the map $\pi: G \longrightarrow \sfrac{G}{N}$ by $\pi(g)=gN$. Then, for any $g_1,g_2 \in G$, we have
+\textbf{Proof:} Assume $N \trianglelefteq G$. Then define the map $\pi: G \longrightarrow \sfrac{G}{N}$ by $\pi(g)=gN$. Then, for any 
+$g_1,g_2 \in G$, we have
 \begin{align*}
     \pi(g_1g_2) &= g_1g_2N \\
     &= (g_1N)(g_2N) \\
@@ -979,24 +1102,32 @@ Now
 \end{align*}
 thus $\ker{(\pi)}=N$. 
 
-Now, for the other direction, assume $N$ is the kernel of some group homomorphism $g:G\longrightarrow K$. We know $N \leq G$. Let $g \in G, \ n \in N$. We need to find $gng^{-1}\in N$. We have
+Now, for the other direction, assume $N$ is the kernel of some group homomorphism $g:G\longrightarrow K$. We know $N \leq G$. Let 
+$g \in G, \ n \in N$. We need to find $gng^{-1}\in N$. We have
 \begin{align*}
     f(gng^{-1})&=g(g)f(n)f(g)^{-1} \\
     &= f(g)e_Kf(g)^{-1} \\
     &= e_K.
 \end{align*}
-This shows $gng^{-1} \in \ker{(f)}=N$ $\forall g \in G$ $\forall n \in N$. Then $gNg^{-1} \subseteq N \ \forall g \in G$. Thusly, $N \trianglelefteq G. \ \square$
+This shows $gng^{-1} \in \ker{(f)}=N$ $\forall g \in G$ $\forall n \in N$. Then $gNg^{-1} \subseteq N \ \forall g \in G$. Thusly, 
+$N \trianglelefteq G. \ \square$
 
 Next, we consider a vital theorem, \textcolor{red}{the First Isomorphism Theorem}.
 
 \textcolor{red}{Theorem 3.1.2: The First Isomorphism Theorem}\\
-If $\phi: G \longrightarrow H$ is a group homomorphism, then $\ker{(\phi)} \trianglelefteq G$ and $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$, where $\phi(G) = Im{(G)}$.
+If $\phi: G \longrightarrow H$ is a group homomorphism, then $\ker{(\phi)} \trianglelefteq G$ and $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$, 
+where $\phi(G) = Im{(G)}$.
 
-\textbf{Proof:} We have shown (above) that $\ker{(\phi)} \trianglelefteq G$. Then we need to show $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$. Define
+\textbf{Proof:} We have shown (above) that $\ker{(\phi)} \trianglelefteq G$. Then we need to show $\sfrac{G}{\ker{(\phi)}} \cong \phi(G)$. 
+Define
 \begin{center}
     $\psi:\sfrac{G}{\ker{(\phi)}} \longrightarrow Im(G)$
 \end{center}
-by the rule $\psi(g\ker{(\phi)}) = \phi(g)$. Let $\ker{(\phi)}=K$. We then need to show that $\psi$ is an isomorphism. First, we need to see if $\psi$ is well-defined. Suppose $g_1K = g_2K$. Then we have $g_2^{-1}g_1 \in K$. Since $K = \ker{(\phi)}$, we have $\phi(g_2^{-1}g_1) = e_H$. This can be rewritten as $\phi(g_1)=\phi(g_2)$. Then $\psi$ is well-defined (and one-to-one, which can be easily shown by reversing the well-defined argument above). Next, let $h \in Im(\phi)$, so $h = \phi(g)$ for some $g \in G$. Then $\psi(gK)=\phi(g)=h$. To check for operation preservation, consider
+by the rule $\psi(g\ker{(\phi)}) = \phi(g)$. Let $\ker{(\phi)}=K$. We then need to show that $\psi$ is an isomorphism. First, we need to 
+see if $\psi$ is well-defined. Suppose $g_1K = g_2K$. Then we have $g_2^{-1}g_1 \in K$. Since $K = \ker{(\phi)}$, we have 
+$\phi(g_2^{-1}g_1) = e_H$. This can be rewritten as $\phi(g_1)=\phi(g_2)$. Then $\psi$ is well-defined (and one-to-one, which can be easily 
+shown by reversing the well-defined argument above). Next, let $h \in Im(\phi)$, so $h = \phi(g)$ for some $g \in G$. Then $\psi(gK)=\phi(g)=h$. 
+To check for operation preservation, consider
 \begin{align*}
     \psi(g_1Kg_2K) &= \psi(g_1g_2K) \\
     &= \phi(g_1g_2) \\
@@ -1004,24 +1135,33 @@ by the rule $\psi(g\ker{(\phi)}) = \phi(g)$. Let $\ker{(\phi)}=K$. We then need 
     &= \psi(g_1K)\psi(g_2K). \ \square
 \end{align*}
 
-\textcolor{red}{Theorem 3.1.3:} Let $G$ be a finite group with $H \leq G$. If the number of left cosets of $H$ in $G$ is $p$ with $p \big| |G|$ and $p$ prime, then $H \trianglelefteq G$.\\
-\textbf{Proof:} Let $G$ act on the set of elft cosets of $H$ in $G$ by the rule $g \cdot aH = gaH$. This gives a homomorphism from $G$ to $S_p$. By the first isomorphism theorem, we can say
+\textcolor{red}{Theorem 3.1.3:} Let $G$ be a finite group with $H \leq G$. If the number of left cosets of $H$ in $G$ is $p$ with 
+$p \big| |G|$ and $p$ prime, then $H \trianglelefteq G$.\\
+\textbf{Proof:} Let $G$ act on the set of elft cosets of $H$ in $G$ by the rule $g \cdot aH = gaH$. This gives a homomorphism from $G$ to 
+$S_p$. By the first isomorphism theorem, we can say
 \[
     \sfrac{G}{\ker{(\phi)}} \cong Im(\phi).
 \]
-Now $Im(\phi) \leq S_p$. By La Grange, $|Im(\phi)| \big| p!$ (as $|S_p|=p!$). Since $\big| \sfrac{G}{\ker{(\phi)}} \big| = |Im(\phi)|$, we have that
+Now $Im(\phi) \leq S_p$. By La Grange, $|Im(\phi)| \big| p!$ (as $|S_p|=p!$). Since $\big| \sfrac{G}{\ker{(\phi)}} \big| = |Im(\phi)|$, we 
+have that
 \begin{align*}
     \sfrac{|G|}{|\ker{(\phi)}|}p! &\Longrightarrow \sfrac{|G|}{|\ker{(\phi)}|} \big| p \\
     &\Longrightarrow \sfrac{|G|}{|\ker{(\phi)}|} = 1 \text{ or } \sfrac{|G|}{|\ker{(\phi)}|} = p.
 \end{align*}
 
-If $\sfrac{|G|}{|\ker{(\phi)}|} = 1$, then $G = \ker{(\phi)}$, which would give that $\phi(g) = id_{S_p}$ $\forall g \in G$. But then for any $g \notin H$, $gH \neq H$ so that $\sigma_g \neq id_{S_p}$. Then, because of the contradiction, we must have that $\sfrac{|G|}{|\ker{(\phi)}|} = p$.
+If $\sfrac{|G|}{|\ker{(\phi)}|} = 1$, then $G = \ker{(\phi)}$, which would give that $\phi(g) = id_{S_p}$ $\forall g \in G$. But then for 
+any $g \notin H$, $gH \neq H$ so that $\sigma_g \neq id_{S_p}$. Then, because of the contradiction, we must have that 
+$\sfrac{|G|}{|\ker{(\phi)}|} = p$.
 
-Notice that $g \in \ker{(\phi)}$, so $\phi(g)=\sigma_g$ is the identity permutation in $S_p$. In particular, $gH=H$, which holds if and only if $g \in H$. Then we must have that $\ker(\phi) \cong H$.
+Notice that $g \in \ker{(\phi)}$, so $\phi(g)=\sigma_g$ is the identity permutation in $S_p$. In particular, $gH=H$, which holds if and 
+only if $g \in H$. Then we must have that $\ker(\phi) \cong H$.
 
-Then $\sfrac{|G|}{|H|} \leq \sfrac{|G|}{|\ker{(\phi)}|} = p$. Since there are $p$ left cosets of $H$ in $G$, we also have that $p = \sfrac{|G|}{|H|}$. Then $|H| = |\ker{(\phi)}|$ and since $\ker{(\phi)} \subseteq H$, we have that $\ker{(\phi)}=H$. Since $\ker{(\phi)} \trianglelefteq G$, we have that $H \trianglelefteq G$. $\square$
+Then $\sfrac{|G|}{|H|} \leq \sfrac{|G|}{|\ker{(\phi)}|} = p$. Since there are $p$ left cosets of $H$ in $G$, we also have that 
+$p = \sfrac{|G|}{|H|}$. Then $|H| = |\ker{(\phi)}|$ and since $\ker{(\phi)} \subseteq H$, we have that $\ker{(\phi)}=H$. Since 
+$\ker{(\phi)} \trianglelefteq G$, we have that $H \trianglelefteq G$. $\square$
 
-One consequence of this result is if $G$ is finite, $H$ is a subgroup of $G$, and there are only two left cosets of $H$ in $G$, then $H \trianglelefteq G$.
+One consequence of this result is if $G$ is finite, $H$ is a subgroup of $G$, and there are only two left cosets of $H$ in $G$, then 
+$H \trianglelefteq G$.
 
 
 \subsection{More on Cosets and La Grange's Theorem}
@@ -1029,7 +1169,8 @@ One consequence of this result is if $G$ is finite, $H$ is a subgroup of $G$, an
 \textcolor{red}{Theorem 3.2.1: La Grange's Theorem}\\
 If $G$ is finite with $H \leq G$, then $|H| \big| |G|$, and there are $\sfrac{|G|}{|H|}$ left cosets of $H$ in $G$.
 
-\textcolor{purple}{Definition 3.2.1:} For $H \leq G$, the \textcolor{purple}{index of $H$ in $G$}, denoted $[G:H]$, is the number of left cosets of $H$ in $G$. If $G$ is finite, then $[G:H] = \sfrac{|G|}{|H|}$.
+\textcolor{purple}{Definition 3.2.1:} For $H \leq G$, the \textcolor{purple}{index of $H$ in $G$}, denoted $[G:H]$, is the number of left 
+cosets of $H$ in $G$. If $G$ is finite, then $[G:H] = \sfrac{|G|}{|H|}$.
 
 \textcolor{red}{Corollary 3.2.1:} If $G$ is finite and $x \in G$, then $|x| \big| |G|$.\\
 \textbf{Proof:} Observe $|<x>| = |x|$. Then, by La Grange, $|<x>| \big| |G|$. $\square$
@@ -1040,27 +1181,34 @@ If $G$ is finite with $H \leq G$, then $|H| \big| |G|$, and there are $\sfrac{|G
 \textcolor{purple}{Definition 3.2.2:} Let $G$ be a group with $H,K \leq G$. Define $HK = \{hk: h \in H, k \in K\}$.
 
 \textcolor{red}{Proposition 3.2.1:} If $H,K \leq G$ with $H$ and $K$ both finite, then $|HK = \dfrac{|H| \cdot |K|}{|H \cap K|}$.\\
-\textbf{Proof:} We can write $HK = \bigcup_{h \in H}{hK}$. Note that two cosets of the form $h_1K$ and $h_2K$ are equal if and only if $h_2^{-1}h_1 \in K$. Now, since $H \leq G$, $h_2^{-1}h_1 \in H$. Then
+\textbf{Proof:} We can write $HK = \bigcup_{h \in H}{hK}$. Note that two cosets of the form $h_1K$ and $h_2K$ are equal if and only if 
+$h_2^{-1}h_1 \in K$. Now, since $H \leq G$, $h_2^{-1}h_1 \in H$. Then
 \begin{align*}
     h_1K = h_2K &\Longleftrightarrow h_2^{-1}h_1 \in H \cap K \\
     &\Longleftrightarrow h_1(H \cap K) = h_2(H \cap K).
 \end{align*}
-This means that, in the union $HK = \bigcup_{h \in H}{hK}$, there are $|H \cap K|$ cosets $hK$ that are all the same coset. Then $\bigg| \bigcup_{h \in H}{hK} \bigg| = \dfrac{|H|}{|H \cap K|}|K|. \ \square$
+This means that, in the union $HK = \bigcup_{h \in H}{hK}$, there are $|H \cap K|$ cosets $hK$ that are all the same coset. Then 
+$\bigg| \bigcup_{h \in H}{hK} \bigg| = \dfrac{|H|}{|H \cap K|}|K|. \ \square$
 
 
 \setcounter{subsection}{3}
 \subsection{Composition Series and the H\"{o}lder Program}
 
-\textcolor{red}{Proposition 3.4.1} If $G$ is a finite abelian group and $p$ is a prime such that $p \big| |G|$, then $x \in G$ such that $ord(x) = p$.\\
-\textbf{Proof:} We will prove by induction. First, assume $p$ is a prime such that $p \big| |G|$. Then let the base case assume that $|G| = p$. In this case, if $x \in G$ with $x \neq e$. Then $|x| \neq 1$ and $|x| \big| p$ by La Grange. Since $p$ is prime, $|x|=p$.
+\textcolor{red}{Proposition 3.4.1} If $G$ is a finite abelian group and $p$ is a prime such that $p \big| |G|$, then $x \in G$ such that 
+$ord(x) = p$.\\
+\textbf{Proof:} We will prove by induction. First, assume $p$ is a prime such that $p \big| |G|$. Then let the base case assume that 
+$|G| = p$. In this case, if $x \in G$ with $x \neq e$. Then $|x| \neq 1$ and $|x| \big| p$ by La Grange. Since $p$ is prime, $|x|=p$.
 
-Next, for the inductive step, assume the base case result holds now for all abelian groups with less than $|G|$ elements. That is, assume that if $H$ is an abelian group and $p \big| |H|$ with $|H| < |G|$, then $h \in H$ with $|h| = p$. Let $x \in G$ with $x \neq e$. If $p \big| |x|$, say $|x| = pk$ with $k \in \mathbb{Z}$, then
+Next, for the inductive step, assume the base case result holds now for all abelian groups with less than $|G|$ elements. That is, assume 
+that if $H$ is an abelian group and $p \big| |H|$ with $|H| < |G|$, then $h \in H$ with $|h| = p$. Let $x \in G$ with $x \neq e$. If $p \big| |x|$, say $|x| = pk$ with $k \in \mathbb{Z}$, then
 \[
     |x^k| = \dfrac{pk}{k} = p \Longrightarrow |x^k| = p
 \]
-and we found an element of order $p$. Next, assume $p \nmid |x|$. Consider $N = <x>$ is a subgroup. Since $G$ is abelian, we know $N \trianglelefteq G$ and $p \nmid |N|$. Lets look at the abelian group $\sfrac{G}{N}$. Notice $|\sfrac{G}{N}| = \sfrac{|G|}{|N|} < |G|$ since $x \neq e$. Also, $p \big| \sfrac{|G|}{|N|}$ since $p | |G|$ but $p \nmid |N|$. By the inductive hypothesis, $\sfrac{G}{N}$ has an element of order $p$, say $yN$ in $\sfrac{G}{N}$. However, the map $\pi : G \longrightarrow \sfrac{G}{N}$ defined by $\pi(g) = gN$ is a group homomorphism. Thus $|yN|_{\sfrac{G}{N}} \bigg| |y|_G \Longrightarrow p \big| |y|_G$, and now we can apply the first part of the argument if $|y|_G = pl$, then $|y^l|_G = p$. $\square$
+and we found an element of order $p$. Next, assume $p \nmid |x|$. Consider $N = <x>$ is a subgroup. Since $G$ is abelian, we know 
+$N \trianglelefteq G$ and $p \nmid |N|$. Lets look at the abelian group $\sfrac{G}{N}$. Notice $|\sfrac{G}{N}| = \sfrac{|G|}{|N|} < |G|$ since $x \neq e$. Also, $p \big| \sfrac{|G|}{|N|}$ since $p | |G|$ but $p \nmid |N|$. By the inductive hypothesis, $\sfrac{G}{N}$ has an element of order $p$, say $yN$ in $\sfrac{G}{N}$. However, the map $\pi : G \longrightarrow \sfrac{G}{N}$ defined by $\pi(g) = gN$ is a group homomorphism. Thus $|yN|_{\sfrac{G}{N}} \bigg| |y|_G \Longrightarrow p \big| |y|_G$, and now we can apply the first part of the argument if $|y|_G = pl$, then $|y^l|_G = p$. $\square$
 
-\textcolor{purple}{Definition 3.4.1:} Let $G$ be a group. Then $G$ is called \textcolor{purple}{simple} if its only normal subgroups are $\{e\}$ and $G$.
+\textcolor{purple}{Definition 3.4.1:} Let $G$ be a group. Then $G$ is called \textcolor{purple}{simple} if its only normal subgroups are 
+$\{e\}$ and $G$.
 
 
 \subsection{Transpositions and the Alternating Groups}
@@ -1079,7 +1227,8 @@ Consider now a cycle $(a_1 \ a_2 \ \dots \ a_m)$ of length $m$. Any cycle can be
 \end{array}
 \]
 
-Since every permutation in $S_n$ can be written as a product of disjoint cycles, and each cycle can be written as a product of transpositions, every $\sigma \in S_n$ is a product of transpositions. Note that they need not be disjoint.
+Since every permutation in $S_n$ can be written as a product of disjoint cycles, and each cycle can be written as a product of 
+transpositions, every $\sigma \in S_n$ is a product of transpositions. Note that they need not be disjoint.
 
 \textcolor{blue}{Example 3.5.1:} Consider 
 \begin{align*}
@@ -1087,9 +1236,11 @@ Since every permutation in $S_n$ can be written as a product of disjoint cycles,
     &= ( 1 \ 9)(1 \ 7)(1 \ 3)
 \end{align*}
 
-\textcolor{purple}{Definition 3.5.2:} We call a permutation \textcolor{purple}{even} if it can be written as a product of an even number of transpositions. Else, it is odd.
+\textcolor{purple}{Definition 3.5.2:} We call a permutation \textcolor{purple}{even} if it can be written as a product of an even number 
+of transpositions. Else, it is odd.
 
-\textcolor{blue}{Example 3.5.2:} Note that determinants of matrices relate to even and odd permutations. Consider the matrix and its determinant below:
+\textcolor{blue}{Example 3.5.2:} Note that determinants of matrices relate to even and odd permutations. Consider the matrix and its 
+determinant below:
 
 \[
 \begin{vmatrix}
@@ -1101,9 +1252,11 @@ Since every permutation in $S_n$ can be written as a product of disjoint cycles,
 
 We will have more of this in Galois Theory.
 
-\textcolor{red}{Theorem 3.5.1:} In $S_n$, any time the identity permutation is written as a product of transpositions, the number of transpositions must be even.
+\textcolor{red}{Theorem 3.5.1:} In $S_n$, any time the identity permutation is written as a product of transpositions, the number of 
+transpositions must be even.
 
-\textcolor{red}{Theorem 3.5.2:} If $\sigma \in S_n$ and $\sigma = \alpha_1 \alpha_2 \cdots \alpha_r = \beta_1 \beta_2 \cdots \beta_t$, where each $\alpha_i,\beta_j$ is a transposition, then $r$ and $t$ are either both even or both odd.
+\textcolor{red}{Theorem 3.5.2:} If $\sigma \in S_n$ and $\sigma = \alpha_1 \alpha_2 \cdots \alpha_r = \beta_1 \beta_2 \cdots \beta_t$, 
+where each $\alpha_i,\beta_j$ is a transposition, then $r$ and $t$ are either both even or both odd.
 
 Consider the sketch of this proof below:
 \begin{align*}
@@ -1114,14 +1267,16 @@ Consider the sketch of this proof below:
 \end{align*}
 Note that the final line above expresses the identity permutation $id$ as a total of $r+t$ transpositions, so $r+t$ must be even. $\square$
 
-\textcolor{purple}{Definition 3.5.3:} The \textcolor{purple}{Alternating Group of degree $n$}, denoted $A_n$, is the subgroup of $S_n$ consisting of all even permutations in $S_n$. Note some interesting properties of $A_n$ below:
+\textcolor{purple}{Definition 3.5.3:} The \textcolor{purple}{Alternating Group of degree $n$}, denoted $A_n$, is the subgroup of $S_n$ 
+consisting of all even permutations in $S_n$. Note some interesting properties of $A_n$ below:
 \begin{enumerate}
     \item $A_n \trianglelefteq S_n$
     \item $|A_n|=\sfrac{n!}{2}$
     \item $[S_n:A_n]=2$
 \end{enumerate}
 
-\textcolor{blue}{Example 3.5.3:} Consider the following symmetric groups and their corresponding alternating groups. Note that the symmetric groups shown do not list the members of their corresponding alternating groups.
+\textcolor{blue}{Example 3.5.3:} Consider the following symmetric groups and their corresponding alternating groups. Note that the 
+symmetric groups shown do not list the members of their corresponding alternating groups.
 \begin{multicols}{2}
     \[
         \begin{array}{|c|c|}
@@ -1149,20 +1304,29 @@ Note that the final line above expresses the identity permutation $id$ as a tota
 \end{multicols}
 
 \textcolor{red}{Theorem 3.5.3: Cauchy's Theorem}\\
-If $G$ is a finite group and $p$ is a prime dividing $|G|$, then $G$ has an element of order $p$. Equivalently, $G$ has a subgroup with $p$ elements. Note that we proved this already with abelian groups (see \textcolor{red}{proposition 3.4.1}).
-\textbf{Proof:} We will use induction on the number of elements in $G$. Let $|G|=n$. Since $p \big| |G|$, we know $p|n$, so $p \leq n$. This means our base case is $n=p$.
+If $G$ is a finite group and $p$ is a prime dividing $|G|$, then $G$ has an element of order $p$. Equivalently, $G$ has a subgroup with 
+$p$ elements. Note that we proved this already with abelian groups (see \textcolor{red}{proposition 3.4.1}).
 
-So $|G|=p$ and any non-identity element in $G$ has order $p$ by La Grange's Theorem. Then our induction hypothesis supposes that $n>p$ and $p|n$. Assume Cauchy's Theorem is true for all groups of order $m$ where $m<n$ and $p|m$.
+\textbf{Proof:} We will use induction on the number of elements in $G$. Let $|G|=n$. Since $p \big| |G|$, we know $p|n$, so $p \leq n$. 
+This means our base case is $n=p$.
 
-If there is a $y \in G$ such that $p \big| |y|$, say $|y|=kp$ for some $k \in \mathbb{N}$. Then we have $|y^k|=p$ and we are done. Assume that no element has order $p$. We will obtain a ctonradiction.
+So $|G|=p$ and any non-identity element in $G$ has order $p$ by La Grange's Theorem. Then our induction hypothesis supposes that $n>p$ and 
+$p|n$. Assume Cauchy's Theorem is true for all groups of order $m$ where $m<n$ and $p|m$.
+
+If there is a $y \in G$ such that $p \big| |y|$, say $|y|=kp$ for some $k \in \mathbb{N}$. Then we have $|y^k|=p$ and we are done. Assume 
+that no element has order $p$. We will obtain a ctonradiction.
 
 Case $1$: $G$ is not abelian. By the class equation, we have 
 \[
     |G| = |Z(G)| + \sum_{i=1}^r[G:C_G(g_i)]
 \]
-where $g_1, g_2, \dots, g_r$ are representatives from the conjugacy classes of size bigger than one. Since $p \big||G|$, if $p \big| |Z(G)|$, then since $Z(G) \lneq G$, we can apply our induction hypothesis to $Z(G)$ to get an element $z \in Z(G)$ of order $p$, which has order $p$ in $G$.
+where $g_1, g_2, \dots, g_r$ are representatives from the conjugacy classes of size bigger than one. Since $p \big||G|$, if 
+$p \big| |Z(G)|$, then since $Z(G) \lneq G$, we can apply our induction hypothesis to $Z(G)$ to get an element $z \in Z(G)$ of order $p$, 
+which has order $p$ in $G$.
 
-Assume $p \nmid |Z(G)|$. Then there must exist $g_1$ such that $p \nmid [G:C_G(g_i)]$. Then $p \nmid \sfrac{|G|}{|C_G(g_i)|}$. But $p \big| |G|$, so $p \big| |C_G(g_i)|$. Now $C_G(g_i) \lneq G$ and $p \big| |C_G(g_i)|$. Then, by our induction hypothesis, $C_G(g_i)$ has an element of order $p$. $\square$
+Assume $p \nmid |Z(G)|$. Then there must exist $g_1$ such that $p \nmid [G:C_G(g_i)]$. Then $p \nmid \sfrac{|G|}{|C_G(g_i)|}$. But 
+$p \big| |G|$, so $p \big| |C_G(g_i)|$. Now $C_G(g_i) \lneq G$ and $p \big| |C_G(g_i)|$. Then, by our induction hypothesis, $C_G(g_i)$ 
+has an element of order $p$. $\square$
 
 
 \newpage
@@ -1172,7 +1336,9 @@ Assume $p \nmid |Z(G)|$. Then there must exist $g_1$ such that $p \nmid [G:C_G(g
 \setcounter{subsection}{3}
 \subsection{Automorphisms}
 
-\textcolor{purple}{Definition 4.4.1:} Let $G$ be a group and $\phi:G \longrightarrow G$ be the automorphism $\phi_g(x)=gxg^{-1}$. Let $Inn(G) = \{ \phi_g:g \in G\}$ be the inner automorphisms of $G$. This forms a subgroup $Aut(G)$, the set of all automorphisms of $G$ under function composition.
+\textcolor{purple}{Definition 4.4.1:} Let $G$ be a group and $\phi:G \longrightarrow G$ be the automorphism $\phi_g(x)=gxg^{-1}$. Let 
+$Inn(G) = \{ \phi_g:g \in G\}$ be the inner automorphisms of $G$. This forms a subgroup $Aut(G)$, the set of all automorphisms of $G$ 
+under function composition.
 
 This idea of using conjugation to generate an automorphism can be generalized into subgroups:
 
@@ -1219,19 +1385,27 @@ which gives us that $\sfrac{G}{Z(G)} \cong Inn(G)$. This is a good result to add
 \subsection{Sylow's Theorems}
 \textcolor{purple}{Definition 4.5.1:} Let $G$ be a group and $p$ be a prime.
 \begin{enumerate}
-    \item A group of order $p^{\alpha}$, $\alpha \in \mathbb{Z}^+$, is called a \textcolor{purple}{$p$-group}. Subgroups of $G$ that are $p$-groups are called \textcolor{purple}{$p$-subgroups}.
-    \item If $|G|=p^{\alpha}m$ with $p \nmid m$, then $H \leq G$ with $|H|=p^{\alpha}$ is called a \textcolor{purple}{$p$-Sylow subgroup of $G$}.
+    \item A group of order $p^{\alpha}$, $\alpha \in \mathbb{Z}^+$, is called a \textcolor{purple}{$p$-group}. Subgroups of $G$ that are 
+    $p$-groups are called \textcolor{purple}{$p$-subgroups}.
+    \item If $|G|=p^{\alpha}m$ with $p \nmid m$, then $H \leq G$ with $|H|=p^{\alpha}$ is called a \textcolor{purple}{$p$-Sylow subgroup 
+    of $G$}.
 \end{enumerate}
-\textcolor{blue}{Example 4.5.1:} Consider $\mathbb{Z}_{36}$. We want to find the $3$-subgroups of $\mathbb{Z}_{36}$. That is, we are looking for subgroups of order $3^1=3, 3^2=9, 3^3 = 27, 3^4=81, \dots$, etc.
+\textcolor{blue}{Example 4.5.1:} Consider $\mathbb{Z}_{36}$. We want to find the $3$-subgroups of $\mathbb{Z}_{36}$. That is, we are 
+looking for subgroups of order $3^1=3, 3^2=9, 3^3 = 27, 3^4=81, \dots$, etc.
 \begin{align*}
     <12> &= \{0,12,24\} \\
     <4> &= \{0,4,8,12,16,20,24,28,32\}.
 \end{align*}
-Note that $<12> \leq \mathbb{Z}_{36}$ has order $3^1$ and $<4> \leq \mathbb{Z}_{36}$ has order $3^2$. Then $<12>$ and $<4>$ are both $p$-subgroups of $\mathbb{Z}_{36}$. Further, since $|\mathbb{Z}_{36}|=36 = 3^2 \cdot 4$ and $3 \nmid 4$, and since $|<4>| = 3^2$ with $<4> \leq \mathbb{Z}_{36}$, we have that $<4>$ is a $3$-Sylow subgroup of $\mathbb{Z}_{36}$.
+Note that $<12> \leq \mathbb{Z}_{36}$ has order $3^1$ and $<4> \leq \mathbb{Z}_{36}$ has order $3^2$. Then $<12>$ and $<4>$ are both 
+$p$-subgroups of $\mathbb{Z}_{36}$. Further, since $|\mathbb{Z}_{36}|=36 = 3^2 \cdot 4$ and $3 \nmid 4$, and since $|<4>| = 3^2$ with 
+$<4> \leq \mathbb{Z}_{36}$, we have that $<4>$ is a $3$-Sylow subgroup of $\mathbb{Z}_{36}$.
 
-\textcolor{blue}{Example 4.5.2:} Consider the symmetric group $S_3$. Note that the $2$-Sylow subgroups in $S_3$ are $\{id, (1 \ 2)\}, \{id, (1 \ 3)\}$, and $\{id, (2 \ 3)\}$. Further, the only $3$-Sylow subgroup in $S_3$ is $\{id, (1 \ 2 \ 3), (1 \ 3 \ 2)\}$.
+\textcolor{blue}{Example 4.5.2:} Consider the symmetric group $S_3$. Note that the $2$-Sylow subgroups in $S_3$ are 
+$\{id, (1 \ 2)\}, \{id, (1 \ 3)\}$, and $\{id, (2 \ 3)\}$. Further, the only $3$-Sylow subgroup in $S_3$ is 
+$\{id, (1 \ 2 \ 3), (1 \ 3 \ 2)\}$.
 
-Note that we write $Syl_p(G)$ to represent the Sylow $p$-subgroups in $G$ and we write $n_p$ or $n_p(G)$ to represent the number of $p$-Sylows in $G$. 
+Note that we write $Syl_p(G)$ to represent the Sylow $p$-subgroups in $G$ and we write $n_p$ or $n_p(G)$ to represent the number of 
+$p$-Sylows in $G$. 
 
 \textcolor{blue}{Example 4.5.3:} In $S_3$, we have
 \begin{align*}
@@ -1243,25 +1417,33 @@ Note that we write $Syl_p(G)$ to represent the Sylow $p$-subgroups in $G$ and we
 Let $G$ be a group and suppose $|G| = p^{\alpha}m$, where $\alpha \in \mathbb{Z}^+$, $p$ is prime, and $p \nmid m$. Then
 \begin{enumerate}
     \item $Syl_p(G) \neq \emptyset$. That is, $G$ has at least one $p$-Sylow subgroup.
-    \item If $Q \leq G$, $Q$ is a $p$-group, and $P \in Syl_p(G)$, then there exists some $g \in G$ such that $Q \leq gPg^{-1}$. In particular, if $P,Q \in Syl_p(G)$, then there exists some $g \in G$ such that $Q = gPg^{-1}$.\\
+    \item If $Q \leq G$, $Q$ is a $p$-group, and $P \in Syl_p(G)$, then there exists some $g \in G$ such that $Q \leq gPg^{-1}$. In 
+    particular, if $P,Q \in Syl_p(G)$, then there exists some $g \in G$ such that $Q = gPg^{-1}$.\\
     To put this more simply, any two $p$-Sylows are conjugates of each other.
-    \item If $n_p$ is the number of $p$-Sylows, then $n_p \equiv 1(\mod{p})$ and $n_p | m$. Note that $n_p = [G:N_G(P)]$ where $P \in Syl_p(G)$.
+    \item If $n_p$ is the number of $p$-Sylows, then $n_p \equiv 1(\mod{p})$ and $n_p | m$. Note that $n_p = [G:N_G(P)]$ where 
+    $P \in Syl_p(G)$.
 \end{enumerate}
 
-\textcolor{red}{Corollary 4.5.1:} Let $G$ be a finite group with $P \in Syl_p(G)$. Then $Syl_p(G)= \{P\}$ if and only if $P \trianglelefteq G$. That is, the number of $p$-Sylows in $G$ is $1$ if and only if $P$ is a normal subgroup of $G$.
+\textcolor{red}{Corollary 4.5.1:} Let $G$ be a finite group with $P \in Syl_p(G)$. Then $Syl_p(G)= \{P\}$ if and only if 
+$P \trianglelefteq G$. That is, the number of $p$-Sylows in $G$ is $1$ if and only if $P$ is a normal subgroup of $G$.
 
-\textbf{Proof:} Assume that $n_p = 1$. That is, assume $Syl_p(G) = \{P\}$. Then, for any $x \in G$, $xPx^{-1} \in Syl_p(G)$ since $xPx^{-1} \leq G$ and $|xPx^{-1}| = |P| = p^{\alpha}$. Thus, $xPx^{-1} \in Syl_p(G) = \{P\} \ \forall x \in G$. Then $xPx^{-1}=P \ \forall x \in G$ and $P \trianglelefteq G$.
+\textbf{Proof:} Assume that $n_p = 1$. That is, assume $Syl_p(G) = \{P\}$. Then, for any $x \in G$, $xPx^{-1} \in Syl_p(G)$ since 
+$xPx^{-1} \leq G$ and $|xPx^{-1}| = |P| = p^{\alpha}$. Thus, $xPx^{-1} \in Syl_p(G) = \{P\} \ \forall x \in G$. Then 
+$xPx^{-1}=P \ \forall x \in G$ and $P \trianglelefteq G$.
 
-For the other direction, assume $P \trianglelefteq G$. Take any $Q \in Syl_p(G)$. Since any two $p$-Sylows are conjugates (part $2$ of Sylow's theorems), $\exists x \in G$ such that $xPx^{-1} = Q$. Then, since $P \trianglelefteq G$, we have $xPx^{-1} = Q \Longrightarrow P=Q$. $\square$
+For the other direction, assume $P \trianglelefteq G$. Take any $Q \in Syl_p(G)$. Since any two $p$-Sylows are conjugates (part $2$ of 
+Sylow's theorems), $\exists x \in G$ such that $xPx^{-1} = Q$. Then, since $P \trianglelefteq G$, we have $xPx^{-1} = Q \Longrightarrow P=Q$. $\square$
 
 \textcolor{purple}{Definition 4.5.2: The Normal Factoring Lemma}\\
-Let $G$ be a finite group with $H,K \trianglelefteq G$, $HK = G$, and $g = hk$ with $h \in H$ and $k \in K$ a unique product in $G$ $\forall g \in G$. Then
+Let $G$ be a finite group with $H,K \trianglelefteq G$, $HK = G$, and $g = hk$ with $h \in H$ and $k \in K$ a unique product in $G$ 
+$\forall g \in G$. Then
 \begin{enumerate}
     \item $H \cap K = \{e\}$, and 
     \item $G \cong H \times K$.
 \end{enumerate}
 
-Next, we consider some applications of Sylow's theorems. The first application relates to groups of order $pq$. Let $G$ be a group with $|G|=pq$, $p < q$, and $p \nmid q-1$. Then $G \cong \mathbb{Z}_{pq}$.\\
+Next, we consider some applications of Sylow's theorems. The first application relates to groups of order $pq$. Let $G$ be a group with 
+$|G|=pq$, $p < q$, and $p \nmid q-1$. Then $G \cong \mathbb{Z}_{pq}$.\\
 \textbf{Proof:} First, let's consider what we know:
 \begin{enumerate}
     \item $n_p \equiv 1(\mod{p})$
@@ -1280,7 +1462,8 @@ But this is a contradiction, so we must have that $n_p=1$. Next, if $n_q = p$, w
     &\Longrightarrow Q | P-1 \\
     &\Longrightarrow qk = p-1.
 \end{align*}
-But $p < q$, so this is a contradiction. Then $n_q=1$. Now, let $P, Q \in Syl_p(G)$. Then $P,Q \trianglelefteq G$ since $n_p=n_q=1$. Also, $P \cap Q = \{e\}$ since $\gcd{(|P|,|Q|)} = 1$. Finally,
+But $p < q$, so this is a contradiction. Then $n_q=1$. Now, let $P, Q \in Syl_p(G)$. Then $P,Q \trianglelefteq G$ since $n_p=n_q=1$. Also, 
+$P \cap Q = \{e\}$ since $\gcd{(|P|,|Q|)} = 1$. Finally,
 \[
     |PQ| = \dfrac{|P||Q|}{|P \cap Q|}=\dfrac{pq}{1}=pq=|G|.
 \]
@@ -1289,15 +1472,21 @@ Then, by the normal factoring lemma, $G \cong P \times Q \cong \mathbb{Z}_p \tim
 \textcolor{blue}{Example 4.5.4:} Prove that a group of order $255$ is abelian.\\
 First, note that the prime factorization of $255$ is $255 = 3 \cdot 5 \cdot 17$. 
 
-Then, by Sylow's theorems, $n_3 \equiv 1(\mod{3})$ and $n_3 | 5 \cdot 17$. But $5 \cdot 17=85$ and the only factors of $85$ are $1,5,17$, and $85$. So we check our next prime, $5$. We have $n_5 \equiv 1(\mod{5})$ and $n_5 | 3 \cdot 17=51$. Similarly to the first prime factor we checked, the only factors of $51$ are $1,3,17$, and $51$. Then we must check our final prime factor, $17$.
+Then, by Sylow's theorems, $n_3 \equiv 1(\mod{3})$ and $n_3 | 5 \cdot 17$. But $5 \cdot 17=85$ and the only factors of $85$ are $1,5,17$, 
+and $85$. So we check our next prime, $5$. We have $n_5 \equiv 1(\mod{5})$ and $n_5 | 3 \cdot 17=51$. Similarly to the first prime factor 
+we checked, the only factors of $51$ are $1,3,17$, and $51$. Then we must check our final prime factor, $17$.
 
-We know, again by Sylow's theorems, $n_{17} \equiv 1(\mod{17})$ and $n_{17} | 3 \cdot 5 = 15$. Note that the divisors of $15$ are $1,3,5$, and $15$. Note that 
+We know, again by Sylow's theorems, $n_{17} \equiv 1(\mod{17})$ and $n_{17} | 3 \cdot 5 = 15$. Note that the divisors of $15$ are $1,3,5$, 
+and $15$. Note that 
 \[
     1(\mod{17}) \cong \overline{1} = \{\dots, -16, 1, 18, 35, \dots \}.
 \]
-Remember that $n_{17}$ represents the number of $p$-Sylows, so it must be a positive number. Further, it must divide the product of the other two factors of $255$ ($15$), so it has to be less than or equal to $15$. Then we must have that $n_{17}=1$. 
+Remember that $n_{17}$ represents the number of $p$-Sylows, so it must be a positive number. Further, it must divide the product of the 
+other two factors of $255$ ($15$), so it has to be less than or equal to $15$. Then we must have that $n_{17}=1$. 
 
-Then let $P \in Syl_{17}(G)$. Then $P \trianglelefteq G$. Since $|P|=17$, $P \cong \mathbb{Z}_{17}$. By La Grange's theorem, $\big| \sfrac{N_G(P)}{C_G(P)}\big| \bigg| |Aut{P}$. Further, since $P \trianglelefteq G$, we know $N_G(P)=G$. Also, $Aut(P) \cong Aut(\mathbb{Z}_{17}^{\star})$. Also, note that $|\mathbb{Z}_{17}^{\star}| = \phi(17)=16$. Now we have
+Then let $P \in Syl_{17}(G)$. Then $P \trianglelefteq G$. Since $|P|=17$, $P \cong \mathbb{Z}_{17}$. By La Grange's theorem, 
+$\big| \sfrac{N_G(P)}{C_G(P)}\big| \bigg| |Aut{P}$. Further, since $P \trianglelefteq G$, we know $N_G(P)=G$. Also, 
+$Aut(P) \cong Aut(\mathbb{Z}_{17}^{\star})$. Also, note that $|\mathbb{Z}_{17}^{\star}| = \phi(17)=16$. Now we have
 \begin{align*}
     \big| \sfrac{G}{C_G(P)} \big| \bigg| 16 &\Longrightarrow \sfrac{|G|}{|C_G(P)|} \big| 16 \\
     &\Longrightarrow \sfrac{3 \cdot 5 \cdot 17}{|C_G(P)|} \bigg| 16 \\
@@ -1306,31 +1495,46 @@ Then let $P \in Syl_{17}(G)$. Then $P \trianglelefteq G$. Since $|P|=17$, $P \co
     &\Longrightarrow C_G(P) = G \\
     &\Longrightarrow P \leq Z(G).
 \end{align*}
-By La Grange, $17 \big| |Z(G)|$, so we must have that $\sfrac{G}{Z(G)}$ has either $1,3,5$, or $3 \cdot 5$ elements, and $3 \nmid 5-1$. In all cases, $G$ is abelian.
+By La Grange, $17 \big| |Z(G)|$, so we must have that $\sfrac{G}{Z(G)}$ has either $1,3,5$, or $3 \cdot 5$ elements, and $3 \nmid 5-1$. 
+In all cases, $G$ is abelian.
 
-\textcolor{blue}{Example 4.5.5:} Show that a group of order $84$ cannot be simple. \textit{Hint: to prove a group is not simple, find a Sylow $p$-subgroup of the group. Further, start with the bigger primes and work your way down.}
+\textcolor{blue}{Example 4.5.5:} Show that a group of order $84$ cannot be simple. \textit{Hint: to prove a group is not simple, find a 
+Sylow $p$-subgroup of the group. Further, start with the bigger primes and work your way down.}
 
-Let $|G|=84=2^2 \cdot 3 \cdot 7$. First, we know $n_2 \equiv 1(\mod{2})$ and $n_2 | 3 \cdot 7$. Then we must have that $n_2 \in \{1,3,7,21\}$. Similarly, $n_3 \equiv 1(\mod{3})$ and $n_3 | 2^2 \cdot 7$, so $n_3 \in \{1,4,7\}$. Lastly, we know $n_7 \equiv 1(\mod{7})$ and $n_7 | 2^2 \cdot 3$, so $n_7 \in \{1\}$. Now, since there is only one $7$-Sylow subgroup of $G$ (say $P \in Syl_y(G)$), we must have that $P \trianglelefteq G$. $\square$
+Let $|G|=84=2^2 \cdot 3 \cdot 7$. First, we know $n_2 \equiv 1(\mod{2})$ and $n_2 | 3 \cdot 7$. Then we must have that 
+$n_2 \in \{1,3,7,21\}$. Similarly, $n_3 \equiv 1(\mod{3})$ and $n_3 | 2^2 \cdot 7$, so $n_3 \in \{1,4,7\}$. Lastly, we know $n_7 \equiv 1(\mod{7})$ and $n_7 | 2^2 \cdot 3$, so $n_7 \in \{1\}$. Now, since there is only one $7$-Sylow subgroup of $G$ (say $P \in Syl_y(G)$), we must have that $P \trianglelefteq G$. $\square$
 
 \textcolor{blue}{Example 4.5.6:} Show that a group of order $351$ cannot be simple.
 
-We will solve this similarly to the previous example. Let $|G| = 351 = 3^3 \cdot 13$. Note that $n_{13} \equiv 1(\mod{13})$ and $n_{13} | 3^3$. Then we must have that $n_{13} \in \{1, 27\}$. Now, if $n_{13}=1$, then there is only one $13$-Sylow subgroup which will be normal (in this case we would be done). Then assume $n_{13}=27$. That is, assume there are $27$ subgroups of $G$ with cardinality $13$. Remember, if $Q = <x>$ with $|<x>|=13$ (a prime order), then all non-identity elements of $Q$ generate all of $Q$. 
+We will solve this similarly to the previous example. Let $|G| = 351 = 3^3 \cdot 13$. Note that $n_{13} \equiv 1(\mod{13})$ and 
+$n_{13} | 3^3$. Then we must have that $n_{13} \in \{1, 27\}$. Now, if $n_{13}=1$, then there is only one $13$-Sylow subgroup which will 
+be normal (in this case we would be done). Then assume $n_{13}=27$. That is, assume there are $27$ subgroups of $G$ with cardinality $13$. 
+Remember, if $Q = <x>$ with $|<x>|=13$ (a prime order), then all non-identity elements of $Q$ generate all of $Q$. 
 
 Note that if $Q_1$ and $Q_2$ are two distinct subgroups of cardinality $13$, then $Q_1 \cap Q_2 = \{e\}$. 
 
-Now, since we are assuming that there are $27$ subgroups of cardinality $13$, every element in each subgroup \textit{except} the identity element will generate the whole group. Then $27 \cdot 12 = 324$. But the order of $G$ is $351$, which leaves $27$ ($27 = 351-324$) elements that are not of order $13$.
+Now, since we are assuming that there are $27$ subgroups of cardinality $13$, every element in each subgroup \textit{except} the identity 
+element will generate the whole group. Then $27 \cdot 12 = 324$. But the order of $G$ is $351$, which leaves $27$ ($27 = 351-324$) elements 
+that are not of order $13$.
 
-Since exactly $27$ elements remain, and since a $3$-Sylow subgroup will have exactly $3^3=27$ elements, the remaining elements form a unique $3$-Sylow subgroup which is normal in $G$. $\square$
+Since exactly $27$ elements remain, and since a $3$-Sylow subgroup will have exactly $3^3=27$ elements, the remaining elements form a 
+unique $3$-Sylow subgroup which is normal in $G$. $\square$
 
 \textcolor{blue}{Example 4.5.7:} What are the possible isomorphism classes of a group of order $45$?
 
-Let $|G|=45 = 3^2 \cdot 5$. First, note that $n_3 \equiv 1(\mod{3})$ and $n_3 | 5$, so $n_3 = 1$. Similarly, $n_5 \equiv 1(\mod{5})$ and $n_5 | 3^2$, so $n_5 = 1$. Let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $P,Q \trianglelefteq G$, $P \cap Q = \{e\}$, and $|PQ = \dfrac{|P||Q|}{|P \cap Q|} = \dfrac{3^2 \cdot 5}{1} = 45$, so we must have that $PQ=G$. Then, by the Normal Factoring Lemma, $G \cong P \times Q$.
+Let $|G|=45 = 3^2 \cdot 5$. First, note that $n_3 \equiv 1(\mod{3})$ and $n_3 | 5$, so $n_3 = 1$. Similarly, $n_5 \equiv 1(\mod{5})$ and 
+$n_5 | 3^2$, so $n_5 = 1$. Let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $P,Q \trianglelefteq G$, $P \cap Q = \{e\}$, and 
+$|PQ = \dfrac{|P||Q|}{|P \cap Q|} = \dfrac{3^2 \cdot 5}{1} = 45$, so we must have that $PQ=G$. Then, by the Normal Factoring Lemma, 
+$G \cong P \times Q$.
 
-Now, since $|P|=3^2$, $P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5$, so $Q \cong \mathbb{Z}_5$. Then $G \cong \mathbb{Z}_9 \times \mathbb{Z}_5$ or $G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5$. $\square$
+Now, since $|P|=3^2$, $P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5$, so 
+$Q \cong \mathbb{Z}_5$. Then $G \cong \mathbb{Z}_9 \times \mathbb{Z}_5$ or $G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5$. $\square$
 
-\textcolor{blue}{Example 4.5.8:} If $|G| = p^2q^2$ with $p$ and $q$ distinct primes and $p < q$, then $G$ has a normal $q$-Sylow unless $|G| = 36$. 
+\textcolor{blue}{Example 4.5.8:} If $|G| = p^2q^2$ with $p$ and $q$ distinct primes and $p < q$, then $G$ has a normal $q$-Sylow unless 
+$|G| = 36$. 
 
-First, note that $n_p \equiv 1(\mod{p})$ and $n_p | q^2$, so we must have that $n_p \in \{1,q,q^2\}$. Similarly, $n_q \equiv 1(\mod{q})$ with $n_q | p^2$, so $n_q \in \{1,p,p^2\}$.
+First, note that $n_p \equiv 1(\mod{p})$ and $n_p | q^2$, so we must have that $n_p \in \{1,q,q^2\}$. Similarly, $n_q \equiv 1(\mod{q})$ 
+with $n_q | p^2$, so $n_q \in \{1,p,p^2\}$.
 Now, if $n_q = 1$, then we are done. Then assume $n_q = p$. Then we have
 \begin{align*}
     n_q = p &\Longrightarrow p \equiv 1(\mod{q}) \\
@@ -1347,7 +1551,8 @@ Then assume $n_q = p^2$. Then we have
     &\Longrightarrow q | p+1 \text{ or } q | p-1 \\
     &\Longrightarrow p>q.
 \end{align*}
-But, as above, this is a contradiction. Since $p<q$ are both distrinct primes and $q | p+1$, $p$ and $q$ must be consecutive primes. Then $p = 2$ and $q=3$, so $p^2q^2 = 4 \cdot 9 = 36$. $\square$
+But, as above, this is a contradiction. Since $p<q$ are both distrinct primes and $q | p+1$, $p$ and $q$ must be consecutive primes. Then 
+$p = 2$ and $q=3$, so $p^2q^2 = 4 \cdot 9 = 36$. $\square$
 
 
 \newpage
@@ -1355,7 +1560,8 @@ But, as above, this is a contradiction. Since $p<q$ are both distrinct primes an
 \section{Introduction to Rings}
 \subsection{Basic Definitions and Examples}
 
-\textcolor{purple}{Definition 7.1.1:} A \textcolor{purple}{ring} is a set with two binary operations $+$ and $\times$, called addition and multiplication, such that
+\textcolor{purple}{Definition 7.1.1:} A \textcolor{purple}{ring} is a set with two binary operations $+$ and $\times$, called addition and 
+multiplication, such that
 \begin{enumerate}
     \item $(R,+)$ is an abelian group,
     \item $\forall a,b,c \in R$, $a \times (b \times c) = (a \times b) \times c$ (associative law holds), and
@@ -1363,17 +1569,21 @@ But, as above, this is a contradiction. Since $p<q$ are both distrinct primes an
     and $(b + c) \times a = (b \times a) + (c \times a)$ (distributive law holds).
 \end{enumerate}
 
-Note that a ring is \textcolor{purple}{commutative} if $ab = ba$ $\forall a,b \in R$. Further, $R$ has a \textcolor{purple}{unity element} if $\exists 1 \in R$ such that $1a = a1 \ \forall a \in R$.
+Note that a ring is \textcolor{purple}{commutative} if $ab = ba$ $\forall a,b \in R$. Further, $R$ has a \textcolor{purple}{unity element} 
+if $\exists 1 \in R$ such that $1a = a1 \ \forall a \in R$.
 
 Note that, notationally speaking, the additive identity is typically denoted by $0$ and the additive inverse of $a \in R$ is denoted $-a$.
 
 We define \textcolor{purple}{subtraction}, $a - b$, to be $a - b = a+(-b)$.
 
-\textcolor{purple}{Definition 7.1.2:} A ring $R$ with unity element $1$ that is not equal to $0$ is called a \textcolor{purple}{division ring} if every $a \in R$ with $a \neq 0$ has a multiplicative inverse. A commutative division ring is called a \textcolor{purple}{field}.
+\textcolor{purple}{Definition 7.1.2:} A ring $R$ with unity element $1$ that is not equal to $0$ is called a \textcolor{purple}{division 
+ring} if every $a \in R$ with $a \neq 0$ has a multiplicative inverse. A commutative division ring is called a \textcolor{purple}{field}.
 
 Note that the reason for the term "division ring" is that dividing by $a$ corresponds to multiplying by $a^{-1}$.
 
-\textcolor{purple}{Definition 7.1.3:} A ring $R$ that is commutative, has a unity element, and the cancellation property, is called an \textcolor{purple}{integral domain}. $R$ has the \textcolor{purple}{cancellation property} if $ab = ac$ with $a \neq 0$ implies $b = c$ and if $ba = ca$ with $a \neq 0$ then $b = c$.
+\textcolor{purple}{Definition 7.1.3:} A ring $R$ that is commutative, has a unity element, and the cancellation property, is called an 
+\textcolor{purple}{integral domain}. $R$ has the \textcolor{purple}{cancellation property} if $ab = ac$ with $a \neq 0$ implies $b = c$ 
+and if $ba = ca$ with $a \neq 0$ then $b = c$.
 
 \textcolor{red}{Proposition 7.1.1:} Let $R$ be a ring.
 \begin{enumerate}
@@ -1403,11 +1613,13 @@ Note that the reason for the term "division ring" is that dividing by $a$ corres
     &\Longrightarrow -(ab) = (-a)b. \ \square
 \end{align*}
 
-\textcolor{purple}{Definition 7.1.4:} Let $R$ be a ring. A nonzero element $a \in R$ is called a \textcolor{purple}{zero divison} if there exists $b \in R$, $b \neq 0$, such that $ab = 0$ or $ba = 0$ if $R$ has unity $1$ with $1 \neq 0$.
+\textcolor{purple}{Definition 7.1.4:} Let $R$ be a ring. A nonzero element $a \in R$ is called a \textcolor{purple}{zero divison} if there 
+exists $b \in R$, $b \neq 0$, such that $ab = 0$ or $ba = 0$ if $R$ has unity $1$ with $1 \neq 0$.
 
 Note that no ring $R$ can have both zero divisors \textit{and} the cancellation property.
 
-\textcolor{purple}{Definition 7.1.5:} If a ring $R$ has unity $1 \neq 0$, an element $u$ is called a \textcolor{purple}{unit} if $\exists v \in R$ such that $uv = 1 = vu$. The units in $R$ are denoted $R^{\times}$.
+\textcolor{purple}{Definition 7.1.5:} If a ring $R$ has unity $1 \neq 0$, an element $u$ is called a \textcolor{purple}{unit} if 
+$\exists v \in R$ such that $uv = 1 = vu$. The units in $R$ are denoted $R^{\times}$.
 
 \textcolor{blue}{Example 7.1.1:} In $\mathbb{Z}_6$, $2,3,$ and $4$ are zero divisors while $1$ and $5$ are units.
 
@@ -1415,9 +1627,11 @@ Note that no ring $R$ can have both zero divisors \textit{and} the cancellation 
 
 \textcolor{blue}{Example 7.1.3:} In $\mathbb{Q}$, all nonzero elements are units.
 
-\textcolor{purple}{Definition 7.1.6:} If $R$ is a ring with unity $1$, then $R^{\times}$ forms a group under multiplication and is called \textcolor{purple}{the group of units}.
+\textcolor{purple}{Definition 7.1.6:} If $R$ is a ring with unity $1$, then $R^{\times}$ forms a group under multiplication and is called 
+\textcolor{purple}{the group of units}.
 
-\textcolor{blue}{Example 7.1.4:} In $\mathbb{Z}^{\times}_{10}$, the invertible elements are those relatively prime to $10$. That is, $\mathbb{Z^{\times}_{10}} = \{1,3,7,9\}$.
+\textcolor{blue}{Example 7.1.4:} In $\mathbb{Z}^{\times}_{10}$, the invertible elements are those relatively prime to $10$. That is, 
+$\mathbb{Z^{\times}_{10}} = \{1,3,7,9\}$.
 
 With this notation, we can say that $F$ is a field if $F$ is commutative and $F^{\times} = F \backslash \{0\}$. 
 
@@ -1432,10 +1646,13 @@ Note that, if $u$ is a unit in $R$, then $u$ is not a zero divisor (and visa ver
 \end{align*}
 If $xu = 0$, then a similar argument shows that $x = 0$.
 
-\textcolor{red}{Proposition 7.1.2:} If $R$ is an integral domain (ID) and $ab=0$, then either $a = 0$ or $b = 0$. Thus, an ID has no zero divisors.
+\textcolor{red}{Proposition 7.1.2:} If $R$ is an integral domain (ID) and $ab=0$, then either $a = 0$ or $b = 0$. Thus, an ID has no zero 
+divisors.
 
-\textbf{Proof:} If $a = 0$ then we are done. Then assume $a \neq 0$. Now from $ab = 0$, we have $ab = a0 \Longrightarrow b = 0$ (by cancellation of $a$). $\square$ \\
-Note that one can also prove the converse. Further, if $R$ is a commutative ring with unity (cru) and has no zero divisors, then $R$ has the cancellation property. See below for a sketch of the proof:
+\textbf{Proof:} If $a = 0$ then we are done. Then assume $a \neq 0$. Now from $ab = 0$, we have $ab = a0 \Longrightarrow b = 0$ (by 
+cancellation of $a$). $\square$ \\
+Note that one can also prove the converse. Further, if $R$ is a commutative ring with unity (cru) and has no zero divisors, then $R$ has 
+the cancellation property. See below for a sketch of the proof:
 \begin{align*}
     ab = ac &\Longrightarrow ab-ac=0 \\
     &\Longrightarrow a(b-c) = 0 \\
@@ -1445,16 +1662,20 @@ Note that one can also prove the converse. Further, if $R$ is a commutative ring
 
 \textcolor{purple}{Corollary 7.1.1:} If $R$ is a finite integral domain, then $R$ is a field.
 
-\textbf{Proof:} Suppose $R$ is a finite integral domain. Then we know $R$ is a commutative ring with unity and no zero divisors. Further, $R$ has the cancellation property. Let $a \in R: a \neq 0$. We need to show that $a$ is a unit. Let $f:R \longrightarrow R$ be the function $f(x)=ax$.
+\textbf{Proof:} Suppose $R$ is a finite integral domain. Then we know $R$ is a commutative ring with unity and no zero divisors. Further, 
+$R$ has the cancellation property. Let $a \in R: a \neq 0$. We need to show that $a$ is a unit. Let $f:R \longrightarrow R$ be the function 
+$f(x)=ax$.
 
 Claim: $f$ is one-to-one. We have
 \begin{align*}
     f(x_1)=f(x_2) &\Longrightarrow ax_1=ax_2 \\
     &\Longrightarrow x_1=x_2 \text{ by cancellation.}
 \end{align*}
-Since $f:R \longrightarrow R$ is one-to-one and $R$ is finite, $f$ is onto. Thus, $\exists b \in R$ such that $f(b)=1$, so $ab=1$. Thusly, $a$ is a unit.
+Since $f:R \longrightarrow R$ is one-to-one and $R$ is finite, $f$ is onto. Thus, $\exists b \in R$ such that $f(b)=1$, so $ab=1$. Thusly, 
+$a$ is a unit.
 
-\textcolor{purple}{Definition 7.1.7:} Let $R$ be a ring and $S \subseteq R$. The set $S$ is a \textcolor{purple}{subring} of $R$ if $(S,+) \leq (R,+)$ and $S$ is closed under multiplication.
+\textcolor{purple}{Definition 7.1.7:} Let $R$ be a ring and $S \subseteq R$. The set $S$ is a \textcolor{purple}{subring} of 
+$R$ if $(S,+) \leq (R,+)$ and $S$ is closed under multiplication.
 
 The \textcolor{purple}{subring test} says that $S$ is a subring of $R$ if 
 \begin{enumerate}
@@ -1479,17 +1700,21 @@ which has the correct form to be an element of $<a>$. $\square$
 
 \subsection{Examples: Polynomial Rings, Matrix Rings, and Group Rings}
 
-\textcolor{purple}{Definition 7.2.1:} Let $R$ be a commutative ring with unity, and let $x$ be an \textcolor{purple}{indeterminant} (kind of like a variable). A \textcolor{purple}{polynomial in x with coefficients in R} is an expression of the form
+\textcolor{purple}{Definition 7.2.1:} Let $R$ be a commutative ring with unity, and let $x$ be an \textcolor{purple}{indeterminant} (kind 
+of like a variable). A \textcolor{purple}{polynomial in x with coefficients in R} is an expression of the form
 \[
     a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 \text{ where } a_i \in R, n \geq 0.
 \]
-This polynomial is \textcolor{purple}{monic} if $a_n=1$. The ring of polynomials in $x$ with coefficients in $R$ is denoted $R[x]$. Since $R$ is commutative, so is $R[x]$. Since $R$ has unity (say $1$), so does ring $R[x]$ (namely, $u(x)=1$).
+This polynomial is \textcolor{purple}{monic} if $a_n=1$. The ring of polynomials in $x$ with coefficients in $R$ is denoted $R[x]$. Since 
+$R$ is commutative, so is $R[x]$. Since $R$ has unity (say $1$), so does ring $R[x]$ (namely, $u(x)=1$).
 
-The constant polynomials are those of the form $c(x) = a_0$, where $a_0 \in R$. The set of all constant polynomials forms a subring that is isomorphic to $R$. 
+The constant polynomials are those of the form $c(x) = a_0$, where $a_0 \in R$. The set of all constant polynomials forms a subring that 
+is isomorphic to $R$. 
 
 \textcolor{red}{Proposition 7.2.1:} Let $R$ be an integral domain and $p(x)$ and $q(x)$ be nonzero polynomials. Then
 \begin{enumerate}
-    \item the degree of $p(x)q(x)$ is equal to the degree of $p(x)$ plus the degree of $q(x)$. Symbolically, $\deg{(p(x)q(x))} = \deg{(p(x))} + \deg{(q(x))}$.
+    \item the degree of $p(x)q(x)$ is equal to the degree of $p(x)$ plus the degree of $q(x)$. Symbolically, 
+    $\deg{(p(x)q(x))} = \deg{(p(x))} + \deg{(q(x))}$.
     \item the units in $R[x]$ are the units in $R$ (viewed as constant polynomials), and 
     \item $R[x]$ is an integral domain. 
 \end{enumerate}
@@ -1500,13 +1725,17 @@ Note that $\deg{(c(x))}=0$, where $c(x)$ is a constant polynomial and $\deg{(p(x
     p(x) &= a_nx^n+a_{n-1}x^{n-1} + \cdots + a_1x+a_0, a_n \neq 0 \text{ and }\\
     q(x) &= b_mx^m+b_{m-1}x^{m-1} + \cdots + b_1x+b_0, b_m \neq 0.
 \end{align*}
-Thus $p(x)q(x) = a_nb_mx^{n+m} + \cdots + a_0b_0$. Further, since integral domains have no zero divisors, $a_nb_m \neq 0$. Then $\deg{(p(x)q(x))} = n+m = \deg{(p(x))}+\deg{(q(x))}$. $\square$
+Thus $p(x)q(x) = a_nb_mx^{n+m} + \cdots + a_0b_0$. Further, since integral domains have no zero divisors, $a_nb_m \neq 0$. Then 
+$\deg{(p(x)q(x))} = n+m = \deg{(p(x))}+\deg{(q(x))}$. $\square$
 
-\textbf{Proof ($2$):} Suppose $a(x)$ is a unit in $R[x]$. Then $\exists b(x) \in R[x]$ such that $a(x)b(x)=1$. Then, by part $1$ above, $\deg{(a(x))(b(x))} = \deg{(1)} \Longrightarrow \deg{(a(x))} + \deg{(b(x))} = 0 \Longrightarrow \deg{(a(x))} = \deg{(b(x))} = 0$. Then $a(x) = a_0$ and $b(x) = b_0$ for some $a_0, b_0 \in R$. So from $a(x)b(x)=1$, we get $a_0b_0 = 1$. Thus $a_0$ is a unit in $R$. $\square$
+\textbf{Proof ($2$):} Suppose $a(x)$ is a unit in $R[x]$. Then $\exists b(x) \in R[x]$ such that $a(x)b(x)=1$. Then, by part $1$ above, 
+$\deg{(a(x))(b(x))} = \deg{(1)} \Longrightarrow \deg{(a(x))} + \deg{(b(x))} = 0 \Longrightarrow \deg{(a(x))} = \deg{(b(x))} = 0$. Then 
+$a(x) = a_0$ and $b(x) = b_0$ for some $a_0, b_0 \in R$. So from $a(x)b(x)=1$, we get $a_0b_0 = 1$. Thus $a_0$ is a unit in $R$. $\square$
 
 \subsection{Ring Homomorphisms and Quotient Rings}
 
-\textcolor{purple}{Definition 7.3.1:} Let $R$ and $S$ be rings. A function $\phi:R \longrightarrow S$ is a \textcolor{purple}{ring homomorphism} if
+\textcolor{purple}{Definition 7.3.1:} Let $R$ and $S$ be rings. A function $\phi:R \longrightarrow S$ is a \textcolor{purple}{ring 
+homomorphism} if
 \begin{align*}
     \phi(r_1+r_2) &= \phi(r_1)+\phi(r_2) \text{ and }\\
     \phi(r_1r_2) &= \phi(r_1)\phi(r_2) \ \forall r_1,r_2 \in R. 
@@ -1520,7 +1749,8 @@ A ring homomorphism that is one-to-one is a \textcolor{purple}{ring isomorphism}
 
 \textcolor{red}{Proposition 7.3.1:} Let $\phi:R \longrightarrow S$ be a ring homomorphism.
 \begin{enumerate}
-    \item The \textcolor{purple}{image} of $\phi$, which is $Im(\phi) = \{s \in S: \exists r \in R \text{ with } \phi(r)=s\}$ is a subring of $S$.
+    \item The \textcolor{purple}{image} of $\phi$, which is $Im(\phi) = \{s \in S: \exists r \in R \text{ with } \phi(r)=s\}$ is a subring 
+    of $S$.
     \item $\ker{(\phi)}$ is a subring of $R$.
 \end{enumerate}
 
@@ -1528,7 +1758,9 @@ A ring homomorphism that is one-to-one is a \textcolor{purple}{ring isomorphism}
 \[
     rI=\{ra: a \in I\} \text{ and } Ir = \{ar: a \in I\}.
 \]
-We say that $I$ is a \textcolor{purple}{left ideal} if $I$ is a subring and $rI \subseteq I \ \forall r \in R$. We say that $I$ is a \textcolor{purple}{right ideal} if $I$ is a subring and $Ir \subseteq I \ \forall r \in R$. $I$ is a \textcolor{purple}{two-sided ideal}, also just called an \textcolor{purple}{ideal}, if $I$ is both a left and a right ideal.
+We say that $I$ is a \textcolor{purple}{left ideal} if $I$ is a subring and $rI \subseteq I \ \forall r \in R$. We say that $I$ is a 
+\textcolor{purple}{right ideal} if $I$ is a subring and $Ir \subseteq I \ \forall r \in R$. $I$ is a \textcolor{purple}{two-sided ideal}, 
+also just called an \textcolor{purple}{ideal}, if $I$ is both a left and a right ideal.
 
 Since $R$ is an abelian group, we have additive cosets. If $I$ is a subring of $R$, let 
 \[
@@ -1536,13 +1768,16 @@ Since $R$ is an abelian group, we have additive cosets. If $I$ is a subring of $
 \]
 Then $r + I$ is a \textcolor{purple}{coset} of $I$. Note that we write $\sfrac{R}{I}$ for the set of all cosets of $I$ in $R$.
 
-\textcolor{red}{Proposition 7.3.2:} Let $R$ be a ring and $I$ be an ideal of $R$ (denoted $I \trianglelefteq R$). The additive quotient group $\sfrac{R}{I}$ is a ring under the operations
+\textcolor{red}{Proposition 7.3.2:} Let $R$ be a ring and $I$ be an ideal of $R$ (denoted $I \trianglelefteq R$). The additive quotient 
+group $\sfrac{R}{I}$ is a ring under the operations
 \begin{align}
     (r+I)+(s+I) &= r+s+I \\
     (r+I)(s+I)&=rs+I.
 \end{align}
 
-\textbf{Proof ($2$):} Our goal is to prove that $(r+I)(s+I)=rs+I$ is well-defined under the hyptohesis that $I$ is an ideal. Suppose that $r_1 + I=r_2+I$ with $r_1$ not necessarily equal to $r_2$ and $s_1 + I=s_2+I$ with $s_1$ not necessarily equal to $s_2$. We need to show $r_1s_1+I=r_2s_2+I$. \textit{Note that what we need to show is equivalent to $r_1s_1-r_2s_2 \in I$}.
+\textbf{Proof ($2$):} Our goal is to prove that $(r+I)(s+I)=rs+I$ is well-defined under the hyptohesis that $I$ is an ideal. Suppose that 
+$r_1 + I=r_2+I$ with $r_1$ not necessarily equal to $r_2$ and $s_1 + I=s_2+I$ with $s_1$ not necessarily equal to $s_2$. We need to show 
+$r_1s_1+I=r_2s_2+I$. \textit{Note that what we need to show is equivalent to $r_1s_1-r_2s_2 \in I$}.
 
 Now, $r_1+I=r_2+I$ tells us $r_2-r_1 \in I$ and $s_1+I=s_2+I$ tells us $s_2-s_1 \in I$. Then
 \begin{align*}
@@ -1552,30 +1787,38 @@ Now, $r_1+I=r_2+I$ tells us $r_2-r_1 \in I$ and $s_1+I=s_2+I$ tells us $s_2-s_1 
 
 This element, and all components of it, are in $I$, and $r_1(s_1-s_2)+(r_2-r_1)s_2=r_1s_1-r_2s_2$. $\square$
 
-\textcolor{purple}{Definition 7.3.4:} If $I \trianglelefteq R$, we call the ring $\sfrac{R}{I}$ a \textcolor{purple}{quotient ring}. That is, if $I$ is an ideal of $R$, we call the set of all cosets of $I$ in $R$ a \textcolor{purple}{quotient ring}.
+\textcolor{purple}{Definition 7.3.4:} If $I \trianglelefteq R$, we call the ring $\sfrac{R}{I}$ a \textcolor{purple}{quotient ring}. That 
+is, if $I$ is an ideal of $R$, we call the set of all cosets of $I$ in $R$ a \textcolor{purple}{quotient ring}.
 
 \textcolor{red}{Theorem 7.3.1: The First Isomorphism Theorem for Rings}\\
 \begin{enumerate}
-    \item If $\phi:R \longrightarrow S$ is a ring homomorphism, then $\ker{(\phi)} \trianglelefteq R$, $Im(\phi)$ is a subring of $S$, and $\sfrac{R}{\ker{(\phi)}} \cong Im(\phi)$.
-    \item If $I \trianglelefteq R$, then $\psi:R \longrightarrow \sfrac{R}{I}$ defined by $\psi(r)=r+I$ is an onto ring homomorphism with kernel $I$. This map is the \textcolor{purple}{natural projection map}, or \textcolor{purple}{canonical quotient map}.
+    \item If $\phi:R \longrightarrow S$ is a ring homomorphism, then $\ker{(\phi)} \trianglelefteq R$, $Im(\phi)$ is a subring of $S$, and 
+    $\sfrac{R}{\ker{(\phi)}} \cong Im(\phi)$.
+    \item If $I \trianglelefteq R$, then $\psi:R \longrightarrow \sfrac{R}{I}$ defined by $\psi(r)=r+I$ is an onto ring homomorphism with 
+    kernel $I$. This map is the \textcolor{purple}{natural projection map}, or \textcolor{purple}{canonical quotient map}.
 \end{enumerate}
 
 Let $I$ and $J$ be ideals of $R$. Then
 \begin{enumerate}
     \item the sum of $I$ and $J$ is $I+J = \{i+j: i \in I, j \in J\}$,
-    \item the product of $I$ and $J$, denoted $IJ$, is all expressions of the form $a_mb_m + a_{m-1}b_{m-1} + \cdots + a_1b_1, m>0, a_i \in I, b_i \in J$, and 
-    \item for $n \geq 1$, the $n^{th}$ power of $I$, denoted $I^n$, is all finite sums whose terms are of the form $a_1a_2 \cdots a_n$ where $a_i \in I$.
+    \item the product of $I$ and $J$, denoted $IJ$, is all expressions of the form $a_mb_m + a_{m-1}b_{m-1} + \cdots + a_1b_1, m>0, a_i \in I, b_i \in J$, 
+    and 
+    \item for $n \geq 1$, the $n^{th}$ power of $I$, denoted $I^n$, is all finite sums whose terms are of the form $a_1a_2 \cdots a_n$ 
+    where $a_i \in I$.
 \end{enumerate}
 
-\textcolor{blue}{Example 7.3.1:} In $\mathbb{Z}$, let $I = 6\mathbb{Z} = \{6m: m \in \mathbb{Z}\}$ and $J = 10\mathbb{Z} = \{10n: n \in \mathbb{Z}\}$. Then $I+J=2\mathbb{Z}$. Note that, in general, if you take $m\mathbb{Z} + n\mathbb{Z}$, you get $d\mathbb{Z}$, where $d=\gcd{(m,n)}$. 
+\textcolor{blue}{Example 7.3.1:} In $\mathbb{Z}$, let $I = 6\mathbb{Z} = \{6m: m \in \mathbb{Z}\}$ and $J = 10\mathbb{Z} = \{10n: n \in \mathbb{Z}\}$. 
+Then $I+J=2\mathbb{Z}$. Note that, in general, if you take $m\mathbb{Z} + n\mathbb{Z}$, you get $d\mathbb{Z}$, where $d=\gcd{(m,n)}$. 
 
 \textcolor{red}{Theorem 7.3.2:} Let $R$ be a ring. Then 
 \begin{enumerate}
-    \item the \textcolor{red}{second isomorphism theorem for rings} says if $A$ is a subring of $R$ and $B \trianglelefteq R$, then $A+B$ is a subring, $B \trianglelefteq A+B$, and $A \cap B \trianglelefteq A$. Then
+    \item the \textcolor{red}{second isomorphism theorem for rings} says if $A$ is a subring of $R$ and $B \trianglelefteq R$, then $A+B$ 
+    is a subring, $B \trianglelefteq A+B$, and $A \cap B \trianglelefteq A$. Then
     \[
         \sfrac{A+B}{B} \cong \sfrac{A}{A \cap B}, \text{ and }
     \]
-    \item the \textcolor{red}{third isomorphism theorem for rings} says that if $I,J \trianglelefteq R$ with $I \subseteq J$, then $\sfrac{J}{I} \trianglelefteq \sfrac{R}{I}$ and 
+    \item the \textcolor{red}{third isomorphism theorem for rings} says that if $I,J \trianglelefteq R$ with $I \subseteq J$, then 
+    $\sfrac{J}{I} \trianglelefteq \sfrac{R}{I}$ and 
     \[
         \sfrac{\sfrac{R}{I}}{\sfrac{J}{I}} \cong \sfrac{R}{J}.
     \]
@@ -1583,13 +1826,15 @@ Let $I$ and $J$ be ideals of $R$. Then
 
 \subsection{Properties of Ideals}
 
-\textcolor{purple}{Definition 7.4.1:} Let $A \subseteq R$ where $R$ is a ring. Let $(A)$ denote the smallest ideal in $R$ that contains $A$. Then $(A)$ is the \textcolor{purple}{ideal generated by $A$} and 
+\textcolor{purple}{Definition 7.4.1:} Let $A \subseteq R$ where $R$ is a ring. Let $(A)$ denote the smallest ideal in $R$ that contains 
+$A$. Then $(A)$ is the \textcolor{purple}{ideal generated by $A$} and 
 \[
     (A) = \bigcap_{I \text{ is an ideal with } A \subseteq I}{I}.
 \]
 When $A = \{a\}$ we write $(a)$ and say $(a)$ is the \textcolor{purple}{principal ideal generated by $a$}.
 
-Now, assume $R$ is a commutative ring with unity. In this case, we can prove that $I = \{ar: r \in R\}$ is an ideal in $R$ that contains $a$. Note that $a \cdot 1 = a \in I$, so $I \neq \emptyset$. Then, let $ar_1, ar_2 \in I$ and $s \in R$. Then 
+Now, assume $R$ is a commutative ring with unity. In this case, we can prove that $I = \{ar: r \in R\}$ is an ideal in $R$ that contains 
+$a$. Note that $a \cdot 1 = a \in I$, so $I \neq \emptyset$. Then, let $ar_1, ar_2 \in I$ and $s \in R$. Then 
 \begin{align*}
     ar_1-ar_2 &= a(r_1-r_2) \\
     &= ar_3, r_3 \in R \Longrightarrow ar_1-ar_2 \in I. 
@@ -1599,7 +1844,9 @@ Also, we have
     s(ar_1) &= a(sr_1) \in I \text{ and }\\
     (ar_1)s &= a(r_1s) \in I.   
 \end{align*}
-Then $I \trianglelefteq R$ and $a \in I$. By definition of $(a)$, $(a) \subseteq I$. Now, if $ar \in I$, then, since $(a)$ is an ideal that contains $a$, it also contains $ar$ by the absorbs products property, so $I \subseteq (a)$. So, in a commutative ring with unity, $(a) = \{ar: r \in R\}$. $\square$
+Then $I \trianglelefteq R$ and $a \in I$. By definition of $(a)$, $(a) \subseteq I$. Now, if $ar \in I$, then, since $(a)$ is an ideal 
+that contains $a$, it also contains $ar$ by the absorbs products property, so $I \subseteq (a)$. So, in a commutative ring with unity, 
+$(a) = \{ar: r \in R\}$. $\square$
 
 In this case, we have that $b \in (a)$ if and only if $b=ar$, $r \in R$. Here, we would say $a | b$ and $b$ is a multiple of $a$.
 
@@ -1609,21 +1856,31 @@ In this case, we have that $b \in (a)$ if and only if $b=ar$, $r \in R$. Here, w
     \item if $R$ is commutative, then $R$ is a field if and only if the only ideals in $R$ are $\{0\}$ and $R$.
 \end{enumerate}
 
-\textbf{Proof ($1$):} First, assume $I = R$. Then $1_R \in I$ and $1_R$ is a unit. For the other direction, suppose $u \in I$ with $u$ a unit, say $vu = 1_R$. Then, by the absorbs products property, $vu = 1_R$ is in $I$ since $u \in I$. Therefore, for any $r \in R$, $r1_R \in I$, so $I = R$. $\square$
+\textbf{Proof ($1$):} First, assume $I = R$. Then $1_R \in I$ and $1_R$ is a unit. For the other direction, suppose $u \in I$ with $u$ a 
+unit, say $vu = 1_R$. Then, by the absorbs products property, $vu = 1_R$ is in $I$ since $u \in I$. Therefore, for any $r \in R$, $r1_R \in I$, 
+so $I = R$. $\square$
 
-\textbf{Proof ($2$):} Assume $R$ is a field and $J \trianglelefteq R$. If $J = \{0\}$, then we are done, so assume $J \neq \{0\}$. Then $J$ contains a nonzero element $u$. Since $R$ is a field, $u$ is a unit. So by part $1$, $J = R$.
+\textbf{Proof ($2$):} Assume $R$ is a field and $J \trianglelefteq R$. If $J = \{0\}$, then we are done, so assume $J \neq \{0\}$. Then 
+$J$ contains a nonzero element $u$. Since $R$ is a field, $u$ is a unit. So by part $1$, $J = R$.
 
-For the other direction, assume $\{0\}$ and $R$ are the only ideals. Let $r \in R$ with $r \neq 0$. We want to show $r$ is a unit. Now $\{0\} \neq (r)$, so $(r) = R$. But $1_R \in R$, so $1_r \in (r)$. Thus, $\exists b \in R: 1_R = br$ and thus $r$ is a unit. $\square$
+For the other direction, assume $\{0\}$ and $R$ are the only ideals. Let $r \in R$ with $r \neq 0$. We want to show $r$ is a unit. Now 
+$\{0\} \neq (r)$, so $(r) = R$. But $1_R \in R$, so $1_r \in (r)$. Thus, $\exists b \in R: 1_R = br$ and thus $r$ is a unit. $\square$
 
-\textcolor{red}{Corollary 7.4.1:} If $R$ is a field and $\phi:R \longrightarrow S$ is a nontrivial ring homomorphism, then $\phi$ is one-to-one.
+\textcolor{red}{Corollary 7.4.1:} If $R$ is a field and $\phi:R \longrightarrow S$ is a nontrivial ring homomorphism, then $\phi$ is 
+one-to-one.
 
-\textbf{Proof:} We know $\ker{(\phi)} \trianglelefteq R \Longrightarrow \ker{(\phi)} = \{0\}$ or $\ker{(\phi)}=R$ since $R$ is a field. Since $\phi$ is nontrivial, $\ker{(\phi)} \neq R$. Then $\ker{(\phi)} = \{0\}$, so $\phi$ is one-to-one. $\square$
+\textbf{Proof:} We know $\ker{(\phi)} \trianglelefteq R \Longrightarrow \ker{(\phi)} = \{0\}$ or $\ker{(\phi)}=R$ since $R$ is a field. 
+Since $\phi$ is nontrivial, $\ker{(\phi)} \neq R$. Then $\ker{(\phi)} = \{0\}$, so $\phi$ is one-to-one. $\square$
 
-\textcolor{purple}{Definition 7.4.2:} Let $S$ be a ring and $M \trianglelefteq S$ with $M \neq S$. We call $M$ a \textcolor{purple}{maximal ideal} if whenever $I \trianglelefteq S$ with $M \subseteq I \subseteq S$, we have either $M = I$ or $M = S$.
+\textcolor{purple}{Definition 7.4.2:} Let $S$ be a ring and $M \trianglelefteq S$ with $M \neq S$. We call $M$ a \textcolor{purple}{maximal 
+ideal} if whenever $I \trianglelefteq S$ with $M \subseteq I \subseteq S$, we have either $M = I$ or $M = S$.
 
-\textcolor{red}{Proposition 7.4.2:} Let $R$ be a commutative ring with unity with $M \trianglelefteq R$. Then $\sfrac{R}{M}$ is a field if and only if $M$ is maximal.
+\textcolor{red}{Proposition 7.4.2:} Let $R$ be a commutative ring with unity with $M \trianglelefteq R$. Then $\sfrac{R}{M}$ is a field if 
+and only if $M$ is maximal.
 
-\textbf{Proof:} Assume $M$ is a maximal ideal. Since $R$ is a commutative ring with unity, so is $\sfrac{R}{M}$. Now we show every $r+M \neq 0+M$ in $\sfrac{R}{M}$ is invertible. Consider $I= \{m+sr:m \in M, s \in R\}$. Then $I$ is an ideal. Certainly, $M \subseteq I$ and $R \subseteq I$, but $M$ is maximal, so $I=R$.
+\textbf{Proof:} Assume $M$ is a maximal ideal. Since $R$ is a commutative ring with unity, so is $\sfrac{R}{M}$. Now we show every 
+$r+M \neq 0+M$ in $\sfrac{R}{M}$ is invertible. Consider $I= \{m+sr:m \in M, s \in R\}$. Then $I$ is an ideal. Certainly, $M \subseteq I$ 
+and $R \subseteq I$, but $M$ is maximal, so $I=R$.
 
 Therefore, $\exists m_1 \in M$ and $\exists s_1 \in R$ such that $1_R=m_1+s_1r$. Now, $s_1r-1_R = m$ so $s_1r-1_R \in M$. Then this implies
 \begin{align*}
@@ -1631,16 +1888,22 @@ Therefore, $\exists m_1 \in M$ and $\exists s_1 \in R$ such that $1_R=m_1+s_1r$.
     &\Longrightarrow r+M \text{ is invertible.}
 \end{align*}
 
-For the other direction, assume $\sfrac{R}{M}$ is a field. Let $I$ be an ideal with $M \subseteq I \subseteq R$ where $M \neq I$. We will now argue that $I = R$. Let $r \in I$ with $r \notin M$. Since $\sfrac{R}{M}$ is a field and we have $r +M \neq 0+M$, the element $r+M$ has an inverse. Let $(r+M)(s+M)=1_R+M$. Then
+For the other direction, assume $\sfrac{R}{M}$ is a field. Let $I$ be an ideal with $M \subseteq I \subseteq R$ where $M \neq I$. We will 
+now argue that $I = R$. Let $r \in I$ with $r \notin M$. Since $\sfrac{R}{M}$ is a field and we have $r +M \neq 0+M$, the element $r+M$ has 
+an inverse. Let $(r+M)(s+M)=1_R+M$. Then
 \begin{align*}
     sr+M = 1_R+M &\Longrightarrow 1_R-sr=m, \ m \in M \\
     &\Longrightarrow 1_R = sr+m.
 \end{align*}
-Now, since $r \in I$ and $I$ absorbs products, $sr \in I$. Then $1_R \in I$ and $I=R$. Now, if an ideal contains a unit, it must be the whole ring. This shows that $M$ is maximal. $\square$
+Now, since $r \in I$ and $I$ absorbs products, $sr \in I$. Then $1_R \in I$ and $I=R$. Now, if an ideal contains a unit, it must be the 
+whole ring. This shows that $M$ is maximal. $\square$
 
-\textcolor{red}{Proposition 7.4.3:} Assume $R$ is a commutative ring with unity. Then $P$ is a prime ideal if and only if $\sfrac{R}{P}$ is an integral domain.
+\textcolor{red}{Proposition 7.4.3:} Assume $R$ is a commutative ring with unity. Then $P$ is a prime ideal if and only if $\sfrac{R}{P}$ 
+is an integral domain.
 
-\textbf{Proof:} Since $R$ is a commutative ring with unity, $\sfrac{R}{P}$ is also a commutative ring with unity. Then we need only show $\sfrac{R}{P}$ has no zero divisors. Suppose $(a+P)(b+P) = 0+P$. Then $(a+P)(b+P)= ab+P$ and $ab \in P$, so we must have at least one of $a \in P$ or $b \in P$. Then $a+P = 0+P$ or $b+p = 0+P$.
+\textbf{Proof:} Since $R$ is a commutative ring with unity, $\sfrac{R}{P}$ is also a commutative ring with unity. Then we need only show 
+$\sfrac{R}{P}$ has no zero divisors. Suppose $(a+P)(b+P) = 0+P$. Then $(a+P)(b+P)= ab+P$ and $ab \in P$, so we must have at least one of 
+$a \in P$ or $b \in P$. Then $a+P = 0+P$ or $b+p = 0+P$.
 
 For the other direction, assume $\sfrac{R}{P}$ is an integral domain, and let $ab \in P$. Then
 \begin{align*}
@@ -1652,7 +1915,8 @@ For the other direction, assume $\sfrac{R}{P}$ is an integral domain, and let $a
 
 Note that, if $M$ is a maximal ideal, then $M$ is prime. Further, note that the converse of this statement is not necessarily true.
 
-\textcolor{blue}{Example 7.4.1:} In $\mathbb{Z}$, the $(0)$ ideal is prime but not maximal. Further, $(x)$ is prime in $\mathbb{Z}[x]$ but not maximal. Also note that $\sfrac{\mathbb{Z}[x]}{(x)} \cong \mathbb{Z}$, which is an integral domain but not a field. 
+\textcolor{blue}{Example 7.4.1:} In $\mathbb{Z}$, the $(0)$ ideal is prime but not maximal. Further, $(x)$ is prime in $\mathbb{Z}[x]$ but 
+not maximal. Also note that $\sfrac{\mathbb{Z}[x]}{(x)} \cong \mathbb{Z}$, which is an integral domain but not a field. 
 
 \subsection{Rings of Fractions}
 
@@ -1663,20 +1927,25 @@ In this section, assume $R$ is an integral domain. Our goal is to construct a ne
     \item is minimal with respect to $(1)$ and $(2)$.
 \end{enumerate}
 
-Given $R$, let $S = \{(a,b): a,b \in R, b \neq 0\}$. Define an equivalence relation $\sim$ on $S$ by the rule $(a,b) \sim (c,d)$ if and only if $ad=bc$. Let $Frac(R)$ be the set of all equivalence classes under the relation $\sim$ on $S$. Given $[a,b],[c,d] \in Frac(R)$, define
+Given $R$, let $S = \{(a,b): a,b \in R, b \neq 0\}$. Define an equivalence relation $\sim$ on $S$ by the rule $(a,b) \sim (c,d)$ if and 
+only if $ad=bc$. Let $Frac(R)$ be the set of all equivalence classes under the relation $\sim$ on $S$. Given $[a,b],[c,d] \in Frac(R)$, 
+define
 \begin{align*}
     [a,b]+[c,d] &= [ad+bc,bd] \text{ and } \\
     [a,b][c,d] &= [ac,bd].
 \end{align*}
-With these two operations, $Frac(R)$ is a field. The additive identity is $[0,1_R]$, and the multiplicative identity is $[1_R,1_R]$. Given $[a,b]$ where $[a,b] \neq [0,1_R]$, observe $[a,b][b,a] = [ab,ba]=[1_R,1_R]$. That is, any nonzero element is invertible. 
+With these two operations, $Frac(R)$ is a field. The additive identity is $[0,1_R]$, and the multiplicative identity is $[1_R,1_R]$. Given 
+$[a,b]$ where $[a,b] \neq [0,1_R]$, observe $[a,b][b,a] = [ab,ba]=[1_R,1_R]$. That is, any nonzero element is invertible. 
 
-The set $\{[a,1_R]: a \in R\}$ is a subset of $Frac(R)$ that is isomorphic ro $R$. This field is called \textcolor{purple}{the field of fractions of $R$}.
+The set $\{[a,1_R]: a \in R\}$ is a subset of $Frac(R)$ that is isomorphic ro $R$. This field is called \textcolor{purple}{the field of 
+fractions of $R$}.
 
 Some good facts to know:
 \begin{enumerate}
     \item If $R$ is a field, then $Frac(R) \cong R$.
     \item If $R = \mathbb{Z}$, then $Frac(R) = \mathbb{Q}$.
-    \item If $R$ is an integral domain, then $R[x]$ is an integral domain and $Frac(R[x]) = R(x)$, where $R(x)$ is the set of rational functions. That is, where $R(x) = \biggl\{ \dfrac{f(x)}{g(x)}: f(x), g(x) \in R[x], g(x) \neq 0 \biggr\}$.
+    \item If $R$ is an integral domain, then $R[x]$ is an integral domain and $Frac(R[x]) = R(x)$, where $R(x)$ is the set of rational 
+    functions. That is, where $R(x) = \biggl\{ \dfrac{f(x)}{g(x)}: f(x), g(x) \in R[x], g(x) \neq 0 \biggr\}$.
 \end{enumerate}
 
 
@@ -1685,9 +1954,39 @@ Some good facts to know:
 \section{Euclidean Domains, Principal Ideal Domains, and Unique Factorization Domains}
 \subsection{Euclidean Domains}
 
-\textcolor{purple}{Definition 8.1.1:} Let $R$ be an integral domain. A function $N: R \longrightarrow \{0,1,2,3, \dots\}$ with $N(0_R) = 0$ is called a \textcolor{purple}{norm} on $R$. If $N(a)>0$ $\forall a \in R$ with $a \neq 0_R$, then $N$ is a \textcolor{purple}{positive norm}.
+\textcolor{purple}{Definition 8.1.1:} Let $R$ be an integral domain. A function $N: R \longrightarrow \{0,1,2,3, \dots\}$ with $N(0_R) = 0$ 
+is called a \textcolor{purple}{norm} on $R$. If $N(a)>0$ $\forall a \in R$ with $a \neq 0_R$, then $N$ is a \textcolor{purple}{positive 
+norm}.
 
-\textcolor{purple}{Definition 8.1.2:} An integral domain $R$ is a \textcolor{purple}{Euclidean domain} if there is a norm $N$ or $R$ such that for any two $a,b \in R$ with $b \neq 0$, there are unique elements $q$ and $r$ in $R$ such that $a = qb+r$ where $r = 0_R$ or $N(r)<N(b)$. We might call $q$ the \textcolor{purple}{quotient} and $r$ the \textcolor{purple}{remainder}.
+\textcolor{purple}{Definition 8.1.2:} An integral domain $R$ is a \textcolor{purple}{Euclidean domain} if there is a norm $N$ or $R$ such 
+that for any two $a,b \in R$ with $b \neq 0$, there are unique elements $q$ and $r$ in $R$ such that $a = qb+r$ where $r = 0_R$ or 
+$N(r)<N(b)$. We might call $q$ the \textcolor{purple}{quotient} and $r$ the \textcolor{purple}{remainder}.
 
+\textcolor{blue}{Example 8.1.1:} Some examples of Euclidean Domains include:
+\begin{enumerate}
+    \item $\mathbb{Z}$ with $N(x) = |x|$
+    \item if $F$ is a field, $F[x]$ (polynomials with coefficients in $F$) is the ring and $N(p(x)) = \deg{(p(x))}$
+    \item $\mathbb{Z}[i] = \{a+bi:a,b \in \mathbb{Z}\}$ with $N(a+bi) = a^2+b^2$ (think number theory)
+\end{enumerate}
+
+\textcolor{red}{Proposition 8.1.1:} Let $R$ be a euclidian domain. If $I$ is a nonzero ideal in $R$, then there is a $d \in R$ such that 
+$I=(d)$. In particular, every euclidean domain is a principal ideal domain. Also, $d \in I$ with the smallest positive norm subject to 
+being in $I$.
+
+\textbf{Proof:} Let $I \trianglelefteq R$ with $I \neq \{0\}$. Let $d \in I$ with $N(d)$ positive and as small as possible. We claim that 
+$(d)=I$.
+
+Now, $d \in I$, so since $I$ absorbs products, $rd \in I$ $\forall r \in R$. Thusly, $(d) \subseteq I$. For the reverse inclusion, let 
+$a \in I$. There exists unique $q$ and $r$ such that $a=dq+r$ where $r = 0$ or $N(r) < N(d)$. Then we have
+\begin{align*}
+    a = dq+r &\Longrightarrow a-dq = r \\
+    &\Longrightarrow a-dq \in I \text{ since } a \in I, dq \in I \\
+    &\Longrightarrow r \in I.
+\end{align*}
+
+But $d \in I$ and $N(d)$ is as small as possible. So $N(r) < N(d)$ cannot occur. Then $r = 0$. Then 
+$a=dq \Longrightarrow a \in (d) \Longrightarrow (d) \in I \Longrightarrow (d)=I. \ \square$
+
+One consequence of this is as follows: Let $F$ be a field. If $J \trianglelefteq F[x]$ then $J=(p(x))$ for some $p(x) \in F[x]$. 
 
 \end{document}
