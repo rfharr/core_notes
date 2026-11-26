@@ -59,7 +59,8 @@
         n_3 \equiv 1(\mod{3}) \text{ and } n_3 \big| 5 &\Longrightarrow n_3 = 1 \text{ and }\\
         n_5 \equiv 1(\mod{5}) \text{ and } n_5 \big| 3^2 = 9 &\Longrightarrow n_5 = 1
     \end{align*}
-    Now, let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $|P| = 3^2 = 9$ and $|Q|= 5$. Then, since $P$ and $Q$ are both finite subgroups of $G$, we have that 
+    Now, let $P \in Syl_3(G)$ and $Q \in Syl_5(G)$. Then $|P| = 3^2 = 9$ and $|Q|= 5$. Then, since $P$ and $Q$ are both finite subgroups 
+    of $G$, we have that 
     \[
         |PQ| = \dfrac{|P||Q|}{|P \cap Q|}.
     \]
@@ -72,30 +73,101 @@
     \[
         |PQ| = \dfrac{|P||Q|}{|P \cap Q|} = \dfrac{9 \cdot 5}{1} = 45 = |G|.
     \]
-    Now, since $n_3 = n_5 = 1$, we must have that $P,Q \trianglelefteq G$. Further, since $|PQ|=|G|$, we must have that $PQ = G$. Then, by the Normal Factoring Lemma, we must have that $G \cong P \times Q$.
+    Now, since $n_3 = n_5 = 1$, we must have that $P,Q \trianglelefteq G$. Further, since $|PQ|=|G|$, we must have that $PQ = G$. Then, by 
+    the Normal Factoring Lemma, we must have that $G \cong P \times Q$.
 
-    Now, note that $|P| = 9 \Longrightarrow P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5 \Longrightarrow Q \cong \mathbb{Z}_5$. Then we have 
+    Now, note that $|P| = 9 \Longrightarrow P \cong \mathbb{Z}_9$ or $P \cong \mathbb{Z}_3 \times \mathbb{Z}_3$. Similarly, $|Q| = 5 
+    \Longrightarrow Q \cong \mathbb{Z}_5$. Then we have 
     \[
         G \cong \mathbb{Z}_3 \times \mathbb{Z}_3 \times \mathbb{Z}_5 \text{ or } G \cong \mathbb{Z}_9 \times \mathbb{Z}_5. \ \square
     \]
 
-    \item If $G$ is a group of order $105=3 \cdot 5 \cdot 7$, prove that $G$ has a cyclic subgroup of order $35$ and that this subgroup is normal in $G$.
-    
+    \item If $G$ is a group of order $105=3 \cdot 5 \cdot 7$, prove that $G$ has a cyclic subgroup of order $35$ and that this subgroup is 
+    normal in $G$.\\
+    \textbf{Proof:} Let $G$ be a group with $|G| = 105 = 3 \cdot 5 \cdot 7$. Then, by Sylow's Theorems, we have that $\exists P_3 \in 
+    Syl_3(G)$. Then $n_3 \geq 1, n_3 \equiv 1(\mod{3})$, and $n_3 \big| 35$. Then we must have that $n_3 \in \{1,7\}$. Similarly, $\exists
+    P_5 \in Syl_5(G)$, so $n_5 \geq 1, n_5 \equiv 1(\mod{5})$, and $n_5 \big| 21$. Then we must have that $n_5 \in \{1,21\}$. Lastly, 
+    $\exists P_7 \in Syl_7(G)$, so $n_7 \equiv 1(\mod{7})$ and $n_7 \big| 15$, so we must have that $n_7 \in \{1,15\}$.
+
+    Now, since $P_5$ and $P_7$ are both finite subgroups of $G$, we know
+    \[
+        |P_5P_7| = \dfrac{|P_5| \cdot |P_7|}{|P_5 \cap P_7|}.
+    \]
+    Now, $|P_5| = 5, |P_7|=7$, $P_5 \cap P_7 \leq P_5$, and $P_5 \cap P_7 \leq P_7$. Then, by La Grange's Theorem, $|P_5 \cap P_7| \big| |P_5|$
+    and $|P_5 \cap P_7| \big| |P_7|$. Since $5$ and $7$ only share $1$ as a common divisor, we must have that $|P_5 \cap P_7| = 1$ and 
+    $P_5 \cap P_7 = \{e\}$. Then 
+    \[
+        \dfrac{|P_5| \cdot |P_7|}{|P_5 \cap P_7|} = \dfrac{5 \cdot 7}{1} = 35.
+    \]
+    Next, we aim to show that $P_5P_7 \leq G$. Now assume that $n_5 = 21$ and $n_7 = 15$. Then, since $P_5 \cap P_7 = \{e\}$, the only element
+    of order $1$ in either group is the identity. Then all other elements from each group must have order $5$ and $7$, respectively. By
+    counting, we have $21 \cdot 4 + 15 \cdot 6 = 84 + 90 = 174 > 105$, which is a contradiction. Then at least one of $n_5 = 1$ or $n_7 = 1$
+    must be true.
+
+    \textbf{Case 1: $n_5 = 1$}\\
+    If $n_5 = 1$, then $P_5 \in Syl_5(G)$ is the lone Sylow-$5$ subgroup of $G$. Then $Syl_5(G) = \{P_5\}$ and by Sylow's Theorems, 
+    $gP_5g^{-1} \leq G$ and $|gP_5g^{-1}| = |P_5| = 5$, so $gP_5g^{-1} \in Syl_5(G) = \{P_5\}$. Thusly, $gP_5g^{-1} = P_5$, so $P_5 
+    \trianglelefteq G$. 
+
+    Next, let $a = h_1k_1$ and $b=h_2k_2$. Then $a,b \in P_5P_7$. We aim to show that $ab^{-1} \in P_5P_7$. Let $c = h_3k_3$. We have 
+    \begin{align*}
+        ab^{-1} = c &\Longrightarrow h_1k_1(h_2k_2)^{-1}=h_3k_3 \\
+        &\Longrightarrow h_1k_1k_2^{-1}h_2^{-1}=h_3k_3 \\
+        &\Longrightarrow h_1k_4h_2^{-1} = h_3k_3 \\
+        &\Longrightarrow k_4h_2^{-1} = h_1^{-1}h_3k_3 \\
+        &\Longrightarrow k_4h_2^{-1} = h_4k_3 \\
+        &\Longrightarrow P_7P_5 = P_5P_7.
+    \end{align*}
+
+    Next, we consider the same $a,b \in P_5P_7$. We have
+    \begin{align*}
+        ab^{-1} &= h_1k_1(h_2k_2)^{-1} \\
+        &= h_1k_1k_2^{-1}h_2^{-1} \\
+        &= h_1k_3h_2^{-1} \\
+        &= h_1h_3k_4 \\
+        &= h_4k_4 \in P_5P_7 \\
+        &\Longrightarrow P_5P_7 \leq G.
+    \end{align*}
+
+    \textbf{Case $2$: $n_7 = 1$}\\
+    Assume that $n_7=1$. Then, as in the first case, $P_7 \trianglelefteq G$, which gives us that $P_5P_7=P_7P_5$, and thusly $P_5P_7 \leq G$.
+
+    Then we need only show that $P_5P_7$ is cyclic and normal in $G$. First, we tackle cyclic. Then we consider the number of Sylow-$5$ 
+    subgroups of $P_5P_7$ and the number of Sylow-$7$ subgroups of $P_5P_7$. First, note that $n_5 \equiv 1(\mod{5})$ and $n_5 \big| 7$, so 
+    we must have that $n_5 = 1$. Similarly, $n_7 \equiv 1(\mod{7})$ and $n_7 \big| 5$, so we must have that $n_7 = 1$. Then $P_5 
+    \trianglelefteq P_5P_7$ and $P_7 \trianglelefteq P_5P_7$. Further, as in above, $P_5 \cap P_7 = \{e\}$. Then, by the normal factoring
+    lemma, we must have that $P_5P_7 \cong \mathbb{Z}_{35}$, so $P_5P_7$ is cyclic.
+
+    Lastly, we consider normalcy. In doing so, we consider the quotient group $\sfrac{G}{P_5P_7}$. Note that, since both $G$ and $P_5P_7$ are
+    finite, $\big| \sfrac{G}{P_5P_7} \big| = \sfrac{|G|}{|P_5P_7|} \sfrac{105}{35} = 3 = [G:P_5P_7]$. Since $3$ is prime and $3 \big| |G|$,
+    we must have that $P_5P_7 \trianglelefteq G$. $\square$
+
     \item Let $p$ and $q$ be distinct primes. Prove that a group of order $p^2q$ is not simple.\\
-    \textbf{Proof:} Let $G$ be a group such that $|G| = p^2q$ with $p$ and $q$ distinct primes. Then, by Sylow's Theorems, $\exists P \in Syl_p(G)$ and $\exists Q \in Syl_q(G)$. First, we investigate $Syl_p(G)$. 
+    \textbf{Proof:} Let $G$ be a group such that $|G| = p^2q$ with $p$ and $q$ distinct primes. Then, by Sylow's Theorems, $\exists P \in 
+    Syl_p(G)$ and $\exists Q \in Syl_q(G)$. First, we investigate $Syl_p(G)$. 
 
-    Note that, again by Sylow's Theorems, $n_p \equiv 1(\mod{p})$ and $n_p \big| q$. Then we must have that $n_p \in \{1,q\}$. Now, if $n_p = 1$, then $p \in Syl_p(G)$ is the sole sylow $p$-subgroup of $G$ and thusly, $P \trianglelefteq G$. Then $G$ is not simple and we are done. Then assume that $n_p = q$. Next, we investigate $Syl_q(G)$. 
+    Note that, again by Sylow's Theorems, $n_p \equiv 1(\mod{p})$ and $n_p \big| q$. Then we must have that $n_p \in \{1,q\}$. Now, if $n_p 
+    = 1$, then $p \in Syl_p(G)$ is the sole sylow $p$-subgroup of $G$ and thusly, $P \trianglelefteq G$. Then $G$ is not simple and we are 
+    done. 
+    Then assume that $n_p = q$. Next, we investigate $Syl_q(G)$. 
 
-    Again citing Sylow's Theorems, $n_q \equiv 1(\mod{q})$ and $n_q \big| p^2$. Then $n_q \in \{1,p,p^2\}$. Similarly to above, if $n_q = 1$, then $Q \in Syl_q(G)$ is the sole sylow $q$-subgroup and is thusly normal in $G$. Then we are done. So assume that $n_q \neq 1$. Then $n_q \in \{p,p^2\}$. Now, since $n_p = q$, we have
+    Again citing Sylow's Theorems, $n_q \equiv 1(\mod{q})$ and $n_q \big| p^2$. Then $n_q \in \{1,p,p^2\}$. Similarly to above, if $n_q = 1$, 
+    then $Q \in Syl_q(G)$ is the sole sylow $q$-subgroup and is thusly normal in $G$. Then we are done. So assume that $n_q \neq 1$. Then 
+    $n_q \in \{p,p^2\}$. Now, since $n_p = q$, we have
     \begin{align*}
         n_p = q &\Longrightarrow q \equiv 1(\mod{p}) \\
         &\Longrightarrow q \in \{1,p+1,2p+1, \dots \} \\
         &\Longrightarrow p < q.
     \end{align*}
 
-    Assume $n_q = p$. Now, since $n_q \equiv 1(\mod{q})$, we must have that $n_q \in \{1, q+1, 2q+1, \dots \}$, so $p \in \{1,q+1,2q+1, \dots \}$. But $1 < p < q$, so we have a contradiction (since $p < q \Longrightarrow p < q+1$).
+    Assume $n_q = p$. Now, since $n_q \equiv 1(\mod{q})$, we must have that $n_q \in \{1, q+1, 2q+1, \dots \}$, so $p \in \{1,q+1,2q+1, 
+    \dots \}$. But $1 < p < q$, so we have a contradiction (since $p < q \Longrightarrow p < q+1$).
 
-    Then assume that $n_q = p^2$. Now, since $|Q| = q$ and there are $p^2$ sylow $q$-subgroups in $G$, we must have that the total number of elements (not counting the identity) that are accounted for in the sylow $q$-subgroups is $p^2(q-1) = p^2q-p^2$. This means that there are exactly $p^2$ elements of $G$ remaining to be accounted for, all of which must be elements of $P \in Syl_p(G)$. Since $P \in Syl_p(G) \Longrightarrow |P| = p^2$, we must only have one sylow $p$-subgroup of $G$. That is, $n_p = 1$. Then $P \trianglelefteq G$ and $G$ is not simple. $\square$
+    Then assume that $n_q = p^2$. Now, since $|Q| = q$ and there are $p^2$ sylow $q$-subgroups in $G$, we must have that the total number 
+    of elements (not counting the identity) that are accounted for in the sylow $q$-subgroups is $p^2(q-1) = p^2q-p^2$. This means that 
+    there are exactly $p^2$ elements of $G$ remaining to be accounted for, all of which must be elements of $P \in Syl_p(G)$. Since $P 
+    \in Syl_p(G) \Longrightarrow |P| = p^2$, we must only have one sylow $p$-subgroup of $G$. That is, $n_p = 1$. Then $P \trianglelefteq G$ 
+    and $G$ is not simple. $\square$
     
     \item Prove that a group of order $132$ cannot be simple.\\
     \textbf{Proof:} Let $G$ be a group with order $132 = 2^2 \cdot 3 \cdot 11$. Then, by Sylow's Theorem, we have
@@ -107,434 +179,33 @@
         n_{11} &\equiv 1(\mod{11}) \text{ and } n_{11} \big| 12 \\
         &\Longrightarrow n_{11} \in \{1,12\}.
     \end{align*}
-    We will start with $n_{11}$. Now, if $n_{11}=1$, then $|Syl_{11}(G)| = 1$ and $P \in Syl_{11}(G) \Longrightarrow P \trianglelefteq G$ and we are done. Then assume $n_{11}=12$. Note that for each $Q_i \in Syl_{11}(G)$, $|Q_i| = 11$. Further, we have that, since the order of each $Q_i$ is prime and each $Q_i$ is unique, $Q_n \cap Q_m = \{e\} \ \forall n,m \in \{1,2, \dots, 12\}$. Then there are $10 \cdot 12 = 120$ unique elements from $G$ accounted for in $\bigcup_{i =1}^{12}{Q_i}$, $Q_i \in Syl_{11}(G)$, which leaves $12$ elements remaining.
+    We will start with $n_{11}$. Now, if $n_{11}=1$, then $|Syl_{11}(G)| = 1$ and $P \in Syl_{11}(G) \Longrightarrow P \trianglelefteq G$ 
+    and we are done. Then assume $n_{11}=12$. Note that for each $Q_i \in Syl_{11}(G)$, $|Q_i| = 11$. Further, we have that, since the order 
+    of each $Q_i$ is prime and each $Q_i$ is unique, $Q_n \cap Q_m = \{e\} \ \forall n,m \in \{1,2, \dots, 12\}$. Then there are $10 \cdot 
+    12 = 120$ unique elements from $G$ accounted for in $\bigcup_{i =1}^{12}{Q_i}$, $Q_i \in Syl_{11}(G)$, which leaves $12$ elements 
+    remaining.
 
-    Now, we consider $n_3$. Since there are only $12$ distinct elements remaining in $G$, we know $n_3 \neq 22$. Further, if $n_3=1$ then $K \in Syl_3(G) \Longrightarrow K \trianglelefteq G$ and we are done. Then assume that $n_3 = 4$. Similarly to above, $Syl_3(G)$ will contain $4 \cdot 2 = 8$ unique elements between it's $4$ subgroups, leaving $4$ unique elements remaining in $G$.
+    Now, we consider $n_3$. Since there are only $12$ distinct elements remaining in $G$, we know $n_3 \neq 22$. Further, if $n_3=1$ then 
+    $K \in Syl_3(G) \Longrightarrow K \trianglelefteq G$ and we are done. Then assume that $n_3 = 4$. Similarly to above, $Syl_3(G)$ will 
+    contain $4 \cdot 2 = 8$ unique elements between it's $4$ subgroups, leaving $4$ unique elements remaining in $G$.
 
-    Lastly, we have $n_2$. Note that we must have that $n_2=1$ since $H \in Syl_2(G) \Longrightarrow |H| = 4$. Then $H \trianglelefteq G$ and $G$ is not simple. $\square$
+    Lastly, we have $n_2$. Note that we must have that $n_2=1$ since $H \in Syl_2(G) \Longrightarrow |H| = 4$. Then $H \trianglelefteq G$ 
+    and $G$ is not simple. $\square$
 
     \item Let $P \in Syl_p(G)$ and let $N$ be a normal subgroup of $G$. Prove that $P \cap N$ is a Sylow $p$-subgroup of $N$.
-    \item Let $G$ be a group of order $231 = 3 \cdot 7 \cdot 11$. Prove that $Z(G)$ contains a Sylow $11$-subgroup. Hint: One approach is to use the $\sfrac{N}{C}$ Theorem which states that if $H$ is a subgroup of $G$, then $\sfrac{N_G(H)}{C_G(H)}$ is isomorphic to a subgroup of $Aut(H)$.
-    \item Prove that there is no simple group of order $300 = 2^2 \cdot 3 \cdot 5^2$. Hint: Assume that $G$ is not simple. By considering $n_5$, obtain a contradiction by showing $G$ is isomorphic to a subgroup of $S_6$.
+    \item Let $G$ be a group of order $231 = 3 \cdot 7 \cdot 11$. Prove that $Z(G)$ contains a Sylow $11$-subgroup. Hint: One approach is 
+    to use the $\sfrac{N}{C}$ Theorem which states that if $H$ is a subgroup of $G$, then $\sfrac{N_G(H)}{C_G(H)}$ is isomorphic to a 
+    subgroup of $Aut(H)$.
+    \item Prove that there is no simple group of order $300 = 2^2 \cdot 3 \cdot 5^2$. Hint: Assume that $G$ is not simple. By considering 
+    $n_5$, obtain a contradiction by showing $G$ is isomorphic to a subgroup of $S_6$.
 \end{enumerate}
 
 \newpage
 
-\section{Comprehensive Exams}
+\section{Sylow Problems From Recent Comprehensive Exams}
 
 \subsection{Spring 2026}
-\textbf{Algebra}
-
-\begin{enumerate}
-    \item Let $G$ be a finite group and let $p$ be the smallest prime dividing the order of $G$. If $H$ is a subgroup of $G$ of index $p$, prove that $H$ is a normal subgroup of $G$.\\
-    \textbf{Proof:} Let $G$ act on $\sfrac{G}{H}$ by the map $g \cdot (xH) = (gx)H$, $g \in G, xH \in \sfrac{G}{H}$. Then each $g \in G$ induces a permutation $\sigma_g: \sfrac{G}{H} \longrightarrow \sfrac{G}{H}$ defined by $\sigma_g(xH) = g \cdot (xH)$. Next, we show $\sigma_g$ is a bijection. 
-
-    For one-to-one, let $\sigma_g(x_1H) = \sigma_g(x_2H)$. Then we have
-    \begin{align*}
-        \sigma_g(x_1H) = \sigma_g(x_2H) &\Longrightarrow g \cdot (x_1H) = g \cdot (x_2H) \\
-        &\Longrightarrow (gx_1)H = (gx_2)H \\
-        &\Longrightarrow (gx_2)^{-1}(gx_1) \in H \\
-        &\Longrightarrow x_2^{-1}g^{-1}gx_1 \in H \\
-        &\Longrightarrow x_2^{-1}x_1 \in H \\
-        &\Longrightarrow x_1H = x_2H,
-    \end{align*}
-    so $\sigma_g$ is one-to-one. For onto, let $(gx)H \in \sfrac{G}{H}$. Then we have
-    \begin{align*}
-        (gx)H &= g\cdot (xH) \\
-        &= \sigma_g(xH),
-    \end{align*}
-    so $\sigma_g$ is onto. Then $\sigma_g$ is a bijection. Further, since $\sigma_g$ maps onto itself and is a bijection, $\sigma_g$ is a permutation. That is, $\sigma_g \in S_{\sfrac{G}{H}}$. Now, since $[G:H] = p$, $\sigma_g \in S_p$.
-
-    Then we define a map $\phi:G \longrightarrow S_p$ by $\phi(g) = \sigma_g$. Then we will next show that $\phi$ is a homomorphism. Let $g_1,g_2 \in G$. We have 
-    \begin{align*}
-        \phi(g_1g_2) &= \sigma_{g_1g_2} \\
-        &= \sigma_{g_1} \circ \sigma{g_2} \\
-        &= \phi(g_1) \phi(g_2),
-    \end{align*}
-    so $\phi$ is a homomorphism. Then we consider the kernel, $K = \ker{(\phi)}$. Let $k \in K$ and consider the identity coset, $xH = eH = H$. Then we have
-    \begin{align*}
-        \phi(k) &= \sigma_k(xH) \\
-        &= \sigma_k(eH) \\
-        &= k \cdot eH \\
-        &= k \cdot H \\
-        &= (k)H \\
-        &= H.
-    \end{align*}
-    Then we must have that $K \subseteq H$. Now, by the First Isomorphism Theorem, we know 
-    \[
-        \sfrac{G}{K} \cong Im(\phi).
-    \]
-    Further, since $\phi:G \longrightarrow S_p$, we have that $Im(\phi) \leq S_p$. Then, by La Grange's Theorem, we have
-    \[
-        \big| \sfrac{G}{K} \big| \bigg| \big|S_p \big| \Longrightarrow [G:K] \big| p! 
-    \]
-    Next, by the Tower Law, we have
-    \begin{align*}
-        [G:K] &= [G:H] \cdot [H:K] \\
-        &= p \cdot [H:K].
-    \end{align*}
-    Note that $K \leq G$, so we know $[G:K] \big| |G|$. Now, since $p$ is the smallest prime divisor of $|G|$, $[G:K]$ has no prime divisors smaller than $p$. So we must have that $p$ is the only prime divisor of $[G:K]$, and thusly $[G:K] = p$. Then $[H:K] = 1$, so $H = K$. Lastly, since $K \trianglelefteq G$, we obtain $H \trianglelefteq G$. $\square$
-    \item Let $G$ be a group of order $p^{\alpha}$ where $p$ is a prime and $\alpha$ is a positive integer.
     \begin{enumerate}
-        \item Prove that $|Z(G)|>1$, where $Z(G)$ is the center of $G$.\\
-        \textbf{Proof:} Let $G$ be a group of order $p^{\alpha}$ with $p$ a prime and $\alpha \in \mathbb{Z}^+$. We define $Z(G) = \{g \in G: gx = xg \ \forall x \in G\}$.  
-
-        Now, by the class equation, 
-        \[
-            |G| = |Z(G)| + \sum[G:C_G(x)]
-        \]
-        where the sum is taken over all conjugacy classes of size greater than $1$ with only $1$ $x$ per conjugacy class. Note that we only take the sum over conjugacy classes of size greater than one because if the conjugacy class only has one element, then that element must commute with all elements of $G$ and is thusly in the center (which is already being counted by $|Z(G)|$ in the class equation).
-
-        Now, by the Orbit-Stabilizer Theorem, $[G:C_G(x)]= \dfrac{|G|}{|C_G(x)|}$. Then we have
-        \begin{align*}
-            |G|=|Z(G)|+\sum[G:C_G(x)] &\Longrightarrow |G|=|Z(G)|+\sum{\dfrac{|G|}{|C_G(x)|}}\\
-            &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{|C_G(x)|}}
-        \end{align*}
-        Now, note that by La Grange's Theorem, $H \leq G \Longrightarrow |H| \big||G|$. Further, $C_G(x) \leq G$. Then we must have that $|C_G(x)| \big| |G|$, and thusly $|C_G(x)| = p^{l_x}$ with $1 \leq l_x < \alpha$. Then
-        \begin{align*}
-            p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{|C_G(x)|}} &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{\dfrac{p^{\alpha}}{p^{l_x}}} \\
-            &\Longrightarrow p^{\alpha} = |Z(G)|+\sum{p^{\alpha-l_x}}\\
-            &\Longrightarrow p^{\alpha}-\sum{p^{\alpha-l_x}} =|Z(G)|\\
-            &\Longrightarrow p(p^{\alpha-1}-\sum{p^{\alpha-l_x-1}}) = |Z(G)| \\
-            &\Longrightarrow p \big| |Z(G)| \\
-            &\Longrightarrow |Z(G)| > 1. \ \square
-        \end{align*}
-        \item Prove inductively that any group of order $p^{\alpha}$ contains a subgroup of order $p^{\alpha-1}$ for all $\alpha \geq 1$. You may use Cauchy's Theorem for abelian groups without proving it.\\
-        \textbf{Proof:} Let $G$ be a group of order $p^{\alpha}$ with $p$ a prime and $\alpha \in \mathbb{Z}^+$. First, assume $\alpha = 1$. Then $|G| = p$ and we consider the trivial subgroup, $H = \{e\}$. Note that $|H| = 1 = p^{\alpha-1} = p^0$. Then our base case is true.
-
-        Now, assume that $|G| = p^{k}, k < \alpha \Longrightarrow \exists H \leq G$ with $|H| = p^{k-1}$ is true. We need to show that $|G| = p^{k+1} \Longrightarrow \exists H \leq G$ with $|H| = p^{k}$ is true. Then assume that $|G| = p^{\alpha}$. Note that, by our proof in part $(a)$ above, $p \big| |Z(G)|$. Then, by Cauchy's Theorem for abelian groups, $\exists N \leq Z(G)$ such that $|N| = p$. Further, since $N \leq Z(G)$, $N \trianglelefteq G$ (any subgroup of the center of a group must be a normal subgroup of the entire group).
-
-        Next, consider the quotient group $\sfrac{G}{N}$. Note that, since $G$ and $N$ are finite, 
-        \[
-            \big| \sfrac{G}{N} \big| = \sfrac{|G|}{|N|} = \dfrac{p^{\alpha}}{p} = p^{\alpha-1}.
-        \]
-        Then, by our inductive hypothesis, $\exists K \leq \sfrac{G}{N}$ such that $|K| = p^{\alpha-2}$. Then, by the Fourth Isomorphism Theorem, $\exists H \leq G$ such that $N \subseteq H$ and $\sfrac{H}{N} \cong K$. Then we have
-        \begin{align*}
-             |H| &= \big| \sfrac{H}{N} \big| \cdot |N| \\
-             &= |K| \cdot |N| \\
-             &= p^{\alpha-2} \cdot p \\
-             &= p^{\alpha -1} \\
-             &\Longrightarrow \exists H \leq G: |H| = p^{\alpha - 1}. \ \square
-        \end{align*}
+        \item k
     \end{enumerate}
-    \item Let $G$ be a group. A subgroup $H$ of $G$ is a \textit{characteristic subgroup} if $\phi(H)=H$ for all isomorphisms $\phi:G \longrightarrow G$.
-    \begin{enumerate}
-        \item If $H$ is a characteristic subgroup of $G$, prove that $H$ is a normal subgroup of $G$.
-        \item Prove that $Z(G)$ is a characteristic subgroup of $G$.
-    \end{enumerate}
-    \item Let $G$ be a group of order $p^3qr$, where $p,q$, and $r$ are primes and $p>q>r$. Suppose that $P$ and $Q$ are distict Sylow $p$ subgroups with $|P \cap Q| > 1$.
-    \begin{enumerate}
-        \item Prove that $|P \cap Q| = p^2$.\\
-        \textbf{Proof:} Let $P,Q \in Syl_p(G)$ be distinct. Let $|G| = p^3qr$ with $p,q,$ and $r$ primes, $p>q>r$, and $|P \cap Q| > 1$. 
-        
-        First, note that $|P|=|Q| = p^3$. Also note that $P \cap Q \leq P$ and $P \cap Q \leq Q$. Then, by La Grange's Theorem, $|P \cap Q| \big |P|$ and $|P \cap Q| \big |Q|$. Then $|P \cap Q| \in \{p,p^2,p^3\}$. Further, since $P$ and $Q$ are distinct, we know that $\exists a \in P$ such that $a \notin Q$. Similarly, $\exists b \in Q$ such that $b \notin P$. Then we must have that $P \cap Q$ is a proper subgroup of $P$ and also a proper subgroup of $Q$. Then we must have that $|P \cap Q| < p^3$, which means that $|P \cap Q| \in \{p,p^2\}$.
-        
-        Now, assume that $|P \cap Q| = p$. Then, since $P$ and $Q$ are both finite, we have
-        \begin{align*}
-            |PQ| &= \dfrac{|P||Q|}{|P \cap Q|} \\
-            &= \dfrac{p^3 \cdot p^3}{p} \\
-            &= p^5.
-        \end{align*}
-        Note that $PQ \leq G$, so $|PQ| \leq |G|$. Then we must have that $p^5 \leq p^3qr \Longrightarrow p^2 \leq qr$. Now, say $p = 5$, $q = 3$, and $r = 2$. Then $p^2 = 25$ and $qr = 6$. But this is a contradiction, which means that we would need for $p < q$ or $p < r$, which is a contradiction. Then we cannot have that $|P \cap Q| = p$. This means that the only remaining possibility is $|P \cap Q| = p^2$. $\square$
-        \item Prove that $N_G(P \cap Q)$ contains both $P$ and $Q$. Here $N_G(P \cap Q)$ is the normalizer of $P \cap Q$ in $G$.
-        \item Prove that $P \cap Q$ is normal in $G$.
-    \end{enumerate}
-    \item Let $G$ be a group of order $2 \cdot 3^2 \cdot 11 = 198$.
-    \begin{enumerate}
-        \item Prove that $G$ has a unique $11$-Sylow subgroup. \\
-        \textbf{Proof:} Note that $G$ has order $11^1 \cdot 18$. Then, by Sylow's Theorem, $\exists P \in Syl_{11}(G)$, so $n_{11} \geq 1$. Further, Sylow's Theorem also gives us that $n_{11} \equiv 1(\mod{11})$ and $n_{11} \big| 18$. Then we must have that $n_{11}=1$, so $P$ is unique. $\square$
-        \item Let $P$ be the unique $11$-Sylow subgroup of $G$. Prove $C_G(P)$ is a normal subgroup of $G$ where $C_G(P)$ is the centralizer of $P$ in $G$.\\
-        \textbf{Proof:} Let $P \in Syl_{11}(G)$ with $n_{11}=1$, and let $C_G(P) = \{c \in G: cp=pc \ \forall p \in P\}$ be the centralizer of $P$ in $G$. Note that, since $n_{11}=1$, we must have that $P \trianglelefteq G$. Then we need to show that $gC_G(P)g^{-1} = C_G(P) \ \forall g \in G$. That is, we need to show that $gcg^{-1} \in C_G(P), \ c \in C_G(P) \ \forall g \in G$. Let $p \in P$. We have 
-        \begin{align*}
-            p(gcg^{-1}) &= gg^{-1}p(gcg^{-1}) \\
-            &= g(g^{-1}p)gcg^{-1} \\
-            &= g(p_1g^{-1}g)cg^{-1} \text{ since } P \trianglelefteq G\\
-            &= gp_1cg^{-1} \\
-            &= gcp_1g^{-1} \\
-            &= (gcg^{-1})p \text{ since we established } p_1g^{-1} = g^{-1}p\\
-            &\Longrightarrow gcg^{-1} \in C_G(P) \\
-            &\Longrightarrow gC_G(P)g^{-1}=C_G(P) \\
-            &\Longrightarrow C_G(P) \trianglelefteq G. \ \square
-        \end{align*}
-        \item Prove that $G$ has a normal $3$-Sylow subgroup.\\
-        \textbf{Proof:} Let $G$ be defined as above. Then, since $|G| = 3^2 \cdot 22$, Sylow's Theorem tells us that $\exists Q \in Syl_3(G)$. Further, Sylow's Theorem also tells us that $n_3 \equiv 1(\mod{3})$ and $n_3 \big| 22$. Then we must have that $n_3 =1$. Then $Syl_3(G) = \{Q\}$.\\
-        Next, note that, since $Syl_3(G) = \{Q\}$ and $Q \leq G$, we have that $gQg^{-1} \leq G$ $\forall g \in G$. Next, let $\phi:Q \Longrightarrow gQg^{-1}$ be defined by $\phi(q)=gqg^{-1}$. We aim to show that this map is a bijection. Let $\phi(q_1)=\phi(q_2)$. Then we have
-        \begin{align*}
-            \phi(q_1)=\phi(q_2) &\Longrightarrow gq_1g^{-1} = gq_2g^{-1} \\
-            &\Longrightarrow gq_1g^{-1}g = gq_2g^{-1}g \\
-            &\Longrightarrow gq_1=gq_2 \\
-            &\Longrightarrow g^{-1}gq_1 = g^{-1}gq_2 \\
-            &\Longrightarrow q_1=q_2,
-        \end{align*}
-        so $\phi$ is one-to-one. Next, let $x \in gQg^{-1}$. Then we have
-        \begin{align*}
-            x \in gQg^{-1} &\Longrightarrow gqg^{-1} = x \text{ for some } q \in Q \\
-            &\Longrightarrow gqg^{-1}g = xg \\
-            &\Longrightarrow gq = xg \\
-            &\Longrightarrow g^{-1}gq = g^{-1}xg \\
-            &\Longrightarrow q = g^{-1}xg,
-        \end{align*}
-        so we must have that $\phi(g^{-1}xg)=q$. Then $\phi$ is a bijection and we must have that $|gQg^{-1}| = |Q|$. Then we must have that $gQg^{-1} = Q$, and thusly $Q \trianglelefteq G$. $\square$
-    \end{enumerate}
-\end{enumerate}
-
-\newpage
-
-\subsection{Spring 2025}
-\textbf{Algebra}
-
-\begin{enumerate}
-    \item Let $n \geq 3$ and let $i \in \{1,2, \dots, n\}$.
-    \begin{enumerate}
-        \item Show that $H = \{\sigma \in S_n: \sigma(i)=i\}$ is a subgroup of $S_n$.\\
-        \textbf{Proof:} Let $S_n$ denote the \textit{symmetric group of degree $n$}, $n \geq 3$, and $i \in \{1,2, \dots, n\}$. Define $H = \{\sigma \in S_n: \sigma(i)=i\}$. We will apply the subgroup test. First, note that the definition of the identity permutation is $e(i)=i$ for all $i \in \{1,2, \dots, n\}$. Then, by definition, $e \in H$ and $H$ is nonempty.
-
-        Next, let $\alpha, \beta \in H$. Then $\alpha(i)=i$ and $\beta(i)=i$. Further, we have
-        \begin{align*}
-            \beta(i)=i &\Longrightarrow \beta^{-1}(\beta(i)) = \beta^{-1}(i) \\
-            &\Longrightarrow i = \beta^{-1}(i) \\
-            &\Longrightarrow \beta^{-1}(i)=i.
-        \end{align*}
-        Then we have
-        \begin{align*}
-            \alpha \beta^{-1} &= \alpha(\beta^{-1}(i)) \\
-            &= \alpha(i) \\
-            &= i \\
-            &\Longrightarrow \alpha \beta^{-1} \in H. 
-        \end{align*}
-        Then we must have that $H$ is a subgroup of $S_n$. $\square$
-        \item In $S_8$, let $\alpha = (123)(45)(67)$. Determine the number of elements in $C_{S_8}(\alpha)$, the centralizer of $\alpha$ in $S_8$. \\
-        \textbf{Proof:} Let $\alpha = (123)(45)(67) \in S_8$. Denote the \textit{conjugacy class that contains $\alpha$} by $cl(\alpha)$ and the \textit{centralizer of $\alpha$ in $S_8$} by $C_{S_8}(\alpha) = \{\sigma \in S_8: \sigma \alpha = \alpha \sigma\}$. For $\sigma \in S_8$, let $A = \sigma C_G(\alpha) = \{\sigma \alpha: \alpha \in C_G(\alpha)\}$ be the set of left cosets of $C_G(\alpha)$ in $S_8$. 
-
-        Next, define a function $f: A \longrightarrow cl(\alpha)$ by $f(\sigma C_{S_8}(\alpha)) = \sigma \alpha \sigma^{-1}$. We claim that $f$ is a bijection. First, let $\sigma \alpha \sigma^{-1} \in cl(\alpha)$. Then $\exists \sigma C_G(\alpha) \in A$ such that $f(\sigma C_G(\alpha)) = \sigma \alpha \sigma^{-1}$, so we must have that $f$ is onto. 
-
-        Next, we show that $f$ is one-to-one. Let $f(\sigma_1 C_{S_8}(\alpha)) = f(\sigma_2 C_{S_8}(\alpha))$. Then we have 
-        \begin{align*}
-            f(\sigma_1 C_{S_8}(\alpha)) = f(\sigma_2 C_{S_8}(\alpha)) &\Longrightarrow \sigma_1 \alpha \sigma_1^{-1} = \sigma_2 \alpha \sigma_2^{-1} \\
-            &\Longrightarrow \sigma_1 \alpha = \sigma_2 \alpha \sigma_2^{-1} \sigma_1 \\
-            &\Longrightarrow \sigma_2^{-1} \sigma_1 \alpha = \alpha \sigma_2^{-1} \sigma_1 \\
-            &\Longrightarrow \sigma_2^{-1} \sigma_1 \in C_{S_8}(\alpha) \\
-            &\Longrightarrow \sigma_1 C_{S_8}(\alpha) = \sigma_2 C_{S_8}(\alpha),
-        \end{align*}
-        so we must have that $f$ is one-to-one. Then $f:A \longrightarrow cl(\alpha)$ is a bijection and we must have that 
-        \begin{align*}
-            |A| = |cl(\alpha)| &\Longrightarrow |\sigma C_G(\alpha)| = |cl(\alpha)|\\
-            &\Longrightarrow [S_8:C_G(\alpha)] = |cl(\alpha)| \\
-            &\Longrightarrow \dfrac{|S_8|}{|C_G(\alpha)|} = |cl(\alpha)| \\
-            &\Longrightarrow \dfrac{|S_8|}{|cl(\alpha)|} = |C_G(\alpha)| \\
-            &\Longrightarrow |C_G(\alpha)| = \dfrac{8!}{\dfrac{8 \cdot 7 \cdot 6}{3} \cdot \dfrac{\dfrac{5 \cdot 4}{2} \cdot \dfrac{3 \cdot 2}{2}}{2}} \\
-            &\Longrightarrow |C_G(\alpha)| = 24. \ \square
-        \end{align*}
-    \end{enumerate}
-    \begin{enumerate} \item Let $G$ be a group and let $x \in G$ with $\circ(x)=n$. Prove
-    \[
-        x^k=e \Longleftrightarrow n \big| k
-    \]
-    \textbf{Proof:} Let $G$ be a group, $x \in G$, $\circ(x)=n$, and $n \big| k$. Then we have
-    \begin{align*}
-        n \big| k &\Longrightarrow \exists m: nm = k \\
-        &\Longrightarrow x^{nm}= x^k \\
-        &\Longrightarrow (x^n)^m = x^k \\
-        &\Longrightarrow e^m = x^k \\
-        &\Longrightarrow e = x^k.
-    \end{align*}
-    For the other direction, assume $e = x^k$ and let $k = nq + r$, $0 \leq r < n$. Then we have 
-    \begin{align*}
-        e &= x^k \\
-        &= x^{nq + r} \\
-        &= x^{nq}x^r \\
-        &= (x^n)^qx^r \\
-        &= e^qx^r \\
-        &= x^r.
-    \end{align*}
-    But $r<n$, so we must have that $r = 0$. Then $nq = k$ and thusly $n \big| k$. $\square$
-    \item Prove that, in a finite Abelian group, for any $x,y \in G$, we have
-    \[
-        \circ(xy) \big| lcm(\circ(x),\circ(y))
-    \]
-    \end{enumerate}
-    \textbf{Proof:} Let $G$ be an abelian group with $x,y \in G$. Let $\circ(x) = n$ and $\circ(y)=m$. Let $lcm(n,m) = \alpha$, so $\exists a,b \in \mathbb{Z}$ such that $\alpha = an = bm$. Then we have
-    \begin{align*}
-        (xy)^{lcm(n,m)} &= (xy)^{\alpha} \\
-        &= x^{\alpha}y^{\alpha} \\
-        &= x^{an}y^{bm} \\
-        &= (x^n)^a(y^m)^b \\
-        &= e^ae^b \\
-        &= e \\
-        &\Longrightarrow ord(xy) \big| lcm(\circ(x), \circ(y)). \ \square
-    \end{align*}
-    \item Let $H$ and $K$ be subgroups of $G$ and define $HK = \{hk: h \in H, k \in K\}$.
-    \begin{enumerate}
-        \item Prove that $HK$ is a subgroup of $G$ if and only if $HK = KH$.\\
-        \textbf{Proof:} Let $H,K \leq G$ and define $HK = \{hk: h \in H, k \in K\}$. For the first direction, assume $HK \leq G$. Let $a,b \in HK$. Then $a = h_1k_1$ and $b = h_2k_2$, $h_1,h_2 \in H$ and $k_1, k_2 \in K$. Further, since $HK \leq G$, we have that $ab^{-1} \in HK$. Then $\exists c \in HK$ such that $c = h_3k_3$ with $ab^{-1}=c$. Then
-        \begin{align*}
-            ab^{-1} =c &\Longrightarrow h_1k_1(h_2k_2)^{-1} = h_3k_3 \\
-            &\Longrightarrow  h_1k_1k_2^{-1}h_2^{-1} = h_3k_3 \\
-            &\Longrightarrow h_1k_4h_2^{-1} = h_3k_3 \\
-            &\Longrightarrow h_3^{-1}h_1k_4h_2^{-1} = k_3 \\
-            &\Longrightarrow h_4k_4h_2^{-1} = k_3 \\
-            &\Longrightarrow h_4k_4 = k_3h_2 \\
-            &\Longrightarrow HK = KH.
-        \end{align*}
-        For the other direction, let $HK = KH$. First, since $H \leq G$ and $K \leq G$, $e \in H$ and $e \in K$. Then $ee \in HK$. Then let $a,b \in HK$. Then $a = h_1k_1$ and $b = h_2k_2$ for some $h_1,h_2 \in H$ and $k_1,k_2 \in K$. Then we have
-        \begin{align*}
-            ab^{-1} &= h_1k_1(h_2k_2)^{-1} \\
-            &= h_1k_1k_2^{-1}h_2^{-1} \\
-            &= h_1k_3h_2^{-1} \text{ since } K \leq G \\
-            &= h_1h_3k_4 \text{ since } HK = KH \\
-            &= h_4k_4 \in HK \text{ since } H \leq G \\
-            &\Longrightarrow HK \leq G. \ \square
-        \end{align*}
-        \item Prove that if $H \trianglelefteq G$, then $HK$ is a subgroup of $G$.\\
-        \textbf{Proof:} Let $H,K \leq G$ and define $HK = \{hk: h \in H, k \in K\}$. Let $H \trianglelefteq G$. First, note that $e \in H$ and $e \in K$ gives us that $e = ee \in HK$, so $HK$ is nonempty. Next, let $a,b \in HK$. Then $\exists h_1,h_2 \in H$ and $k_1,k_2 \in K$ such that $a = h_1k_1$ and $b=h_2k_2$. Then we need to show that $ab^{-1} = c \in HK$, with $c = h_3k_3$ for some $h_3 \in H$ and $k_3 \in K$. We have
-        \begin{align*}
-            ab^{-1} = c &\Longrightarrow  h_1k_1(h_2k_2)^{-1} = h_3k_3 \\
-            &\Longrightarrow  h_1k_1k_2^{-1}h_2^{-1} = h_3k_3 \\
-            &\Longrightarrow h_1k_4h_2^{-1} = h_3k_3 \text{ since } K \leq G \\
-            &\Longrightarrow h_3^{-1}h_1k_4h_2^{-1} = k_3 \\
-            &\Longrightarrow h_4k_4h_2^{-1} = k_3 \text{ since } H \leq G \\
-            &\Longrightarrow h_4k_4 = k_3h_2 \\
-            &\Longrightarrow HK = KH \\
-            &\Longrightarrow HK \leq G. \ \square 
-        \end{align*}
-    \end{enumerate}
-    \item Let $p$ be a prime, $n$ be a positive integer, and $G$ be a group of order $p^n$.
-    \begin{enumerate}
-        \item Prove that $Z(G) \neq \{e\}$. \\
-        \textbf{Proof:} Let $p$ be a prime, $n \in \mathbb{Z}^+$, and $G$ be a group with $|G| = p^n$ and $x \in G$. Then, by the class equation, we have
-        \[
-            |G| = |Z(G)| + \sum{[G:C_G(x)]}
-        \]
-        where $Z(G) = \{g \in G: xg=gx, x \in G\}$ is the center of $G$ and the sum of the set of left cosets of the center of $x$ in $G$ is taken over the conjugacy classes of size greater than one with only one $x$ per conjugacy class. Note that, if we were to include conjugacy classes of size one, then we would be double counting elements that are also in the center. This is because 
-        \begin{align*}
-            |C_G(x)| = 1 &\Longrightarrow x = gxg^{-1} \\
-            &\Longrightarrow xg = gx \\
-            &\Longrightarrow x \in Z(G).
-        \end{align*}
-        Further, $|G|= p^n$ and $[G:C_G(x)] = \dfrac{|G|}{|C_G(x)|}$, so we have
-        \begin{align*}
-            |G| = |Z(G)| + \sum{[G:C_G(x)]} &\Longrightarrow p^n = |Z(G)| + \sum{\dfrac{|G|}{|C_G(x)|}} \\
-            &\Longrightarrow p^n = |Z(G)| + \sum{\dfrac{p^n}{|C_G(x)|}}.
-        \end{align*}
-        Now, since $C_G(x) < G$, by La Grange's Theorem, we have that $|C_G(x)| \big| |G|$, so 
-        \[
-            p^n = |Z(G)| + \sum{\dfrac{p^n}{|C_G(x)|}} \Longrightarrow p^n = |Z(G)| + \sum{\dfrac{p^n}{p^{l_x}}}
-        \]
-        with $0 \leq l_x < n$. Then we have 
-        \begin{align*}
-            p^n = |Z(G)| + \sum{\dfrac{p^n}{p^{l_x}}} &\Longrightarrow p^n = |Z(G)| + \sum{p^{n-l_x}}\\
-            &\Longrightarrow p^n-p^{n-l_x} = |Z(G)| \\
-            &\Longrightarrow p(p^{n-1}-p^{n-l_x-1}) = |Z(G)| \\
-            &\Longrightarrow p \big| |Z(G)| \\
-            &\Longrightarrow Z(G) \neq \{e\}. \ \square
-        \end{align*}
-        \item If $|G|=p^2$, prove that $G$ is abelian.\\
-        \textbf{Proof:} Let $|G| = p^2$. Then, by part $(a)$, we must have that $G$ has a non-trivial center. That is, $p \big| |Z(G)|$. Then, by La Grange's Theorem, we must have that $|Z(G)| \in \{p,p^2\}$. We proceed by cases.\\
-        \textbf{Case 1: $|Z(G)| = p^2$} \\
-        If $|Z(G)| = p^2$, then $Z(G) = G$, so every element of $G$ is in the center of $G$, and thusly $G$ is abelian.
-
-        \textbf{Case 2: $|Z(G)| = p$} \\
-        If $|Z(G)| = p$, then we consider the quotient group $\sfrac{G}{Z(G)}$. Note that, since $G$, and thusly $Z(G)$, are finite, we have $\big| \sfrac{G}{Z(G)} \big| = \sfrac{|G|}{|Z(G)|} = \sfrac{p^2}{p} = p$. Further, note that the quotient group $\sfrac{G}{Z(G)} \leq G$, and note that any group (or in this case, subgroup) with prime order is cyclic. 
-
-        Now, let $x,y \in G$. Then we can consider their cosets $xZ(G)$ and $yZ(G)$, both in $\sfrac{G}{Z(G)}$. Then we can write both of these as powers of their generators. We ahve $xZ(G) = g^aZ(G)$ and $yZ(G) = g^bZ(G)$. Then we write $x$ and $y$ as $x=g^az_1$ and $y=g^bz_2$. Then we have
-        \begin{align*}
-            xy &= (g^az_1)(g^bz_2) \\
-            &= g^a(z_1g^b)z_2 \\
-            &= g^a(g^bz_1)z_2 \\
-            &= (g^ag^b)(z_1z_2) \\
-            &= g^{a+b}(z_2z_1) \\
-            &= g^{b+a}(z_2z_1) \\
-            &= g^b(g^az_2)z_1 \\
-            &= g^b(z_2g^a)z_1 \\
-            &= (g^bz_2)(g^az_1) \\
-            &= yx \\
-            &\Longrightarrow G \text{ is abelian. } \square 
-        \end{align*}
-        \item Determine, with proof, all groups (up to isomorphism) of order $11^2 \cdot 13^2$.\\
-        \textbf{Proof:} Let $G$ be a group with $|G| = 11^2 \cdot 13^2$. Then, by Sylow's Theorem, we have that 
-        \begin{align*}
-            |G| = 11^2 \cdot 169 &\Longrightarrow \exists H \in Syl_{11}(G), n_{11} \equiv 1(\mod{11}), \text{ and } n_{11} \big| 169 \\
-            &\Longrightarrow n_{11}=1 \\
-            &\Longrightarrow H \trianglelefteq G, \text{ and } \\
-            |G| = 13^2 \cdot 121 &\Longrightarrow \exists K \in Syl_{13}(G), n_{13} \equiv 1(\mod{13}), \text{ and } n_{13} \big| 121 \\
-            &\Longrightarrow n_{13} = 1 \\
-            &\Longrightarrow K \trianglelefteq G.
-        \end{align*}
-        Further, since $\gcd{(|H|,|K|)} = 1$, we must have that $H \cap K = \{e\}$. Thusly, 
-        \[
-            |HK| = \dfrac{|H| \cdot |K|}{|H \cap K|} = \dfrac{11^2 \cdot 13^2}{1} = |G|,
-        \]
-        which means that $HK = G$. Then, by the Normal Factoring Lemma, $G \cong H \times K$. Further, $H \trianglelefteq G$ and $K \trianglelefteq G$ gives us that $G$ is abelian. Then, by the fundamental theorem of finite abelian groups, we have:
-        \begin{align*}
-            G &\cong \mathbb{Z}_{11^2} \times \mathbb{Z}_{13^2}, \\
-            G &\cong \mathbb{Z}_{11} \times \mathbb{Z}_{11} \times \mathbb{Z}_{13} \times \mathbb{Z}_{13}, \\
-            G &\cong \mathbb{Z}_{11^2} \times \mathbb{Z}_{13} \times \mathbb{Z}_{13}, \text{ and } \\
-            G &\cong \mathbb{Z}_{11} \times \mathbb{Z}_{11} \times \mathbb{Z}_{13^2}. \ \square
-        \end{align*}
-    \end{enumerate}
-    \item Let $G$ be a group of order $105 = 3 \cdot 5 \cdot 7$.
-    \begin{enumerate}
-        \item Prove that $G$ has a cyclic subgroup of order $35$.\\
-        \textbf{Proof:} Let $G$ be a group of order $105 = 3 \cdot 35 = 5 \cdot 21 = 7 \cdot 15$. Then, by Sylow's Theorems, since $3,5$, 
-        and $7$ are primes that do not divide $35$, $21$, and $15$, $\exists H \in Syl_3(G), \exists P \in Syl_5(G)$, and 
-        $\exists K \in Syl_7(G)$. Let $PK = \{pk: p \in P, k \in K\}$. First, note that, since $P,K \leq G$ and are also both finite, 
-        \[
-            |PK| = \dfrac{|P| \cdot |K|}{|P \cap K|}.
-        \]
-        Next, note that $K \leq G$ and $P \leq G$ gives us that $ee = e \in PK$, so $PK$ is nonempty. Now let $a = p_1k_1$, $b = p_2k_2$ 
-        and $c = p_3k_3$. We need to show that $PK \leq G$. We have
-        \begin{align*}
-            ab = c &\Longrightarrow p_1k_1p_2k_2 = p_3k_3 \\
-            &\Longrightarrow p_1k_1p_2 = p_3k_3k_2^{-1} \\
-            &\Longrightarrow p_1k_1p_2 = p_3k_4 \\
-            &\Longrightarrow k_1p_2 = p_1^{-1}p_3k_4 \\
-            &\Longrightarrow k_1p_2 = p_4k_4 \\
-            &\Longrightarrow KP = PK. \\
-        \end{align*}
-        Again, starting with $a$ and $c$ in $PK$, we have
-        \begin{align*}
-            ab &= p_1k_1p_2k_2 \\
-            &= p_1p_3k_3k_2 \\
-            &= p_4k_4 \in PK \\
-            &\Longrightarrow ab \in PK \\
-            &\Longrightarrow PK \leq G.
-        \end{align*}
-        Now, since $P \in Syl_5(G)$ and $K \in Syl_7(G)$, $|P|=5$ and $|K| = 7$. Further, note that $P \cap K \leq P$ and $P \cap K \leq K$. 
-        Then, by La Grange's Theorem, $|P \cap K| \big| |P|$ and $|P \cap K| \big| |K|$. Now, the only common factor of $5$ and $7$ is $1$, 
-        so $|P \cap K| = 1$. Thusly, $P \cap K = \{e\}$. Then
-        \[
-            |PK| = \dfrac{|P||K|}{|P \cap K|} = \dfrac{5 \cdot 7}{1} = 35,
-        \]
-        so $|PK|=35$. Lastly, we must show that $PK$ is cyclic. Again citing Sylow's Theorems, note that, since $|PK| = 5 \cdot 7$, we know 
-        $P \in Syl_5(PK)$ and $K \in Syl_7(PK)$. Further, $n_5 \equiv 1(\mod{(5)})$ and $n_5 \big| 7$, so $n_5 = 1$ and we obtain $P
-        \trianglelefteq PK$. Similarly, $n_7 \equiv 1(\mod{(7)})$ and $n_7 \big| 5$, so $n_7 = 1$ and we obtain $K \trianglelefteq PK$. Then,
-        by the Normal Factoring Lemma, we have that $PK \cong P \times K$. Further, since $|P|=5$ and $|K| = 7$, we know $P \cong \mathbb{Z}_5$
-        and $K \cong \mathbb{Z}_7$. Then $PK \cong \mathbb{Z}_5 \times \mathbb{Z}_7$, so we must have that $PK$ is cyclic. $\square$
-        
-        \item Prove that $G$ has a unique $5$-Sylow and a unique $7$-Sylow subgroup.\\
-        
-        \textbf{Proof:} As in part (a) above, let $P \in Syl_5(G)$ and $K \in Syl_7(G)$. Now, since $n_5 \equiv 1(\mod{(5)})$ and $n_5 
-        \big| 21$, we must have that $n_5 \in \{1,21\}$. Similarly, $n_7 \equiv 1(\mod{(7)})$ and $n_7 \big| 15$, we must have that $n_7 
-        \in \{1,15\}$. 
-        
-        Now, assume that $n_5 = 21$ and $n_7= 15$. Since, for any $P \in Syl_5(G)$ and for any $K \in Syl_7(G)$, 
-        $P \cap K = \{e\}$ (see part (a)), all non-identity elements in any $P \in Syl_5(G)$ and $K \in Syl_7(G)$ must be unique. Then, 
-        since $|P| = 5$ and $|K|=7$ for any $P \in Syl_5(G)$ and $K \in Syl_7(G)$, we use a counting arguement. Then $4 \cdot 21+6 \cdot 
-        15 = 84+90=174 > 105$, which is a contradiction. Then we must have that at least one of $n_5=1$ or $n_7=1$ must be true. Then we
-        proceed by cases.
-
-        Case $1$: $n_5=1$ \\
-        Assume $n_5=1$. Then if we also have that $n_7 = 1$, then we must have that both $P \trianglelefteq G$ and $K \trianglelefteq G$ 
-        and we are done. Then assume that $n_7 = 15$. Now, note that for any $K \in Syl_7(G)$, we must have $P \cap K = \{e\}$. Then the
-        unique elements of $G$ that are accounted for so far add up to $4 \cdot 1 + 6 \cdot 15 + 1 = 95$, which leaves $10$ not accounted
-        for. Now we consider $H \in Syl_3(G)$. Note that $n_3 \equiv 1(\mod{(3)})$ and $n_3 \big| 35$, so we must have $n_3 \in \{1,7\}$.
-        Assume $n_3=7$. This would add $2 \cdot 7 = 14$ unique elements to our group $G$, which would put us at $|G|=109$, which is a
-        contradiction. Then we must have that $n_3=1$. 
-
-        Case $2$: $n_7=1$\\
-        Assume $n_7 = 1$. Then if we also have that $n_5 = 1$, then we must have that both $P \trianglelefteq G$ and $K \trianglelefteq G$
-        and we are done. Then assume that $n_5 = 21$.
-    \end{enumerate}
-\end{enumerate}
-
 \end{document}
