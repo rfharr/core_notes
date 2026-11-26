@@ -139,7 +139,7 @@
     lemma, we must have that $P_5P_7 \cong \mathbb{Z}_{35}$, so $P_5P_7$ is cyclic.
 
     Lastly, we consider normalcy. In doing so, we consider the quotient group $\sfrac{G}{P_5P_7}$. Note that, since both $G$ and $P_5P_7$ are
-    finite, $\big| \sfrac{G}{P_5P_7} \big| = \sfrac{|G|}{|P_5P_7|} \sfrac{105}{35} = 3 = [G:P_5P_7]$. Since $3$ is prime and $3 \big| |G|$,
+    finite, $\big| \sfrac{G}{P_5P_7} \big| = \sfrac{|G|}{|P_5P_7|} = \sfrac{105}{35} = 3 = [G:P_5P_7]$. Since $3$ is prime and $3 \big| |G|$,
     we must have that $P_5P_7 \trianglelefteq G$. $\square$
 
     \item Let $p$ and $q$ be distinct primes. Prove that a group of order $p^2q$ is not simple.\\
@@ -192,7 +192,16 @@
     Lastly, we have $n_2$. Note that we must have that $n_2=1$ since $H \in Syl_2(G) \Longrightarrow |H| = 4$. Then $H \trianglelefteq G$ 
     and $G$ is not simple. $\square$
 
-    \item Let $P \in Syl_p(G)$ and let $N$ be a normal subgroup of $G$. Prove that $P \cap N$ is a Sylow $p$-subgroup of $N$.
+    \item Let $P \in Syl_p(G)$ and let $N$ be a normal subgroup of $G$. Prove that $P \cap N$ is a Sylow $p$-subgroup of $N$.\\
+    \textbf{Proof:} Let $N \trianglelefteq G$. Then we have that $N \leq G$ and by La Grange's Theorem, $|N| \big| |G|$. Let $P \in Syl_p(G)$. 
+    Then, by definition, $|G| = p^{\alpha}m, p$ a prime and $\alpha,m \in \mathbb{Z}^+$. Then we have that $|N| \big| p^{\alpha}m$ and thusly
+    $|N| = p^{\beta}n, \beta,n \in \mathbb{Z}^+$ with $n \big| m$ and $\beta \leq \alpha$.
+
+    Now, $P \cap N \leq N$, so again by La Grange's Theorem, $|P \cap N | \big| |N|$. Further, since $P \in Syl_p(G)$, we have that 
+    $|P| = p^{\alpha}$. Additionally, $P \cap N \leq P$, so La Grange's Theorem also gives us that $|P \cap N| \big| |P|$, and thusly
+    $|P \cap N| \big| p^{\alpha}$, so we have that $|P \cap N| = p^{\beta}$, $\beta \leq \alpha$.
+
+    Then, by the definition of Sylow $p$-subgroups, $|N| = p^{\beta}n$ and $|P \cap N|=p^{\beta}$, so we must have that $P \cap N \in Syl_p(N)$. $\square$
     \item Let $G$ be a group of order $231 = 3 \cdot 7 \cdot 11$. Prove that $Z(G)$ contains a Sylow $11$-subgroup. Hint: One approach is 
     to use the $\sfrac{N}{C}$ Theorem which states that if $H$ is a subgroup of $G$, then $\sfrac{N_G(H)}{C_G(H)}$ is isomorphic to a 
     subgroup of $Aut(H)$.
